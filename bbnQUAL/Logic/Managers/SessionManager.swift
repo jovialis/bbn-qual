@@ -74,20 +74,27 @@ class SessionManager {
         if user.inCourse {
             // Find class session for the user's class that's not expired
             let collection = self.db.collection(SessionManager.collection)
-            collection.document(user.course).getDocument { document, error in
+            collection
+            .whereField("course", isEqualTo: user.course)
+            .whereField("expired", isEqualTo: false)
+            .limit(to: 1)
+            .getDocuments { documents, error in
                 // Validate that we got documents
-                guard let document = document else {
+                guard let documents = documents else {
                     callback.fire(.failure(error: error!))
                     return
                 }
                 
-                guard let data = document.data() else {
+                // ENsure that we actually got a document
+                if documents.isEmpty {
                     callback.fire(.success(object: nil))
                     return
                 }
                 
-                // Grab the first and only document
-                let session = QualSession(uid: document.documentID, map: data)
+                let document = documents.documents.first!
+                
+                // Grab the first and only document and parse
+                let session = QualSession(uid: document.documentID, map: document.data())
                 if let session = session {
                     if !session.expired {
                         callback.fire(.success(object: session))

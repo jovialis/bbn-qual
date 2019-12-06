@@ -20,29 +20,29 @@ class LoginViewController: UIViewController, ASWebAuthenticationPresentationCont
 	@IBOutlet weak var loadingIndicator: UIActivityIndicatorView!
 	@IBOutlet weak var loginButton: UIButton!
 	
-	override func viewDidLoad() {
-		super.viewDidLoad()
-		
-		self.loadingIndicator.isHidden = false
-		self.loginButton.isHidden = true
-		
-		// Load session from keychain
-		let keychain = KeychainSwift()
-		
-		let idToken = keychain.get("id_token")
-		let token = keychain.get("access_token")
-		let refreshToken = keychain.get("refresh_token")
-		
-		// Couldn't load session from keychain
-		if idToken == nil || token == nil || refreshToken == nil {
-			self.loadingIndicator.stopAnimating()
-			self.loginButton.isHidden = false
-			return
-		}
-		
-		// Refresh all tokens
-		refreshGoogleAuthToken(refreshToken: refreshToken!)
-	}
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.loadingIndicator.isHidden = false
+        self.loginButton.isHidden = true
+        
+        // Load session from keychain
+        let keychain = KeychainSwift()
+        
+        let idToken = keychain.get("id_token")
+        let token = keychain.get("access_token")
+        let refreshToken = keychain.get("refresh_token")
+        
+        // Couldn't load session from keychain
+        if idToken == nil || token == nil || refreshToken == nil {
+            self.loadingIndicator.stopAnimating()
+            self.loginButton.isHidden = false
+            return
+        }
+        
+        // Refresh all tokens
+        refreshGoogleAuthToken(refreshToken: refreshToken!)
+    }
 	
 	@IBAction func onGoogleLogin(_ sender: Any) {
 		self.openAuthDialogue()
@@ -230,8 +230,12 @@ class LoginViewController: UIViewController, ASWebAuthenticationPresentationCont
 		print("Successfully logged in.")
 				
 		// Push to hub
-		let storyboard = UIStoryboard(name: "AccessRouter", bundle: nil)
-		self.navigationController?.pushViewController(storyboard.instantiateInitialViewController()!, animated: false)
+		let storyboard = UIStoryboard(name: "Router", bundle: nil)
+        let controller = storyboard.instantiateInitialViewController()!
+        
+        controller.modalPresentationStyle = .fullScreen
+        
+        self.present(controller, animated: false, completion: nil)
 	}
 	
 }
