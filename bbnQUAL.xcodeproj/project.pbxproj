@@ -51,10 +51,10 @@
 		D64B2C4C2399F98C003FCA64 /* TeacherRouterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D64B2C4A2399F98C003FCA64 /* TeacherRouterViewController.swift */; };
 		D67F5A23239826B8008C7EDC /* StudentRouterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F5A22239826B7008C7EDC /* StudentRouterViewController.swift */; };
 		D67F5A24239826B8008C7EDC /* StudentRouterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67F5A22239826B7008C7EDC /* StudentRouterViewController.swift */; };
-		D67F5A29239826FF008C7EDC /* StudentRouter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67F5A28239826FF008C7EDC /* StudentRouter.storyboard */; };
-		D67F5A2A239826FF008C7EDC /* StudentRouter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67F5A28239826FF008C7EDC /* StudentRouter.storyboard */; };
-		D67F5A2C2398270C008C7EDC /* TeacherRouter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67F5A2B2398270C008C7EDC /* TeacherRouter.storyboard */; };
-		D67F5A2D2398270C008C7EDC /* TeacherRouter.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67F5A2B2398270C008C7EDC /* TeacherRouter.storyboard */; };
+		D67F5A29239826FF008C7EDC /* Student.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67F5A28239826FF008C7EDC /* Student.storyboard */; };
+		D67F5A2A239826FF008C7EDC /* Student.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67F5A28239826FF008C7EDC /* Student.storyboard */; };
+		D67F5A2C2398270C008C7EDC /* Teacher.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67F5A2B2398270C008C7EDC /* Teacher.storyboard */; };
+		D67F5A2D2398270C008C7EDC /* Teacher.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67F5A2B2398270C008C7EDC /* Teacher.storyboard */; };
 		D6BDF5CB23977AE300638352 /* QError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BDF5CA23977AE300638352 /* QError.swift */; };
 		D6BDF5CC23977AE300638352 /* QError.swift in Sources */ = {isa = PBXBuildFile; fileRef = D6BDF5CA23977AE300638352 /* QError.swift */; };
 		DA85B086DB0DA7C84A4FDF84 /* Pods_bbnQUAL.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BC9DAB37B5D1A0B9F97D1329 /* Pods_bbnQUAL.framework */; };
@@ -104,8 +104,8 @@
 		D61171C92397755A00A6DF1A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Session.swift; path = ../../../../../../../../System/Volumes/Data/Users/Mysticate/Documents/Workspaces/bbnQUAL/bbnQUAL/Logic/Models/Session.swift; sourceTree = "<group>"; };
 		D64B2C4A2399F98C003FCA64 /* TeacherRouterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TeacherRouterViewController.swift; path = ../../../../../../../../System/Volumes/Data/Users/Mysticate/Documents/Workspaces/bbnQUAL/bbnQUAL/Interface/Controllers/TeacherRouterViewController.swift; sourceTree = "<group>"; };
 		D67F5A22239826B7008C7EDC /* StudentRouterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRouterViewController.swift; sourceTree = "<group>"; };
-		D67F5A28239826FF008C7EDC /* StudentRouter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = StudentRouter.storyboard; path = ../../../../../../../System/Volumes/Data/Users/Mysticate/Documents/Workspaces/bbnQUAL/bbnQUAL/Interface/StudentRouter.storyboard; sourceTree = "<group>"; };
-		D67F5A2B2398270C008C7EDC /* TeacherRouter.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = TeacherRouter.storyboard; path = ../../../../../../../System/Volumes/Data/Users/Mysticate/Documents/Workspaces/bbnQUAL/bbnQUAL/Interface/TeacherRouter.storyboard; sourceTree = "<group>"; };
+		D67F5A28239826FF008C7EDC /* Student.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Student.storyboard; path = ../../../../../../../System/Volumes/Data/Users/Mysticate/Documents/Workspaces/bbnQUAL/bbnQUAL/Interface/Student.storyboard; sourceTree = "<group>"; };
+		D67F5A2B2398270C008C7EDC /* Teacher.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Teacher.storyboard; path = ../../../../../../../System/Volumes/Data/Users/Mysticate/Documents/Workspaces/bbnQUAL/bbnQUAL/Interface/Teacher.storyboard; sourceTree = "<group>"; };
 		D6BDF5CA23977AE300638352 /* QError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QError.swift; path = ../../../../../../../System/Volumes/Data/Users/Mysticate/Documents/Workspaces/bbnQUAL/bbnQUAL/Logic/QError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -154,8 +154,8 @@
 				D64FE9FF239989F2007C7E29 /* Utils */,
 				C03C8ADD238C35D900715032 /* Login.storyboard */,
 				C010E3032390579B00D07047 /* Router.storyboard */,
-				D67F5A28239826FF008C7EDC /* StudentRouter.storyboard */,
-				D67F5A2B2398270C008C7EDC /* TeacherRouter.storyboard */,
+				D67F5A28239826FF008C7EDC /* Student.storyboard */,
+				D67F5A2B2398270C008C7EDC /* Teacher.storyboard */,
 				C00F11A02391F68000D66E7D /* Controllers */,
 				C00F11A12391F69200D66E7D /* Views */,
 			);
@@ -374,7 +374,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C03C8AE4238C35DB00715032 /* LaunchScreen.storyboard in Resources */,
-				D67F5A2C2398270C008C7EDC /* TeacherRouter.storyboard in Resources */,
+				D67F5A2C2398270C008C7EDC /* Teacher.storyboard in Resources */,
 				C010E3042390579B00D07047 /* Router.storyboard in Resources */,
 				C03C8AE1238C35DB00715032 /* Assets.xcassets in Resources */,
 				C0604BEF238EF47400686D89 /* PTSans-Bold.ttf in Resources */,
@@ -385,7 +385,7 @@
 				C098D08B238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist in Resources */,
 				C0604BF3238EF47400686D89 /* PTSans-BoldItalic.ttf in Resources */,
 				C0604BF1238EF47400686D89 /* PTSans-Regular.ttf in Resources */,
-				D67F5A29239826FF008C7EDC /* StudentRouter.storyboard in Resources */,
+				D67F5A29239826FF008C7EDC /* Student.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -395,13 +395,13 @@
 			files = (
 				C098D089238C9A8F006B6E20 /* macOS-GoogleService-Info.plist in Resources */,
 				C0604BF4238EF47400686D89 /* PTSans-BoldItalic.ttf in Resources */,
-				D67F5A2A239826FF008C7EDC /* StudentRouter.storyboard in Resources */,
+				D67F5A2A239826FF008C7EDC /* Student.storyboard in Resources */,
 				C098D08C238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist in Resources */,
 				C0604BF2238EF47400686D89 /* PTSans-Regular.ttf in Resources */,
 				C010E3052390579B00D07047 /* Router.storyboard in Resources */,
 				C0604BF0238EF47400686D89 /* PTSans-Bold.ttf in Resources */,
 				C0604BFE238F0ABA00686D89 /* TestTube.svg in Resources */,
-				D67F5A2D2398270C008C7EDC /* TeacherRouter.storyboard in Resources */,
+				D67F5A2D2398270C008C7EDC /* Teacher.storyboard in Resources */,
 				C0604BF6238EF47400686D89 /* PTSans-Italic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

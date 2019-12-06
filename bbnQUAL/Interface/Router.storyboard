@@ -37,6 +37,7 @@
         <!--Teacher Router-->
         <scene sceneID="GKG-o7-Chz">
             <objects>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="bou-KA-dyJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
                 <viewController storyboardIdentifier="TeacherRouter" title="Teacher Router" id="CMx-wt-1Hq" customClass="TeacherRouterViewController" customModule="bbnQUAL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zH0-6A-UKv">
                         <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
@@ -57,7 +58,6 @@
                         <viewLayoutGuide key="safeArea" id="d4m-xR-nxW"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bou-KA-dyJ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-116" y="-326"/>
         </scene>
@@ -75,10 +75,19 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZtK-XM-SEg">
+                                <rect key="frame" x="336" y="325" width="129" height="31"/>
+                                <state key="normal" title="Check for Session"/>
+                                <connections>
+                                    <action selector="userPressedCheckForSession:" destination="7Sa-mP-hJ4" eventType="touchUpInside" id="bFV-NL-V32"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="bZA-Y8-jZA" firstAttribute="centerX" secondItem="Ncy-lR-rxQ" secondAttribute="centerX" id="Q5p-em-QGF"/>
+                            <constraint firstItem="ZtK-XM-SEg" firstAttribute="centerX" secondItem="Ncy-lR-rxQ" secondAttribute="centerX" id="Rqa-Ch-XCT"/>
+                            <constraint firstItem="ZtK-XM-SEg" firstAttribute="centerY" secondItem="Ncy-lR-rxQ" secondAttribute="centerY" constant="40" id="Rxk-Tt-cf6"/>
                             <constraint firstItem="bZA-Y8-jZA" firstAttribute="centerY" secondItem="Ncy-lR-rxQ" secondAttribute="centerY" id="fzc-eA-5g8"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Ncy-lR-rxQ"/>
@@ -86,7 +95,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="bib-Vn-yC4" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-116" y="469"/>
+            <point key="canvasLocation" x="-116.25" y="469"/>
         </scene>
     </scenes>
 </document>

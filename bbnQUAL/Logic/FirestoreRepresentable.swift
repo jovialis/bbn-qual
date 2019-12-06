@@ -61,7 +61,7 @@ class FirestoreRepresentableHandler {
 				// Attempt data parse. Otherwise throw an error
 				if let data = snapshot.data() {
 					// Attempt udpate object, catching any errors that are thrown
-					do {
+					do {                        
 						try self.represented.update(map: data)
 						self.updated.fire(.success(object: ()))
 					} catch {

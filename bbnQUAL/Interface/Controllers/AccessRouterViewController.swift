@@ -94,8 +94,9 @@ class AccessRouterViewController: UIViewController {
             
             if let controller = self.storyboard?.instantiateViewController(identifier: controllerName) {
                 // Transfer user object to presented views
-                var castedController = controller as! RouterUserSupplied
-                castedController.user = user
+                if var castedController = controller as? RouterUserSupplied {
+                    castedController.user = user
+                }
                 
                 controller.modalPresentationStyle = .fullScreen
                 

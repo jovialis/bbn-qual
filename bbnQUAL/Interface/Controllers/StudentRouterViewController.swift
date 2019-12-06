@@ -26,6 +26,11 @@ class StudentRouterViewController: UIViewController, RouterUserSupplied {
         self.obtainSessionForUser(user: self.user)
     }
     
+    @IBAction func userPressedCheckForSession(_ sender: Any) {
+        // Attempt to find a session for the user
+        self.obtainSessionForUser(user: self.user)
+    }
+    
     // Override dismiss to ensure that we dismiss any presented controllers first.
     override func dismiss(animated flag: Bool, completion: (() -> Void)? = nil) {
         // Dismiss the student controller
@@ -60,8 +65,11 @@ class StudentRouterViewController: UIViewController, RouterUserSupplied {
                     // If the session expired, pop the student controller
                     if session.expired {
                         self.undoPresentation()
+                        self.session = nil
                     }
                     
+                    break
+                                        
                 // Connection error means we pop the student controller and get a new session
                 case .failure(let error):
                     print(error)
@@ -84,12 +92,26 @@ class StudentRouterViewController: UIViewController, RouterUserSupplied {
     }
     
     private func doPresentation() {
+        let storyboard = UIStoryboard(name: "Student", bundle: nil)
+        
+        if let controller = storyboard.instantiateInitialViewController() {
+            self.studentController = controller
+            
+            controller.modalPresentationStyle = .fullScreen
+            controller.modalTransitionStyle = .coverVertical
+            
+            self.present(controller, animated: true, completion: nil)
+        }
+        
+        
         // TODO: Present the student controller
     }
     
     private func undoPresentation() {
         if let controller = self.studentController {
-            controller.dismiss(animated: false, completion: nil)
+            controller.dismiss(animated: true, completion: nil)
+            
+            self.studentController = nil
         }
     }
     

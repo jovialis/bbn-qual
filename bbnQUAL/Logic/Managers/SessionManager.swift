@@ -15,6 +15,7 @@ class SessionManager {
     
     fileprivate(set) static var shared = SessionManager()
     fileprivate(set) lazy var db = Firestore.firestore()
+    
     static let collection = "sessions"
     
     fileprivate init() {

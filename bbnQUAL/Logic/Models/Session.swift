@@ -50,26 +50,26 @@ class QualSession: FirestoreRepresentable {
     
     // Update using Firebase data
     func update(map: [String: Any]) throws {
-        guard let courseUid = mapped["course"] as? String else {
+        guard let courseUid = map["course"] as? String else {
             throw QError.insufficientData
         }
            
-        guard let teacherUid = mapped["teacher"] as? String else {
+        guard let teacherUid = map["teacher"] as? String else {
             throw QError.insufficientData
         }
            
-        guard let expired = mapped["expired"] as? Bool else {
+        guard let expired = map["expired"] as? Bool else {
             throw QError.insufficientData
         }
-           
-        guard let timestamp = mapped["timestamp"] as? Date else {
+        
+        guard let timestamp = map["timestamp"] as? Timestamp else {
             throw QError.insufficientData
         }
            
         self.course = courseUid
         self.teacher = teacherUid
         self.expired = expired
-        self.timestamp = timestamp
+        self.timestamp = timestamp.dateValue()
     }
     
     // Convert back to map for saving in Firebase
@@ -78,7 +78,7 @@ class QualSession: FirestoreRepresentable {
             "course": self.course,
             "teacher": self.teacher,
             "expired": self.expired,
-            "timestamp": self.timestamp
+            "timestamp": Timestamp(date: self.timestamp)
         ]
     }
     
