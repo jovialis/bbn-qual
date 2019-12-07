@@ -100,13 +100,13 @@
 		C098D087238C9A8F006B6E20 /* macOS-GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "macOS-GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C098D08A238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iPadOS-GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C098D08D238CAED6006B6E20 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		D61171C62397748F00A6DF1A /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = ../../../../../../../../System/Volumes/Data/Users/Mysticate/Documents/Workspaces/bbnQUAL/bbnQUAL/Logic/Managers/SessionManager.swift; sourceTree = "<group>"; };
-		D61171C92397755A00A6DF1A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Session.swift; path = ../../../../../../../../System/Volumes/Data/Users/Mysticate/Documents/Workspaces/bbnQUAL/bbnQUAL/Logic/Models/Session.swift; sourceTree = "<group>"; };
-		D64B2C4A2399F98C003FCA64 /* TeacherRouterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = TeacherRouterViewController.swift; path = ../../../../../../../../System/Volumes/Data/Users/Mysticate/Documents/Workspaces/bbnQUAL/bbnQUAL/Interface/Controllers/TeacherRouterViewController.swift; sourceTree = "<group>"; };
+		D61171C62397748F00A6DF1A /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		D61171C92397755A00A6DF1A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		D64B2C4A2399F98C003FCA64 /* TeacherRouterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherRouterViewController.swift; sourceTree = "<group>"; };
 		D67F5A22239826B7008C7EDC /* StudentRouterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentRouterViewController.swift; sourceTree = "<group>"; };
-		D67F5A28239826FF008C7EDC /* Student.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Student.storyboard; path = ../../../../../../../System/Volumes/Data/Users/Mysticate/Documents/Workspaces/bbnQUAL/bbnQUAL/Interface/Student.storyboard; sourceTree = "<group>"; };
-		D67F5A2B2398270C008C7EDC /* Teacher.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Teacher.storyboard; path = ../../../../../../../System/Volumes/Data/Users/Mysticate/Documents/Workspaces/bbnQUAL/bbnQUAL/Interface/Teacher.storyboard; sourceTree = "<group>"; };
-		D6BDF5CA23977AE300638352 /* QError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = QError.swift; path = ../../../../../../../System/Volumes/Data/Users/Mysticate/Documents/Workspaces/bbnQUAL/bbnQUAL/Logic/QError.swift; sourceTree = "<group>"; };
+		D67F5A28239826FF008C7EDC /* Student.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Student.storyboard; sourceTree = "<group>"; };
+		D67F5A2B2398270C008C7EDC /* Teacher.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Teacher.storyboard; sourceTree = "<group>"; };
+		D6BDF5CA23977AE300638352 /* QError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QError.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
