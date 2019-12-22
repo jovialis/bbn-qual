@@ -12,6 +12,7 @@ target 'bbnQUAL' do
 
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
+	pod 'Firebase/Functions'
 
   pod 'Firebase/Auth'
   pod 'GTMAppAuth'
@@ -19,8 +20,12 @@ target 'bbnQUAL' do
 
   pod 'Alamofire', '~> 5.0.0-rc.3'
 
-  pod 'Macaw'
   pod 'KeychainSwift'
   pod 'Signals'
+	pod 'Bond'
+	
+  pod 'Macaw'
+  pod 'CollectionKit'
+	pod 'SnapKit'
 
 end

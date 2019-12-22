@@ -29,12 +29,14 @@ class LoginViewController: UIViewController, ASWebAuthenticationPresentationCont
         // Load session from keychain
         let keychain = KeychainSwift()
         
+		let forceLogout = false
+		
         let idToken = keychain.get("id_token")
         let token = keychain.get("access_token")
         let refreshToken = keychain.get("refresh_token")
         
         // Couldn't load session from keychain
-        if idToken == nil || token == nil || refreshToken == nil {
+        if forceLogout || (idToken == nil || token == nil || refreshToken == nil) {
             self.loadingIndicator.stopAnimating()
             self.loginButton.isHidden = false
             return
