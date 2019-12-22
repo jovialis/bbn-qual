@@ -34,7 +34,13 @@ class TeacherWrapperViewController: UIViewController {
 	private func setupContainerView() {
 		// Instantiate navigation controller
 		let navigationController = UINavigationController()
-		navigationController.navigationBar.isHidden = true
+//		navigationController.navigationBar.isHidden = true
+		
+		// Make navigation bar transparent
+		navigationController.navigationBar.setBackgroundImage(UIImage(), for: .default) //UIImage.init(named: "transparent.png")
+		navigationController.navigationBar.shadowImage = UIImage()
+		navigationController.navigationBar.isTranslucent = true
+		navigationController.view.backgroundColor = .clear
 		
 		// Add child controller
 		self.addChild(navigationController)

@@ -25,6 +25,8 @@
 		C03C8AE1238C35DB00715032 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C03C8AE0238C35DB00715032 /* Assets.xcassets */; };
 		C03C8AE4238C35DB00715032 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03C8AE2238C35DB00715032 /* LaunchScreen.storyboard */; };
 		C03C8AEF238C35DC00715032 /* bbnQUALTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03C8AEE238C35DC00715032 /* bbnQUALTests.swift */; };
+		C049D86E23AFF05B00DFE9DA /* ReagentSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C049D86D23AFF05B00DFE9DA /* ReagentSelectionView.swift */; };
+		C049D86F23AFF05B00DFE9DA /* ReagentSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C049D86D23AFF05B00DFE9DA /* ReagentSelectionView.swift */; };
 		C0604BEF238EF47400686D89 /* PTSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0604BEB238EF47300686D89 /* PTSans-Bold.ttf */; };
 		C0604BF0238EF47400686D89 /* PTSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0604BEB238EF47300686D89 /* PTSans-Bold.ttf */; };
 		C0604BF1238EF47400686D89 /* PTSans-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0604BEC238EF47300686D89 /* PTSans-Regular.ttf */; };
@@ -51,6 +53,8 @@
 		C098D08C238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C098D08A238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist */; };
 		C098D08E238CAED6006B6E20 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098D08D238CAED6006B6E20 /* LoginViewController.swift */; };
 		C098D08F238CAED6006B6E20 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098D08D238CAED6006B6E20 /* LoginViewController.swift */; };
+		C0FAADE723AE9DA100420A8C /* TeacherCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAADE623AE9DA100420A8C /* TeacherCourseViewController.swift */; };
+		C0FAADE823AE9DA100420A8C /* TeacherCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAADE623AE9DA100420A8C /* TeacherCourseViewController.swift */; };
 		D61171C72397748F00A6DF1A /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61171C62397748F00A6DF1A /* SessionManager.swift */; };
 		D61171C82397748F00A6DF1A /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61171C62397748F00A6DF1A /* SessionManager.swift */; };
 		D61171CA2397755A00A6DF1A /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61171C92397755A00A6DF1A /* Session.swift */; };
@@ -99,6 +103,7 @@
 		C03C8AEE238C35DC00715032 /* bbnQUALTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bbnQUALTests.swift; sourceTree = "<group>"; };
 		C03C8AF0238C35DC00715032 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C03C8AF9238C35EC00715032 /* bbnQUAL.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bbnQUAL.entitlements; sourceTree = "<group>"; };
+		C049D86D23AFF05B00DFE9DA /* ReagentSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReagentSelectionView.swift; sourceTree = "<group>"; };
 		C0604BEB238EF47300686D89 /* PTSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Bold.ttf"; sourceTree = "<group>"; };
 		C0604BEC238EF47300686D89 /* PTSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Regular.ttf"; sourceTree = "<group>"; };
 		C0604BED238EF47400686D89 /* PTSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-BoldItalic.ttf"; sourceTree = "<group>"; };
@@ -112,6 +117,7 @@
 		C098D087238C9A8F006B6E20 /* macOS-GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "macOS-GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C098D08A238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iPadOS-GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C098D08D238CAED6006B6E20 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C0FAADE623AE9DA100420A8C /* TeacherCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCourseViewController.swift; sourceTree = "<group>"; };
 		D61171C62397748F00A6DF1A /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		D61171C92397755A00A6DF1A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
 		D64B2C4A2399F98C003FCA64 /* TeacherRouterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherRouterViewController.swift; sourceTree = "<group>"; };
@@ -199,6 +205,7 @@
 			children = (
 				C0604BFF238F0C7D00686D89 /* TestTubeView.swift */,
 				C07C2E0F23A5845E005B5423 /* CourseView.swift */,
+				C049D86D23AFF05B00DFE9DA /* ReagentSelectionView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -310,6 +317,7 @@
 			children = (
 				C07C2E0923A57441005B5423 /* TeacherWrapperViewController.swift */,
 				C07C2E1223A6CF47005B5423 /* TeacherCoursesViewController.swift */,
+				C0FAADE623AE9DA100420A8C /* TeacherCourseViewController.swift */,
 			);
 			path = Teacher;
 			sourceTree = "<group>";
@@ -500,8 +508,10 @@
 				C07C2E1323A6CF47005B5423 /* TeacherCoursesViewController.swift in Sources */,
 				C07C2E1023A5845E005B5423 /* CourseView.swift in Sources */,
 				C07C2E0A23A57441005B5423 /* TeacherWrapperViewController.swift in Sources */,
+				C0FAADE723AE9DA100420A8C /* TeacherCourseViewController.swift in Sources */,
 				D6BDF5CB23977AE300638352 /* QError.swift in Sources */,
 				C010E30B23905B2C00D07047 /* UserManager.swift in Sources */,
+				C049D86E23AFF05B00DFE9DA /* ReagentSelectionView.swift in Sources */,
 				C010E31123905F2F00D07047 /* Callback.swift in Sources */,
 				C010E30E23905D5500D07047 /* User.swift in Sources */,
 				D64B2C4B2399F98C003FCA64 /* TeacherRouterViewController.swift in Sources */,
@@ -528,12 +538,14 @@
 				C07C2E0B23A57441005B5423 /* TeacherWrapperViewController.swift in Sources */,
 				C098D08F238CAED6006B6E20 /* LoginViewController.swift in Sources */,
 				C07C2E1123A5845E005B5423 /* CourseView.swift in Sources */,
+				C049D86F23AFF05B00DFE9DA /* ReagentSelectionView.swift in Sources */,
 				C010E30F23905D5500D07047 /* User.swift in Sources */,
 				C07C2E1423A6CF47005B5423 /* TeacherCoursesViewController.swift in Sources */,
 				C010E3152390613500D07047 /* FirestoreRepresentable.swift in Sources */,
 				C03C8AEF238C35DC00715032 /* bbnQUALTests.swift in Sources */,
 				C010E30C23905B2C00D07047 /* UserManager.swift in Sources */,
 				D67F5A24239826B8008C7EDC /* StudentRouterViewController.swift in Sources */,
+				C0FAADE823AE9DA100420A8C /* TeacherCourseViewController.swift in Sources */,
 				C07C2E0E23A57EFF005B5423 /* Course.swift in Sources */,
 				C0604C01238F0C7D00686D89 /* TestTubeView.swift in Sources */,
 				D64B2C4C2399F98C003FCA64 /* TeacherRouterViewController.swift in Sources */,

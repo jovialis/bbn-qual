@@ -12,6 +12,8 @@ import CollectionKit
 import Firebase
 import FirebaseFirestoreSwift
 import SnapKit
+import Bond
+import ReactiveKit
 
 class TeacherCoursesViewController: UIViewController {
 	
@@ -63,7 +65,11 @@ class TeacherCoursesViewController: UIViewController {
 			view.backgroundColor = .secondarySystemBackground
 			view.layer.cornerRadius = 5.0
 			
-			view.clickedButton?.onTouchDown.then(listener: self) {
+			// Layout
+			view.layoutSubviews()
+			
+			// Open the course when clicked
+			_ = view.clickedButton?.reactive.tapGesture().observe { _ in
 				self.openCourse(course: data)
 			}
 		}
@@ -161,7 +167,12 @@ class TeacherCoursesViewController: UIViewController {
 	}
 	
 	private func openCourse(course: Course) {
+		let storyboard = UIStoryboard(name: "Teacher", bundle: nil)
+		let controller = storyboard.instantiateViewController(withIdentifier: "TeacherCourse")
 		
+//		controller.course = course
+		
+		self.navigationController?.pushViewController(controller, animated: true)
 	}
 	
 }

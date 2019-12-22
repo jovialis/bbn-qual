@@ -19,7 +19,6 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 		guard let windowScene = (scene as? UIWindowScene) else { return }
 		
 		windowScene.sizeRestrictions?.minimumSize = CGSize(width: 1400, height: 900)
-		windowScene.sizeRestrictions?.maximumSize = CGSize(width: 1400, height: 900)
 	}
 
 	func sceneDidDisconnect(_ scene: UIScene) {
