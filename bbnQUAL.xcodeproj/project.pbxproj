@@ -25,6 +25,10 @@
 		C03C8AE1238C35DB00715032 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C03C8AE0238C35DB00715032 /* Assets.xcassets */; };
 		C03C8AE4238C35DB00715032 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03C8AE2238C35DB00715032 /* LaunchScreen.storyboard */; };
 		C03C8AEF238C35DC00715032 /* bbnQUALTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03C8AEE238C35DC00715032 /* bbnQUALTests.swift */; };
+		C03CC82923B3C47A00D8482C /* TestTube-Light.svg in Resources */ = {isa = PBXBuildFile; fileRef = C03CC82823B3C47A00D8482C /* TestTube-Light.svg */; };
+		C03CC82A23B3C47A00D8482C /* TestTube-Light.svg in Resources */ = {isa = PBXBuildFile; fileRef = C03CC82823B3C47A00D8482C /* TestTube-Light.svg */; };
+		C03CC82C23B3FD5200D8482C /* TestTube-Dark.svg in Resources */ = {isa = PBXBuildFile; fileRef = C03CC82B23B3FD5200D8482C /* TestTube-Dark.svg */; };
+		C03CC82D23B3FD5200D8482C /* TestTube-Dark.svg in Resources */ = {isa = PBXBuildFile; fileRef = C03CC82B23B3FD5200D8482C /* TestTube-Dark.svg */; };
 		C049D86E23AFF05B00DFE9DA /* ReagentSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C049D86D23AFF05B00DFE9DA /* ReagentSelectionView.swift */; };
 		C049D86F23AFF05B00DFE9DA /* ReagentSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C049D86D23AFF05B00DFE9DA /* ReagentSelectionView.swift */; };
 		C0604BEF238EF47400686D89 /* PTSans-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0604BEB238EF47300686D89 /* PTSans-Bold.ttf */; };
@@ -35,8 +39,6 @@
 		C0604BF4238EF47400686D89 /* PTSans-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0604BED238EF47400686D89 /* PTSans-BoldItalic.ttf */; };
 		C0604BF5238EF47400686D89 /* PTSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0604BEE238EF47400686D89 /* PTSans-Italic.ttf */; };
 		C0604BF6238EF47400686D89 /* PTSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0604BEE238EF47400686D89 /* PTSans-Italic.ttf */; };
-		C0604BFD238F0ABA00686D89 /* TestTube.svg in Resources */ = {isa = PBXBuildFile; fileRef = C0604BFA238F0ABA00686D89 /* TestTube.svg */; };
-		C0604BFE238F0ABA00686D89 /* TestTube.svg in Resources */ = {isa = PBXBuildFile; fileRef = C0604BFA238F0ABA00686D89 /* TestTube.svg */; };
 		C0604C00238F0C7D00686D89 /* TestTubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0604BFF238F0C7D00686D89 /* TestTubeView.swift */; };
 		C0604C01238F0C7D00686D89 /* TestTubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0604BFF238F0C7D00686D89 /* TestTubeView.swift */; };
 		C07C2E0A23A57441005B5423 /* TeacherWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C2E0923A57441005B5423 /* TeacherWrapperViewController.swift */; };
@@ -53,6 +55,8 @@
 		C098D08C238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C098D08A238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist */; };
 		C098D08E238CAED6006B6E20 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098D08D238CAED6006B6E20 /* LoginViewController.swift */; };
 		C098D08F238CAED6006B6E20 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098D08D238CAED6006B6E20 /* LoginViewController.swift */; };
+		C0F97E4323B040AD0091E974 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F97E4223B040AD0091E974 /* StudentViewController.swift */; };
+		C0F97E4423B040AD0091E974 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F97E4223B040AD0091E974 /* StudentViewController.swift */; };
 		C0FAADE723AE9DA100420A8C /* TeacherCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAADE623AE9DA100420A8C /* TeacherCourseViewController.swift */; };
 		C0FAADE823AE9DA100420A8C /* TeacherCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAADE623AE9DA100420A8C /* TeacherCourseViewController.swift */; };
 		D61171C72397748F00A6DF1A /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61171C62397748F00A6DF1A /* SessionManager.swift */; };
@@ -103,12 +107,13 @@
 		C03C8AEE238C35DC00715032 /* bbnQUALTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bbnQUALTests.swift; sourceTree = "<group>"; };
 		C03C8AF0238C35DC00715032 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C03C8AF9238C35EC00715032 /* bbnQUAL.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = bbnQUAL.entitlements; sourceTree = "<group>"; };
+		C03CC82823B3C47A00D8482C /* TestTube-Light.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "TestTube-Light.svg"; sourceTree = "<group>"; };
+		C03CC82B23B3FD5200D8482C /* TestTube-Dark.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "TestTube-Dark.svg"; sourceTree = "<group>"; };
 		C049D86D23AFF05B00DFE9DA /* ReagentSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReagentSelectionView.swift; sourceTree = "<group>"; };
 		C0604BEB238EF47300686D89 /* PTSans-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Bold.ttf"; sourceTree = "<group>"; };
 		C0604BEC238EF47300686D89 /* PTSans-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Regular.ttf"; sourceTree = "<group>"; };
 		C0604BED238EF47400686D89 /* PTSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		C0604BEE238EF47400686D89 /* PTSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Italic.ttf"; sourceTree = "<group>"; };
-		C0604BFA238F0ABA00686D89 /* TestTube.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = TestTube.svg; sourceTree = "<group>"; };
 		C0604BFF238F0C7D00686D89 /* TestTubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTubeView.swift; sourceTree = "<group>"; };
 		C07C2E0923A57441005B5423 /* TeacherWrapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherWrapperViewController.swift; sourceTree = "<group>"; };
 		C07C2E0C23A57EFF005B5423 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
@@ -117,6 +122,7 @@
 		C098D087238C9A8F006B6E20 /* macOS-GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "macOS-GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C098D08A238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iPadOS-GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C098D08D238CAED6006B6E20 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		C0F97E4223B040AD0091E974 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
 		C0FAADE623AE9DA100420A8C /* TeacherCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCourseViewController.swift; sourceTree = "<group>"; };
 		D61171C62397748F00A6DF1A /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		D61171C92397755A00A6DF1A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -196,6 +202,7 @@
 				C07C2E0623A57323005B5423 /* Startup */,
 				C07C2E0723A57334005B5423 /* Routing */,
 				C07C2E0823A57388005B5423 /* Teacher */,
+				C0F97E4123B0403E0091E974 /* Student */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -203,8 +210,8 @@
 		C00F11A12391F69200D66E7D /* Views */ = {
 			isa = PBXGroup;
 			children = (
-				C0604BFF238F0C7D00686D89 /* TestTubeView.swift */,
 				C07C2E0F23A5845E005B5423 /* CourseView.swift */,
+				C0604BFF238F0C7D00686D89 /* TestTubeView.swift */,
 				C049D86D23AFF05B00DFE9DA /* ReagentSelectionView.swift */,
 			);
 			path = Views;
@@ -289,7 +296,8 @@
 		C0604BF8238F0AAC00686D89 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
-				C0604BFA238F0ABA00686D89 /* TestTube.svg */,
+				C03CC82823B3C47A00D8482C /* TestTube-Light.svg */,
+				C03CC82B23B3FD5200D8482C /* TestTube-Dark.svg */,
 			);
 			path = Graphics;
 			sourceTree = "<group>";
@@ -320,6 +328,14 @@
 				C0FAADE623AE9DA100420A8C /* TeacherCourseViewController.swift */,
 			);
 			path = Teacher;
+			sourceTree = "<group>";
+		};
+		C0F97E4123B0403E0091E974 /* Student */ = {
+			isa = PBXGroup;
+			children = (
+				C0F97E4223B040AD0091E974 /* StudentViewController.swift */,
+			);
+			path = Student;
 			sourceTree = "<group>";
 		};
 		D64FE9FF239989F2007C7E29 /* Utils */ = {
@@ -421,13 +437,14 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C03CC82923B3C47A00D8482C /* TestTube-Light.svg in Resources */,
 				C03C8AE4238C35DB00715032 /* LaunchScreen.storyboard in Resources */,
 				D67F5A2C2398270C008C7EDC /* Teacher.storyboard in Resources */,
 				C010E3042390579B00D07047 /* Router.storyboard in Resources */,
+				C03CC82C23B3FD5200D8482C /* TestTube-Dark.svg in Resources */,
 				C03C8AE1238C35DB00715032 /* Assets.xcassets in Resources */,
 				C0604BEF238EF47400686D89 /* PTSans-Bold.ttf in Resources */,
 				C098D088238C9A8F006B6E20 /* macOS-GoogleService-Info.plist in Resources */,
-				C0604BFD238F0ABA00686D89 /* TestTube.svg in Resources */,
 				C03C8ADF238C35D900715032 /* Login.storyboard in Resources */,
 				C0604BF5238EF47400686D89 /* PTSans-Italic.ttf in Resources */,
 				C098D08B238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist in Resources */,
@@ -441,14 +458,15 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C03CC82A23B3C47A00D8482C /* TestTube-Light.svg in Resources */,
 				C098D089238C9A8F006B6E20 /* macOS-GoogleService-Info.plist in Resources */,
+				C03CC82D23B3FD5200D8482C /* TestTube-Dark.svg in Resources */,
 				C0604BF4238EF47400686D89 /* PTSans-BoldItalic.ttf in Resources */,
 				D67F5A2A239826FF008C7EDC /* Student.storyboard in Resources */,
 				C098D08C238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist in Resources */,
 				C0604BF2238EF47400686D89 /* PTSans-Regular.ttf in Resources */,
 				C010E3052390579B00D07047 /* Router.storyboard in Resources */,
 				C0604BF0238EF47400686D89 /* PTSans-Bold.ttf in Resources */,
-				C0604BFE238F0ABA00686D89 /* TestTube.svg in Resources */,
 				D67F5A2D2398270C008C7EDC /* Teacher.storyboard in Resources */,
 				C0604BF6238EF47400686D89 /* PTSans-Italic.ttf in Resources */,
 			);
@@ -515,6 +533,7 @@
 				C010E31123905F2F00D07047 /* Callback.swift in Sources */,
 				C010E30E23905D5500D07047 /* User.swift in Sources */,
 				D64B2C4B2399F98C003FCA64 /* TeacherRouterViewController.swift in Sources */,
+				C0F97E4323B040AD0091E974 /* StudentViewController.swift in Sources */,
 				C07C2E0D23A57EFF005B5423 /* Course.swift in Sources */,
 				C03C8AD8238C35D900715032 /* AppDelegate.swift in Sources */,
 				C010E307239058AE00D07047 /* AccessRouterViewController.swift in Sources */,
@@ -530,6 +549,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0F97E4423B040AD0091E974 /* StudentViewController.swift in Sources */,
 				D61171CB2397755A00A6DF1A /* Session.swift in Sources */,
 				D6BDF5CC23977AE300638352 /* QError.swift in Sources */,
 				C010E31223905F2F00D07047 /* Callback.swift in Sources */,

@@ -10,69 +10,21 @@
         <array key="PTSans-Bold.ttf">
             <string>PTSans-Bold</string>
         </array>
-        <array key="PTSans-Italic.ttf">
-            <string>PTSans-Italic</string>
-        </array>
         <array key="PTSans-Regular.ttf">
             <string>PTSans-Regular</string>
         </array>
     </customFonts>
     <scenes>
-        <!--Root View Controller-->
-        <scene sceneID="Bl9-v6-a06">
-            <objects>
-                <tableViewController id="mDn-3s-vEv" sceneMemberID="viewController">
-                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="ser-dz-qgG">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="pjo-ir-3kg">
-                                <rect key="frame" x="0.0" y="28" width="414" height="43.5"/>
-                                <autoresizingMask key="autoresizingMask"/>
-                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="pjo-ir-3kg" id="Q8m-LN-SjN">
-                                    <rect key="frame" x="0.0" y="0.0" width="414" height="43.5"/>
-                                    <autoresizingMask key="autoresizingMask"/>
-                                </tableViewCellContentView>
-                            </tableViewCell>
-                        </prototypes>
-                        <connections>
-                            <outlet property="dataSource" destination="mDn-3s-vEv" id="9YX-aN-rIG"/>
-                            <outlet property="delegate" destination="mDn-3s-vEv" id="s6Z-Ag-1Qz"/>
-                        </connections>
-                    </tableView>
-                    <navigationItem key="navigationItem" title="Root View Controller" id="5Sz-yZ-oyQ"/>
-                </tableViewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="0xU-qK-BIQ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="125" y="153"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="yyW-4D-gJV">
-            <objects>
-                <navigationController id="UOm-6F-haC" sceneMemberID="viewController">
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="nHh-5f-eKV">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <connections>
-                        <segue destination="mDn-3s-vEv" kind="relationship" relationship="rootViewController" id="zZY-vW-eFs"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="kMI-rn-oW2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-591" y="153"/>
-        </scene>
-        <!--View Controller-->
+        <!--Student View Controller-->
         <scene sceneID="0PG-aK-0o7">
             <objects>
-                <viewController id="m0l-ny-w2e" customClass="ViewController" customModule="bbnQUAL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="m0l-ny-w2e" customClass="StudentViewController" customModule="bbnQUAL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Ij-kh-fGv">
-                        <rect key="frame" x="0.0" y="0.0" width="1500" height="1200"/>
+                        <rect key="frame" x="0.0" y="0.0" width="1500" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="WdO-Bg-eQD" userLabel="Master Stack">
-                                <rect key="frame" x="80" y="124" width="1340" height="1042"/>
+                                <rect key="frame" x="80" y="124" width="1340" height="662"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9us-rI-hbe" userLabel="Header Stack">
                                         <rect key="frame" x="0.0" y="0.0" width="1340" height="40"/>
@@ -125,478 +77,164 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="YeM-sQ-61L" userLabel="Body Stack">
-                                        <rect key="frame" x="0.0" y="90" width="1340" height="952"/>
+                                        <rect key="frame" x="0.0" y="90" width="1340" height="572"/>
                                         <subviews>
-                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ke7-Rm-TwC">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="872"/>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7E-ji-3T5">
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="572"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" axis="vertical" distribution="equalSpacing" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PD0-ZI-AU3">
-                                                        <rect key="frame" x="30" y="30" width="275" height="727"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2uS-sy-lar">
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="572"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regent Set 3/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Na5-Zc-cLn">
-                                                                <rect key="frame" x="0.0" y="0.0" width="193" height="39"/>
-                                                                <fontDescription key="fontDescription" name="PTSans-Bold" family="PT Sans" pointSize="30"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Locate all 4 test tubes for your set. Your test tubes are:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ev6-6H-qQd">
-                                                                <rect key="frame" x="0.0" y="69" width="264" height="57"/>
-                                                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
-                                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Qth-6s-1Nh">
-                                                                <rect key="frame" x="0.0" y="156" width="60" height="129"/>
+                                                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ke7-Rm-TwC">
+                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="517"/>
                                                                 <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 1101" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dow-go-UAr">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="28.5"/>
-                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 1102" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPZ-q9-dcs">
-                                                                        <rect key="frame" x="0.0" y="33.5" width="60" height="28.5"/>
-                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 1103" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOm-W3-ZoI">
-                                                                        <rect key="frame" x="0.0" y="67" width="60" height="28.5"/>
-                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 1104" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="An8-9n-O2C">
-                                                                        <rect key="frame" x="0.0" y="100.5" width="60" height="28.5"/>
-                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
+                                                                    <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" axis="vertical" distribution="equalSpacing" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PD0-ZI-AU3">
+                                                                        <rect key="frame" x="30" y="30" width="275" height="727"/>
+                                                                        <subviews>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regent Set 3/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Na5-Zc-cLn">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="193" height="39"/>
+                                                                                <fontDescription key="fontDescription" name="PTSans-Bold" family="PT Sans" pointSize="30"/>
+                                                                                <nil key="textColor"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Locate all 4 test tubes for your set. Your test tubes are:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ev6-6H-qQd">
+                                                                                <rect key="frame" x="0.0" y="69" width="264" height="57"/>
+                                                                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
+                                                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Qth-6s-1Nh">
+                                                                                <rect key="frame" x="0.0" y="156" width="60" height="129"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 1101" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Dow-go-UAr">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="60" height="28.5"/>
+                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 1102" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WPZ-q9-dcs">
+                                                                                        <rect key="frame" x="0.0" y="33.5" width="60" height="28.5"/>
+                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 1103" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tOm-W3-ZoI">
+                                                                                        <rect key="frame" x="0.0" y="67" width="60" height="28.5"/>
+                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- 1104" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="An8-9n-O2C">
+                                                                                        <rect key="frame" x="0.0" y="100.5" width="60" height="28.5"/>
+                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You must match each test tube to one of these 4 compounds:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRr-f3-IHp">
+                                                                                <rect key="frame" x="0.0" y="315" width="247" height="85.5"/>
+                                                                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
+                                                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Zbd-od-c6q">
+                                                                                <rect key="frame" x="0.0" y="430.5" width="57" height="129"/>
+                                                                                <subviews>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- NaCl" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9j0-EO-gLf">
+                                                                                        <rect key="frame" x="0.0" y="0.0" width="57" height="28.5"/>
+                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- NaCl" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouP-8t-fKV">
+                                                                                        <rect key="frame" x="0.0" y="33.5" width="57" height="28.5"/>
+                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- NaCl" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tR-c2-QQu">
+                                                                                        <rect key="frame" x="0.0" y="67" width="57" height="28.5"/>
+                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- NaCl" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYK-pz-COx">
+                                                                                        <rect key="frame" x="0.0" y="100.5" width="57" height="28.5"/>
+                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
+                                                                                        <nil key="highlightedColor"/>
+                                                                                    </label>
+                                                                                </subviews>
+                                                                            </stackView>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perform all necessary tests, then enter your findings to the right." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6J4-oo-YeG">
+                                                                                <rect key="frame" x="0.0" y="589.5" width="259" height="85.5"/>
+                                                                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
+                                                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can do it! Keep going!" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHQ-KM-Rt4">
+                                                                                <rect key="frame" x="0.0" y="705" width="190.5" height="22"/>
+                                                                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
+                                                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                                <nil key="highlightedColor"/>
+                                                                            </label>
+                                                                        </subviews>
+                                                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                    </stackView>
                                                                 </subviews>
-                                                            </stackView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You must match each test tube to one of these 4 compounds:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRr-f3-IHp">
-                                                                <rect key="frame" x="0.0" y="315" width="247" height="85.5"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                <constraints>
+                                                                    <constraint firstItem="PD0-ZI-AU3" firstAttribute="leading" secondItem="rDI-s0-fiR" secondAttribute="leading" constant="30" id="YVR-7Y-6I8"/>
+                                                                    <constraint firstItem="PD0-ZI-AU3" firstAttribute="bottom" secondItem="rDI-s0-fiR" secondAttribute="bottom" id="fAo-V1-PYE"/>
+                                                                    <constraint firstItem="PD0-ZI-AU3" firstAttribute="top" secondItem="rDI-s0-fiR" secondAttribute="top" constant="30" id="smS-Rz-RC2"/>
+                                                                    <constraint firstItem="PD0-ZI-AU3" firstAttribute="width" secondItem="zcH-Ce-CSo" secondAttribute="width" constant="-60" id="uaJ-73-fMD"/>
+                                                                    <constraint firstItem="PD0-ZI-AU3" firstAttribute="trailing" secondItem="rDI-s0-fiR" secondAttribute="trailing" constant="30" id="unX-6J-bWw"/>
+                                                                </constraints>
+                                                                <viewLayoutGuide key="contentLayoutGuide" id="rDI-s0-fiR"/>
+                                                                <viewLayoutGuide key="frameLayoutGuide" id="zcH-Ce-CSo"/>
+                                                            </scrollView>
+                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18B-V8-bMW">
+                                                                <rect key="frame" x="0.0" y="517" width="335" height="55"/>
+                                                                <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                                <constraints>
+                                                                    <constraint firstAttribute="height" constant="55" id="1YZ-CG-LG6"/>
+                                                                </constraints>
                                                                 <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
-                                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Zbd-od-c6q">
-                                                                <rect key="frame" x="0.0" y="430.5" width="57" height="129"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- NaCl" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9j0-EO-gLf">
-                                                                        <rect key="frame" x="0.0" y="0.0" width="57" height="28.5"/>
-                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- NaCl" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ouP-8t-fKV">
-                                                                        <rect key="frame" x="0.0" y="33.5" width="57" height="28.5"/>
-                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- NaCl" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1tR-c2-QQu">
-                                                                        <rect key="frame" x="0.0" y="67" width="57" height="28.5"/>
-                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="- NaCl" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sYK-pz-COx">
-                                                                        <rect key="frame" x="0.0" y="100.5" width="57" height="28.5"/>
-                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Perform all necessary tests, then enter your findings to the right." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6J4-oo-YeG">
-                                                                <rect key="frame" x="0.0" y="589.5" width="259" height="85.5"/>
-                                                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
-                                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You can do it! Keep going!" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SHQ-KM-Rt4">
-                                                                <rect key="frame" x="0.0" y="705" width="190.5" height="22"/>
-                                                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
-                                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
+                                                                <inset key="contentEdgeInsets" minX="35" minY="10" maxX="35" maxY="10"/>
+                                                                <state key="normal" title="Check Answers">
+                                                                    <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="checkAnswersSelected:" destination="m0l-ny-w2e" eventType="touchUpInside" id="eJ8-RT-OHS"/>
+                                                                </connections>
+                                                            </button>
                                                         </subviews>
-                                                        <color key="backgroundColor" systemColor="systemIndigoColor" red="0.34509803919999998" green="0.33725490200000002" blue="0.83921568629999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                     </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="secondarySystemFillColor" red="0.47058823529999999" green="0.47058823529999999" blue="0.50196078430000002" alpha="0.16" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
-                                                    <constraint firstItem="PD0-ZI-AU3" firstAttribute="leading" secondItem="rDI-s0-fiR" secondAttribute="leading" constant="30" id="YVR-7Y-6I8"/>
-                                                    <constraint firstItem="PD0-ZI-AU3" firstAttribute="bottom" secondItem="rDI-s0-fiR" secondAttribute="bottom" id="fAo-V1-PYE"/>
-                                                    <constraint firstItem="PD0-ZI-AU3" firstAttribute="top" secondItem="rDI-s0-fiR" secondAttribute="top" constant="30" id="smS-Rz-RC2"/>
-                                                    <constraint firstItem="PD0-ZI-AU3" firstAttribute="width" secondItem="zcH-Ce-CSo" secondAttribute="width" constant="-60" id="uaJ-73-fMD"/>
-                                                    <constraint firstItem="PD0-ZI-AU3" firstAttribute="trailing" secondItem="rDI-s0-fiR" secondAttribute="trailing" constant="30" id="unX-6J-bWw"/>
+                                                    <constraint firstItem="2uS-sy-lar" firstAttribute="leading" secondItem="h7E-ji-3T5" secondAttribute="leading" id="Jd8-1T-cgL"/>
+                                                    <constraint firstAttribute="trailing" secondItem="2uS-sy-lar" secondAttribute="trailing" id="Pu0-TK-6bF"/>
+                                                    <constraint firstAttribute="bottom" secondItem="2uS-sy-lar" secondAttribute="bottom" id="YAE-5K-f4K"/>
+                                                    <constraint firstItem="2uS-sy-lar" firstAttribute="top" secondItem="h7E-ji-3T5" secondAttribute="top" id="ZwS-lD-cqC"/>
                                                 </constraints>
-                                                <viewLayoutGuide key="contentLayoutGuide" id="rDI-s0-fiR"/>
-                                                <viewLayoutGuide key="frameLayoutGuide" id="zcH-Ce-CSo"/>
-                                            </scrollView>
+                                            </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NwI-We-ryt">
-                                                <rect key="frame" x="365" y="0.0" width="975" height="952"/>
+                                                <rect key="frame" x="365" y="0.0" width="975" height="572"/>
                                                 <subviews>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="hIX-Js-6RW">
-                                                        <rect key="frame" x="0.0" y="20" width="975" height="932"/>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="hIX-Js-6RW">
+                                                        <rect key="frame" x="0.0" y="0.0" width="975" height="572"/>
                                                         <subviews>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="g5h-og-06i">
-                                                                <rect key="frame" x="367.5" y="0.0" width="240" height="80"/>
-                                                                <subviews>
-                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which tube contains which regent?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVs-m7-DWK">
-                                                                        <rect key="frame" x="-104.5" y="20.5" width="449.5" height="39"/>
-                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="30"/>
-                                                                        <nil key="textColor"/>
-                                                                        <nil key="highlightedColor"/>
-                                                                    </label>
-                                                                </subviews>
-                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which tube contains which regent?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVs-m7-DWK">
+                                                                <rect key="frame" x="263" y="0.0" width="449.5" height="39"/>
                                                                 <constraints>
-                                                                    <constraint firstItem="tVs-m7-DWK" firstAttribute="centerY" secondItem="g5h-og-06i" secondAttribute="centerY" id="9o7-tB-CNs"/>
-                                                                    <constraint firstItem="tVs-m7-DWK" firstAttribute="centerX" secondItem="g5h-og-06i" secondAttribute="centerX" id="eYp-V7-33o"/>
-                                                                    <constraint firstAttribute="height" constant="80" id="xmM-AQ-uMj"/>
+                                                                    <constraint firstAttribute="height" constant="39" id="aZ6-sn-mdf"/>
                                                                 </constraints>
-                                                            </view>
-                                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="center" spacing="75" translatesAutoresizingMaskIntoConstraints="NO" id="UAG-ll-fXz" userLabel="All Tubes">
-                                                                <rect key="frame" x="125" y="80" width="725" height="772"/>
-                                                                <subviews>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="toF-W2-Oiy" userLabel="Tube Stack">
-                                                                        <rect key="frame" x="0.0" y="184.5" width="125" height="403.5"/>
-                                                                        <subviews>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="oor-td-w7b" userLabel="Tube Header">
-                                                                                <rect key="frame" x="34" y="0.0" width="57" height="203.5"/>
-                                                                                <subviews>
-                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="82v-in-yQ7" customClass="TestTubeView" customModule="bbnQUAL" customModuleProvider="target">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="57" height="175"/>
-                                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="82v-in-yQ7" secondAttribute="height" multiplier="40:122" id="1wD-6i-nrt"/>
-                                                                                            <constraint firstAttribute="height" constant="175" id="xUl-jU-7KA"/>
-                                                                                        </constraints>
-                                                                                    </view>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="contains" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bUt-sf-O90">
-                                                                                        <rect key="frame" x="5" y="185" width="47.5" height="18.5"/>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Italic" family="PT Sans" pointSize="14"/>
-                                                                                        <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
-                                                                                </subviews>
-                                                                            </stackView>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="geA-H5-BLb" userLabel="Tube Options">
-                                                                                <rect key="frame" x="0.0" y="238.5" width="125" height="165"/>
-                                                                                <subviews>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ldW-dF-o2Z">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="37.5"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="ldW-dF-o2Z" secondAttribute="height" multiplier="100:30" id="zkq-lJ-4Rj"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
-                                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                                                                        <state key="normal" title="NaCl">
-                                                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                                        </state>
-                                                                                    </button>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bZp-dK-1rb">
-                                                                                        <rect key="frame" x="0.0" y="42.5" width="125" height="37.5"/>
-                                                                                        <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="bZp-dK-1rb" secondAttribute="height" multiplier="100:30" id="ghL-0J-TNl"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
-                                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                                                                        <state key="normal" title="NaCl">
-                                                                                            <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        </state>
-                                                                                    </button>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nWI-aH-w7v">
-                                                                                        <rect key="frame" x="0.0" y="85" width="125" height="37.5"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="nWI-aH-w7v" secondAttribute="height" multiplier="100:30" id="K7f-B8-S28"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
-                                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                                                                        <state key="normal" title="NaCl">
-                                                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                                        </state>
-                                                                                    </button>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RDc-Je-RNR">
-                                                                                        <rect key="frame" x="0.0" y="127.5" width="125" height="37.5"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="RDc-Je-RNR" secondAttribute="height" multiplier="100:30" id="Iud-Pl-ndk"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
-                                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                                                                        <state key="normal" title="NaCl">
-                                                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                                        </state>
-                                                                                    </button>
-                                                                                </subviews>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="width" constant="125" id="6nl-tJ-aGw"/>
-                                                                                    <constraint firstItem="bZp-dK-1rb" firstAttribute="width" secondItem="bZp-dK-1rb" secondAttribute="height" multiplier="100:30" id="Fgp-M3-Pox"/>
-                                                                                    <constraint firstItem="nWI-aH-w7v" firstAttribute="width" secondItem="nWI-aH-w7v" secondAttribute="height" multiplier="100:30" id="TuO-eq-UzX"/>
-                                                                                    <constraint firstItem="RDc-Je-RNR" firstAttribute="width" secondItem="RDc-Je-RNR" secondAttribute="height" multiplier="100:30" id="nh1-Jb-g6m"/>
-                                                                                </constraints>
-                                                                            </stackView>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="cDX-IS-GTd" userLabel="Tube Stack">
-                                                                        <rect key="frame" x="200" y="184.5" width="125" height="403.5"/>
-                                                                        <subviews>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="Jay-KK-o5q" userLabel="Tube Header">
-                                                                                <rect key="frame" x="34" y="0.0" width="57" height="203.5"/>
-                                                                                <subviews>
-                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="ybl-jC-sVo" customClass="TestTubeView" customModule="bbnQUAL" customModuleProvider="target">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="57" height="175"/>
-                                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="ybl-jC-sVo" secondAttribute="height" multiplier="40:122" id="7ri-52-e8t"/>
-                                                                                            <constraint firstAttribute="height" constant="175" id="x4L-2O-CZ9"/>
-                                                                                        </constraints>
-                                                                                    </view>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="contains" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="veq-SG-jdg">
-                                                                                        <rect key="frame" x="5" y="185" width="47.5" height="18.5"/>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Italic" family="PT Sans" pointSize="14"/>
-                                                                                        <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
-                                                                                </subviews>
-                                                                            </stackView>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="wAz-CN-kQL" userLabel="Tube Options">
-                                                                                <rect key="frame" x="0.0" y="238.5" width="125" height="165"/>
-                                                                                <subviews>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y1C-lU-h6t">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="37.5"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="y1C-lU-h6t" secondAttribute="height" multiplier="100:30" id="gqc-Ao-ltl"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
-                                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                                                                        <state key="normal" title="NaCl">
-                                                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                                        </state>
-                                                                                    </button>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="t1R-4B-HCh">
-                                                                                        <rect key="frame" x="0.0" y="42.5" width="125" height="37.5"/>
-                                                                                        <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="t1R-4B-HCh" secondAttribute="height" multiplier="100:30" id="kQt-qD-YbU"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
-                                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                                                                        <state key="normal" title="NaCl">
-                                                                                            <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        </state>
-                                                                                    </button>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="b6S-tp-bth">
-                                                                                        <rect key="frame" x="0.0" y="85" width="125" height="37.5"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="b6S-tp-bth" secondAttribute="height" multiplier="100:30" id="aGe-I4-MGT"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
-                                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                                                                        <state key="normal" title="NaCl">
-                                                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                                        </state>
-                                                                                    </button>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="xEj-nX-xJ5">
-                                                                                        <rect key="frame" x="0.0" y="127.5" width="125" height="37.5"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="xEj-nX-xJ5" secondAttribute="height" multiplier="100:30" id="dgW-1f-LZg"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
-                                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                                                                        <state key="normal" title="NaCl">
-                                                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                                        </state>
-                                                                                    </button>
-                                                                                </subviews>
-                                                                                <constraints>
-                                                                                    <constraint firstItem="xEj-nX-xJ5" firstAttribute="width" secondItem="xEj-nX-xJ5" secondAttribute="height" multiplier="100:30" id="dsJ-w5-3TP"/>
-                                                                                    <constraint firstItem="t1R-4B-HCh" firstAttribute="width" secondItem="t1R-4B-HCh" secondAttribute="height" multiplier="100:30" id="e0W-6B-Zg0"/>
-                                                                                    <constraint firstItem="b6S-tp-bth" firstAttribute="width" secondItem="b6S-tp-bth" secondAttribute="height" multiplier="100:30" id="gRy-uJ-OcK"/>
-                                                                                    <constraint firstAttribute="width" constant="125" id="rDs-tf-B3g"/>
-                                                                                </constraints>
-                                                                            </stackView>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="0nX-fU-49S" userLabel="Tube Stack">
-                                                                        <rect key="frame" x="400" y="184.5" width="125" height="403.5"/>
-                                                                        <subviews>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="iUA-oG-HqL" userLabel="Tube Header">
-                                                                                <rect key="frame" x="34" y="0.0" width="57" height="203.5"/>
-                                                                                <subviews>
-                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pNN-l3-Nx3" customClass="TestTubeView" customModule="bbnQUAL" customModuleProvider="target">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="57" height="175"/>
-                                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="pNN-l3-Nx3" secondAttribute="height" multiplier="40:122" id="V9P-Pw-o93"/>
-                                                                                            <constraint firstAttribute="height" constant="175" id="XTC-Sb-GJB"/>
-                                                                                        </constraints>
-                                                                                    </view>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="contains" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oZx-ux-Mi3">
-                                                                                        <rect key="frame" x="5" y="185" width="47.5" height="18.5"/>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Italic" family="PT Sans" pointSize="14"/>
-                                                                                        <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
-                                                                                </subviews>
-                                                                            </stackView>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="9yH-Fv-6Ew" userLabel="Tube Options">
-                                                                                <rect key="frame" x="0.0" y="238.5" width="125" height="165"/>
-                                                                                <subviews>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h9B-Kj-cuX">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="37.5"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="h9B-Kj-cuX" secondAttribute="height" multiplier="100:30" id="oZt-3q-XZa"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
-                                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                                                                        <state key="normal" title="NaCl">
-                                                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                                        </state>
-                                                                                    </button>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4OH-3P-BIU">
-                                                                                        <rect key="frame" x="0.0" y="42.5" width="125" height="37.5"/>
-                                                                                        <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="4OH-3P-BIU" secondAttribute="height" multiplier="100:30" id="XRy-iT-1WH"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
-                                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                                                                        <state key="normal" title="NaCl">
-                                                                                            <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        </state>
-                                                                                    </button>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a1M-ut-rA7">
-                                                                                        <rect key="frame" x="0.0" y="85" width="125" height="37.5"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="a1M-ut-rA7" secondAttribute="height" multiplier="100:30" id="Afu-ri-fYV"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
-                                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                                                                        <state key="normal" title="NaCl">
-                                                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                                        </state>
-                                                                                    </button>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="f8n-5W-1ip">
-                                                                                        <rect key="frame" x="0.0" y="127.5" width="125" height="37.5"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="f8n-5W-1ip" secondAttribute="height" multiplier="100:30" id="uzR-Dg-7f7"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
-                                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                                                                        <state key="normal" title="NaCl">
-                                                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                                        </state>
-                                                                                    </button>
-                                                                                </subviews>
-                                                                                <constraints>
-                                                                                    <constraint firstAttribute="width" constant="125" id="E1A-68-MSN"/>
-                                                                                    <constraint firstItem="a1M-ut-rA7" firstAttribute="width" secondItem="a1M-ut-rA7" secondAttribute="height" multiplier="100:30" id="scQ-9x-M8Q"/>
-                                                                                    <constraint firstItem="4OH-3P-BIU" firstAttribute="width" secondItem="4OH-3P-BIU" secondAttribute="height" multiplier="100:30" id="voe-c7-xdh"/>
-                                                                                    <constraint firstItem="f8n-5W-1ip" firstAttribute="width" secondItem="f8n-5W-1ip" secondAttribute="height" multiplier="100:30" id="w6T-pb-kU7"/>
-                                                                                </constraints>
-                                                                            </stackView>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="35" translatesAutoresizingMaskIntoConstraints="NO" id="T1u-j5-LCu" userLabel="Tube Stack">
-                                                                        <rect key="frame" x="600" y="184.5" width="125" height="403.5"/>
-                                                                        <subviews>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="equalSpacing" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="zg4-ci-6pd" userLabel="Tube Header">
-                                                                                <rect key="frame" x="34" y="0.0" width="57" height="203.5"/>
-                                                                                <subviews>
-                                                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Ve-XO-zZ0" customClass="TestTubeView" customModule="bbnQUAL" customModuleProvider="target">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="57" height="175"/>
-                                                                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="height" constant="175" id="DaH-uF-r6u"/>
-                                                                                            <constraint firstAttribute="width" secondItem="7Ve-XO-zZ0" secondAttribute="height" multiplier="40:122" id="ovg-dI-PAu"/>
-                                                                                        </constraints>
-                                                                                    </view>
-                                                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" horizontalCompressionResistancePriority="1000" text="contains" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tfJ-hZ-9qq">
-                                                                                        <rect key="frame" x="5" y="185" width="47.5" height="18.5"/>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Italic" family="PT Sans" pointSize="14"/>
-                                                                                        <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                                        <nil key="highlightedColor"/>
-                                                                                    </label>
-                                                                                </subviews>
-                                                                            </stackView>
-                                                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Rvc-Ny-WQP" userLabel="Tube Options">
-                                                                                <rect key="frame" x="0.0" y="238.5" width="125" height="165"/>
-                                                                                <subviews>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="NeD-PB-Gx7">
-                                                                                        <rect key="frame" x="0.0" y="0.0" width="125" height="37.5"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="NeD-PB-Gx7" secondAttribute="height" multiplier="100:30" id="CXN-I3-XhV"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
-                                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                                                                        <state key="normal" title="NaCl">
-                                                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                                        </state>
-                                                                                    </button>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Itl-Fc-Bzp">
-                                                                                        <rect key="frame" x="0.0" y="42.5" width="125" height="37.5"/>
-                                                                                        <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="Itl-Fc-Bzp" secondAttribute="height" multiplier="100:30" id="2UY-AA-LEy"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
-                                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                                                                        <state key="normal" title="NaCl">
-                                                                                            <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                                        </state>
-                                                                                    </button>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kbh-nn-qmx">
-                                                                                        <rect key="frame" x="0.0" y="85" width="125" height="37.5"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="kbh-nn-qmx" secondAttribute="height" multiplier="100:30" id="ESq-vd-jhA"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
-                                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                                                                        <state key="normal" title="NaCl">
-                                                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                                        </state>
-                                                                                    </button>
-                                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7WJ-rX-IQu">
-                                                                                        <rect key="frame" x="0.0" y="127.5" width="125" height="37.5"/>
-                                                                                        <constraints>
-                                                                                            <constraint firstAttribute="width" secondItem="7WJ-rX-IQu" secondAttribute="height" multiplier="100:30" id="wb4-69-DlD"/>
-                                                                                        </constraints>
-                                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="17"/>
-                                                                                        <inset key="contentEdgeInsets" minX="0.0" minY="10" maxX="0.0" maxY="10"/>
-                                                                                        <state key="normal" title="NaCl">
-                                                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                                        </state>
-                                                                                    </button>
-                                                                                </subviews>
-                                                                                <constraints>
-                                                                                    <constraint firstItem="Itl-Fc-Bzp" firstAttribute="width" secondItem="Itl-Fc-Bzp" secondAttribute="height" multiplier="100:30" id="3Pz-HO-ZVy"/>
-                                                                                    <constraint firstItem="7WJ-rX-IQu" firstAttribute="width" secondItem="7WJ-rX-IQu" secondAttribute="height" multiplier="100:30" id="XHK-bk-f8E"/>
-                                                                                    <constraint firstItem="kbh-nn-qmx" firstAttribute="width" secondItem="kbh-nn-qmx" secondAttribute="height" multiplier="100:30" id="duY-Jp-n5l"/>
-                                                                                    <constraint firstAttribute="width" constant="125" id="uaR-M1-5gB"/>
-                                                                                </constraints>
-                                                                            </stackView>
-                                                                        </subviews>
-                                                                    </stackView>
-                                                                </subviews>
-                                                            </stackView>
-                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nQx-NT-NKa">
-                                                                <rect key="frame" x="367.5" y="852" width="240" height="80"/>
-                                                                <subviews>
-                                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18B-V8-bMW">
-                                                                        <rect key="frame" x="14" y="17.5" width="212" height="45"/>
-                                                                        <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="19"/>
-                                                                        <inset key="contentEdgeInsets" minX="35" minY="10" maxX="35" maxY="10"/>
-                                                                        <state key="normal" title="CHECK ANSWERS">
-                                                                            <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                                        </state>
-                                                                    </button>
-                                                                </subviews>
+                                                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="30"/>
+                                                                <nil key="textColor"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaX-YF-ZCJ">
+                                                                <rect key="frame" x="0.0" y="89" width="975" height="483"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                                                <constraints>
-                                                                    <constraint firstAttribute="height" constant="80" id="D8O-Vc-obF"/>
-                                                                    <constraint firstItem="18B-V8-bMW" firstAttribute="centerX" secondItem="nQx-NT-NKa" secondAttribute="centerX" id="KR7-Ki-oK8"/>
-                                                                    <constraint firstItem="18B-V8-bMW" firstAttribute="centerY" secondItem="nQx-NT-NKa" secondAttribute="centerY" id="Or2-j7-5Dr"/>
-                                                                </constraints>
                                                             </view>
                                                         </subviews>
+                                                        <constraints>
+                                                            <constraint firstItem="uaX-YF-ZCJ" firstAttribute="width" secondItem="hIX-Js-6RW" secondAttribute="width" id="c3H-Y8-6XG"/>
+                                                        </constraints>
                                                     </stackView>
                                                 </subviews>
                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -604,14 +242,14 @@
                                                     <constraint firstAttribute="bottom" secondItem="hIX-Js-6RW" secondAttribute="bottom" id="H8E-Ru-nt2"/>
                                                     <constraint firstAttribute="trailing" secondItem="hIX-Js-6RW" secondAttribute="trailing" id="UaK-qb-tEN"/>
                                                     <constraint firstItem="hIX-Js-6RW" firstAttribute="leading" secondItem="NwI-We-ryt" secondAttribute="leading" id="VnI-3P-Ret"/>
-                                                    <constraint firstItem="hIX-Js-6RW" firstAttribute="top" secondItem="NwI-We-ryt" secondAttribute="top" constant="20" id="qTd-cQ-Ice"/>
+                                                    <constraint firstItem="hIX-Js-6RW" firstAttribute="top" secondItem="NwI-We-ryt" secondAttribute="top" id="qTd-cQ-Ice"/>
                                                 </constraints>
                                             </view>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstItem="ke7-Rm-TwC" firstAttribute="width" secondItem="YeM-sQ-61L" secondAttribute="width" multiplier="1:4" id="TSj-LN-ilQ"/>
+                                            <constraint firstItem="h7E-ji-3T5" firstAttribute="width" secondItem="YeM-sQ-61L" secondAttribute="width" multiplier="1:4" id="JHq-0v-dVo"/>
                                             <constraint firstItem="NwI-We-ryt" firstAttribute="height" secondItem="YeM-sQ-61L" secondAttribute="height" id="Tlw-2w-KWP"/>
-                                            <constraint firstItem="ke7-Rm-TwC" firstAttribute="height" secondItem="YeM-sQ-61L" secondAttribute="height" constant="-80" id="sDB-YP-kaC"/>
+                                            <constraint firstItem="h7E-ji-3T5" firstAttribute="height" secondItem="YeM-sQ-61L" secondAttribute="height" id="yia-vg-2uo"/>
                                         </constraints>
                                     </stackView>
                                 </subviews>
@@ -622,11 +260,15 @@
                             <constraint firstItem="WdO-Bg-eQD" firstAttribute="top" secondItem="BP2-Qm-M6G" secondAttribute="top" constant="80" id="7KQ-Dd-nQm"/>
                             <constraint firstItem="BP2-Qm-M6G" firstAttribute="trailing" secondItem="WdO-Bg-eQD" secondAttribute="trailing" constant="80" id="Dfo-yN-4Qv"/>
                             <constraint firstItem="WdO-Bg-eQD" firstAttribute="leading" secondItem="BP2-Qm-M6G" secondAttribute="leading" constant="80" id="F5n-bc-DRz"/>
-                            <constraint firstItem="BP2-Qm-M6G" firstAttribute="bottom" secondItem="WdO-Bg-eQD" secondAttribute="bottom" id="Has-jk-fWn"/>
+                            <constraint firstItem="BP2-Qm-M6G" firstAttribute="bottom" secondItem="WdO-Bg-eQD" secondAttribute="bottom" constant="80" id="Has-jk-fWn"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="BP2-Qm-M6G"/>
                     </view>
-                    <size key="freeformSize" width="1500" height="1200"/>
+                    <size key="freeformSize" width="1500" height="900"/>
+                    <connections>
+                        <outlet property="titleLabel" destination="tVs-m7-DWK" id="sCB-jp-QAT"/>
+                        <outlet property="tubeWrapperView" destination="uaX-YF-ZCJ" id="0bM-JW-YSg"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RGR-jG-1ac" sceneMemberID="firstResponder"/>
             </objects>
