@@ -98,9 +98,7 @@ class StudentRouterViewController: UIViewController, RouterUserSupplied {
             self.studentController = controller
             
             controller.modalPresentationStyle = .fullScreen
-            controller.modalTransitionStyle = .coverVertical
-            
-            self.present(controller, animated: true, completion: nil)
+            self.present(controller, animated: false, completion: nil)
         }
         
         
@@ -109,7 +107,7 @@ class StudentRouterViewController: UIViewController, RouterUserSupplied {
     
     private func undoPresentation() {
         if let controller = self.studentController {
-            controller.dismiss(animated: true, completion: nil)
+            controller.dismiss(animated: false, completion: nil)
             
             self.studentController = nil
         }

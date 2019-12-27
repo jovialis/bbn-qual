@@ -281,6 +281,7 @@ PODS:
   - ReactiveKit (3.15.4)
   - Signals (6.1.0)
   - SnapKit (5.0.1)
+  - SwiftyJSON (5.0.0)
   - SWXMLHash (5.0.1)
 
 DEPENDENCIES:
@@ -299,6 +300,7 @@ DEPENDENCIES:
   - Macaw
   - Signals
   - SnapKit
+  - SwiftyJSON
 
 SPEC REPOS:
   trunk:
@@ -333,6 +335,7 @@ SPEC REPOS:
     - ReactiveKit
     - Signals
     - SnapKit
+    - SwiftyJSON
     - SWXMLHash
 
 SPEC CHECKSUMS:
@@ -367,8 +370,9 @@ SPEC CHECKSUMS:
   ReactiveKit: 9d1d8b600f9f1ae61a36c9d3f1aa47f5b0c8ea8f
   Signals: f8e5c979e93c35273f8dfe55ee7f47213d3e8fe8
   SnapKit: 97b92857e3df3a0c71833cce143274bf6ef8e5eb
+  SwiftyJSON: 36413e04c44ee145039d332b4f4e2d3e8d6c4db7
   SWXMLHash: 9cc0c2e4807926c74377724aa8722ee5707a0485
 
-PODFILE CHECKSUM: 1a2b7b92af25b32bee06294d124e6b4dcbf26988
+PODFILE CHECKSUM: 2097cdb88ad571a9c01027a60c11851e4c47de52
 
 COCOAPODS: 1.8.4

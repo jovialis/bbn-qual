@@ -20,6 +20,8 @@ class ReagentSelectionView: UIView {
 	
 	private var setup: Bool = false
 	
+	var index: Int = -1
+	
 	// Content descriptions
 	var tubeName: String = "XXXX" {
 		didSet {
@@ -29,7 +31,7 @@ class ReagentSelectionView: UIView {
 		}
 	}
 	
-	var reagants: [Reagant] = [  ] {
+	var selectionWrapper: ReagentSelectionWrapper = EmptyReagentSelectionWrapper() {
 		didSet {
 			if let collection = self.collectionView {
 				collection.reloadData()
@@ -37,9 +39,7 @@ class ReagentSelectionView: UIView {
 			}
 		}
 	}
-	
-	private(set) var selectedReagent: Reagant? = nil
-	
+		
 	// Subviews
 	private var testTubeView: TestTubeView!
 	private var collectionView: CollectionView!
@@ -83,10 +83,10 @@ class ReagentSelectionView: UIView {
 		self.collectionView = collectionView
 
 		// Configure collection view
-		let dataSource = ArrayDataSource(data: self.reagants)
+		let dataSource = ArrayDataSource(data: self.selectionWrapper.reagents)
 
 		// View source
-		let viewSource = ClosureViewSource { (button: UIButton, reagant: Reagant, index: Int) in
+		let viewSource = ClosureViewSource { (button: UIButton, reagent: Reagent, index: Int) in
 			// Configure button
 			button.layoutSubviews()
 			button.backgroundColor = .red
@@ -98,19 +98,14 @@ class ReagentSelectionView: UIView {
 			button.layer.borderColor = UIColor.systemFill.cgColor
 			button.layer.borderWidth = 1.0
 			
-			let buttonTitle: String = reagant.name
+			let buttonTitle: String = reagent.name
 			let buttonFont: UIFont = UIFont(name: "PTSans-Regular", size: 20.0)!
 			var buttonColor: UIColor = .label
 			
-			// Remove self.selectedReagant variable if the reagant's been unselected
-			if self.selectedReagent == reagant && !reagant.selected.value {
-				self.selectedReagent = nil
-			}
-			
 			// Update button state
-			if reagant.selected.value {
+			if self.selectionWrapper.isSelected(reagent) {
 				// If it's this view, show selected. Otherwise, show unavailable
-				if reagant == self.selectedReagent {
+				if self.selectionWrapper.isAtIndex(reagent, index: self.index) {
 					// Block color selected
 					button.backgroundColor = .label
 					buttonColor = .systemBackground
@@ -131,49 +126,17 @@ class ReagentSelectionView: UIView {
 			
 			// Selection handlers
 			_ = button.reactive.tapGesture().observe { _ in
-				
-				let clickedReagant = reagant
-				let newValue = !clickedReagant.selected.value
-				
-				// Using this comparison scheme for ease of reading
-				if newValue == true {
-					// Unselect the currently selected reagant
-					if let currentlySelectedReagant = self.selectedReagent {
-						currentlySelectedReagant.selected.value = false
-						self.selectedReagent = nil
-					}
-					
-					// If clickedReagant is currently selected by any other view, unselect it to remove that view's ownership
-					if clickedReagant.selected.value {
-						clickedReagant.selected.value = false
-					}
-					
-					self.selectedReagent = clickedReagant
-					clickedReagant.selected.value = true
-				} else {
-					// Setting newValue to false
-					if clickedReagant == self.selectedReagent {
-						// If it's our selected reagant, unselect it
-						self.selectedReagent = nil
-						clickedReagant.selected.value = false
-					} else {
-						// Unselect the currently selected reagant
-						if let currentlySelectedReagant = self.selectedReagent {
-							self.selectedReagent = nil
-							currentlySelectedReagant.selected.value = false
-						}
-						
-						// If it's not our reagent, we want to select it
-						clickedReagant.selected.value = false
-						self.selectedReagent = clickedReagant
-						clickedReagant.selected.value = true
-					}
+				// If it's our selected reagent, unselect
+				if self.selectionWrapper.isAtIndex(reagent, index: self.index) {
+					self.selectionWrapper.unselect(reagent)
+				} else { // Otherwise, select it
+					self.selectionWrapper.setIndex(reagent, index: self.index)
 				}
 			}
 		}
 		
 		// Button sizes
-		let sizeSource = { (index: Int, data: Reagant, collectionSize: CGSize) -> CGSize in
+		let sizeSource = { (index: Int, data: Reagent, collectionSize: CGSize) -> CGSize in
 			return CGSize(width: 125, height: ReagentSelectionView.REAGANT_BUTTON_HEIGHT)
 		}
 		
@@ -207,10 +170,8 @@ class ReagentSelectionView: UIView {
 		}
 		
 		// Update data on reagant selected changed
-		self.reagants.forEach {
-			_ = $0.selected.observe { _ in
-				self.collectionView.reloadData()
-			}
+		_ = self.selectionWrapper.indexedReagents.observe { _ in
+			self.collectionView.reloadData()
 		}
 	}
 	
@@ -220,7 +181,7 @@ class ReagentSelectionView: UIView {
 			let buttonHeight = ReagentSelectionView.REAGANT_BUTTON_HEIGHT
 			let buttonSpacing = ReagentSelectionView.REAGANT_BUTTON_PADDING_HEIGHT
 			
-			let numRows = CGFloat(ceil(Double(self.reagants.count) / 4.0))
+			let numRows = CGFloat(ceil(Double(self.selectionWrapper.reagents.count) / 4.0))
 			
 			let height = buttonHeight * numRows
 			let paddingAdd = buttonSpacing * (numRows - 1)

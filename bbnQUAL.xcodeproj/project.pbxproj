@@ -19,6 +19,8 @@
 		C010E31223905F2F00D07047 /* Callback.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010E31023905F2F00D07047 /* Callback.swift */; };
 		C010E3142390613500D07047 /* FirestoreRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010E3132390613500D07047 /* FirestoreRepresentable.swift */; };
 		C010E3152390613500D07047 /* FirestoreRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010E3132390613500D07047 /* FirestoreRepresentable.swift */; };
+		C037BCFE23B4E70700231119 /* Reagent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C037BCFD23B4E70700231119 /* Reagent.swift */; };
+		C037BCFF23B4E70700231119 /* Reagent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C037BCFD23B4E70700231119 /* Reagent.swift */; };
 		C03C8AD8238C35D900715032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03C8AD7238C35D900715032 /* AppDelegate.swift */; };
 		C03C8ADA238C35D900715032 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03C8AD9238C35D900715032 /* SceneDelegate.swift */; };
 		C03C8ADF238C35D900715032 /* Login.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C03C8ADD238C35D900715032 /* Login.storyboard */; };
@@ -49,14 +51,32 @@
 		C07C2E1123A5845E005B5423 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C2E0F23A5845E005B5423 /* CourseView.swift */; };
 		C07C2E1323A6CF47005B5423 /* TeacherCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C2E1223A6CF47005B5423 /* TeacherCoursesViewController.swift */; };
 		C07C2E1423A6CF47005B5423 /* TeacherCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C2E1223A6CF47005B5423 /* TeacherCoursesViewController.swift */; };
+		C092C16C23B66D4700032C5E /* StudentStagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C16B23B66D4700032C5E /* StudentStagingViewController.swift */; };
+		C092C16D23B66D4700032C5E /* StudentStagingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C16B23B66D4700032C5E /* StudentStagingViewController.swift */; };
+		C092C16F23B674E500032C5E /* Progression.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C16E23B674E500032C5E /* Progression.swift */; };
+		C092C17023B674E500032C5E /* Progression.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C16E23B674E500032C5E /* Progression.swift */; };
+		C092C17223B676BE00032C5E /* String+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C17123B676BE00032C5E /* String+Error.swift */; };
+		C092C17323B676BE00032C5E /* String+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C17123B676BE00032C5E /* String+Error.swift */; };
+		C092C17B23B67B8300032C5E /* AnswerChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C17A23B67B8300032C5E /* AnswerChecker.swift */; };
+		C092C17C23B67B8300032C5E /* AnswerChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C17A23B67B8300032C5E /* AnswerChecker.swift */; };
+		C092C17E23B6868A00032C5E /* ReagentSelectionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C17D23B6868A00032C5E /* ReagentSelectionWrapper.swift */; };
+		C092C17F23B6868A00032C5E /* ReagentSelectionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C17D23B6868A00032C5E /* ReagentSelectionWrapper.swift */; };
+		C092C18123B6ACC000032C5E /* StudentGameCorrectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C18023B6ACC000032C5E /* StudentGameCorrectViewController.swift */; };
+		C092C18223B6ACC000032C5E /* StudentGameCorrectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C18023B6ACC000032C5E /* StudentGameCorrectViewController.swift */; };
+		C092C18423B6B11500032C5E /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C18323B6B11500032C5E /* ConfettiView.swift */; };
+		C092C18523B6B11500032C5E /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C18323B6B11500032C5E /* ConfettiView.swift */; };
+		C092C18723B6B1F600032C5E /* diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = C092C18623B6B1F600032C5E /* diamond.png */; };
+		C092C18823B6B1F600032C5E /* diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = C092C18623B6B1F600032C5E /* diamond.png */; };
+		C092C18A23B6BBC800032C5E /* StudentGameFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C18923B6BBC800032C5E /* StudentGameFinishedViewController.swift */; };
+		C092C18B23B6BBC800032C5E /* StudentGameFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C18923B6BBC800032C5E /* StudentGameFinishedViewController.swift */; };
 		C098D088238C9A8F006B6E20 /* macOS-GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C098D087238C9A8F006B6E20 /* macOS-GoogleService-Info.plist */; };
 		C098D089238C9A8F006B6E20 /* macOS-GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C098D087238C9A8F006B6E20 /* macOS-GoogleService-Info.plist */; };
 		C098D08B238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C098D08A238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist */; };
 		C098D08C238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C098D08A238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist */; };
 		C098D08E238CAED6006B6E20 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098D08D238CAED6006B6E20 /* LoginViewController.swift */; };
 		C098D08F238CAED6006B6E20 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C098D08D238CAED6006B6E20 /* LoginViewController.swift */; };
-		C0F97E4323B040AD0091E974 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F97E4223B040AD0091E974 /* StudentViewController.swift */; };
-		C0F97E4423B040AD0091E974 /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F97E4223B040AD0091E974 /* StudentViewController.swift */; };
+		C0F97E4323B040AD0091E974 /* StudentGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F97E4223B040AD0091E974 /* StudentGameViewController.swift */; };
+		C0F97E4423B040AD0091E974 /* StudentGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F97E4223B040AD0091E974 /* StudentGameViewController.swift */; };
 		C0FAADE723AE9DA100420A8C /* TeacherCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAADE623AE9DA100420A8C /* TeacherCourseViewController.swift */; };
 		C0FAADE823AE9DA100420A8C /* TeacherCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAADE623AE9DA100420A8C /* TeacherCourseViewController.swift */; };
 		D61171C72397748F00A6DF1A /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D61171C62397748F00A6DF1A /* SessionManager.swift */; };
@@ -96,6 +116,7 @@
 		C010E30D23905D5500D07047 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
 		C010E31023905F2F00D07047 /* Callback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Callback.swift; sourceTree = "<group>"; };
 		C010E3132390613500D07047 /* FirestoreRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRepresentable.swift; sourceTree = "<group>"; };
+		C037BCFD23B4E70700231119 /* Reagent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reagent.swift; sourceTree = "<group>"; };
 		C03C8AD4238C35D900715032 /* bbnQUAL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bbnQUAL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03C8AD7238C35D900715032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		C03C8AD9238C35D900715032 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -119,10 +140,19 @@
 		C07C2E0C23A57EFF005B5423 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		C07C2E0F23A5845E005B5423 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
 		C07C2E1223A6CF47005B5423 /* TeacherCoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCoursesViewController.swift; sourceTree = "<group>"; };
+		C092C16B23B66D4700032C5E /* StudentStagingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentStagingViewController.swift; sourceTree = "<group>"; };
+		C092C16E23B674E500032C5E /* Progression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progression.swift; sourceTree = "<group>"; };
+		C092C17123B676BE00032C5E /* String+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Error.swift"; path = "bbnQUAL/Logic/Models/String+Error.swift"; sourceTree = SOURCE_ROOT; };
+		C092C17A23B67B8300032C5E /* AnswerChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerChecker.swift; sourceTree = "<group>"; };
+		C092C17D23B6868A00032C5E /* ReagentSelectionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReagentSelectionWrapper.swift; sourceTree = "<group>"; };
+		C092C18023B6ACC000032C5E /* StudentGameCorrectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentGameCorrectViewController.swift; sourceTree = "<group>"; };
+		C092C18323B6B11500032C5E /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
+		C092C18623B6B1F600032C5E /* diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diamond.png; sourceTree = "<group>"; };
+		C092C18923B6BBC800032C5E /* StudentGameFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentGameFinishedViewController.swift; sourceTree = "<group>"; };
 		C098D087238C9A8F006B6E20 /* macOS-GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "macOS-GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C098D08A238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iPadOS-GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C098D08D238CAED6006B6E20 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		C0F97E4223B040AD0091E974 /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
+		C0F97E4223B040AD0091E974 /* StudentGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentGameViewController.swift; sourceTree = "<group>"; };
 		C0FAADE623AE9DA100420A8C /* TeacherCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCourseViewController.swift; sourceTree = "<group>"; };
 		D61171C62397748F00A6DF1A /* SessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		D61171C92397755A00A6DF1A /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
@@ -211,6 +241,7 @@
 			isa = PBXGroup;
 			children = (
 				C07C2E0F23A5845E005B5423 /* CourseView.swift */,
+				C092C18323B6B11500032C5E /* ConfettiView.swift */,
 				C0604BFF238F0C7D00686D89 /* TestTubeView.swift */,
 				C049D86D23AFF05B00DFE9DA /* ReagentSelectionView.swift */,
 			);
@@ -222,7 +253,9 @@
 			children = (
 				C010E30D23905D5500D07047 /* User.swift */,
 				D61171C92397755A00A6DF1A /* Session.swift */,
+				C037BCFD23B4E70700231119 /* Reagent.swift */,
 				C07C2E0C23A57EFF005B5423 /* Course.swift */,
+				C092C16E23B674E500032C5E /* Progression.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -296,6 +329,7 @@
 		C0604BF8238F0AAC00686D89 /* Graphics */ = {
 			isa = PBXGroup;
 			children = (
+				C092C18623B6B1F600032C5E /* diamond.png */,
 				C03CC82823B3C47A00D8482C /* TestTube-Light.svg */,
 				C03CC82B23B3FD5200D8482C /* TestTube-Dark.svg */,
 			);
@@ -333,7 +367,12 @@
 		C0F97E4123B0403E0091E974 /* Student */ = {
 			isa = PBXGroup;
 			children = (
-				C0F97E4223B040AD0091E974 /* StudentViewController.swift */,
+				C092C17A23B67B8300032C5E /* AnswerChecker.swift */,
+				C092C17D23B6868A00032C5E /* ReagentSelectionWrapper.swift */,
+				C092C16B23B66D4700032C5E /* StudentStagingViewController.swift */,
+				C0F97E4223B040AD0091E974 /* StudentGameViewController.swift */,
+				C092C18023B6ACC000032C5E /* StudentGameCorrectViewController.swift */,
+				C092C18923B6BBC800032C5E /* StudentGameFinishedViewController.swift */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -341,6 +380,7 @@
 		D64FE9FF239989F2007C7E29 /* Utils */ = {
 			isa = PBXGroup;
 			children = (
+				C092C17123B676BE00032C5E /* String+Error.swift */,
 			);
 			path = Utils;
 			sourceTree = "<group>";
@@ -443,6 +483,7 @@
 				C010E3042390579B00D07047 /* Router.storyboard in Resources */,
 				C03CC82C23B3FD5200D8482C /* TestTube-Dark.svg in Resources */,
 				C03C8AE1238C35DB00715032 /* Assets.xcassets in Resources */,
+				C092C18723B6B1F600032C5E /* diamond.png in Resources */,
 				C0604BEF238EF47400686D89 /* PTSans-Bold.ttf in Resources */,
 				C098D088238C9A8F006B6E20 /* macOS-GoogleService-Info.plist in Resources */,
 				C03C8ADF238C35D900715032 /* Login.storyboard in Resources */,
@@ -464,6 +505,7 @@
 				C0604BF4238EF47400686D89 /* PTSans-BoldItalic.ttf in Resources */,
 				D67F5A2A239826FF008C7EDC /* Student.storyboard in Resources */,
 				C098D08C238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist in Resources */,
+				C092C18823B6B1F600032C5E /* diamond.png in Resources */,
 				C0604BF2238EF47400686D89 /* PTSans-Regular.ttf in Resources */,
 				C010E3052390579B00D07047 /* Router.storyboard in Resources */,
 				C0604BF0238EF47400686D89 /* PTSans-Bold.ttf in Resources */,
@@ -523,17 +565,26 @@
 			files = (
 				C0604C00238F0C7D00686D89 /* TestTubeView.swift in Sources */,
 				C098D08E238CAED6006B6E20 /* LoginViewController.swift in Sources */,
+				C092C18423B6B11500032C5E /* ConfettiView.swift in Sources */,
 				C07C2E1323A6CF47005B5423 /* TeacherCoursesViewController.swift in Sources */,
+				C092C17E23B6868A00032C5E /* ReagentSelectionWrapper.swift in Sources */,
 				C07C2E1023A5845E005B5423 /* CourseView.swift in Sources */,
+				C092C16C23B66D4700032C5E /* StudentStagingViewController.swift in Sources */,
 				C07C2E0A23A57441005B5423 /* TeacherWrapperViewController.swift in Sources */,
 				C0FAADE723AE9DA100420A8C /* TeacherCourseViewController.swift in Sources */,
 				D6BDF5CB23977AE300638352 /* QError.swift in Sources */,
+				C092C17B23B67B8300032C5E /* AnswerChecker.swift in Sources */,
 				C010E30B23905B2C00D07047 /* UserManager.swift in Sources */,
 				C049D86E23AFF05B00DFE9DA /* ReagentSelectionView.swift in Sources */,
 				C010E31123905F2F00D07047 /* Callback.swift in Sources */,
+				C092C18A23B6BBC800032C5E /* StudentGameFinishedViewController.swift in Sources */,
 				C010E30E23905D5500D07047 /* User.swift in Sources */,
+				C092C17223B676BE00032C5E /* String+Error.swift in Sources */,
 				D64B2C4B2399F98C003FCA64 /* TeacherRouterViewController.swift in Sources */,
-				C0F97E4323B040AD0091E974 /* StudentViewController.swift in Sources */,
+				C037BCFE23B4E70700231119 /* Reagent.swift in Sources */,
+				C0F97E4323B040AD0091E974 /* StudentGameViewController.swift in Sources */,
+				C092C16F23B674E500032C5E /* Progression.swift in Sources */,
+				C092C18123B6ACC000032C5E /* StudentGameCorrectViewController.swift in Sources */,
 				C07C2E0D23A57EFF005B5423 /* Course.swift in Sources */,
 				C03C8AD8238C35D900715032 /* AppDelegate.swift in Sources */,
 				C010E307239058AE00D07047 /* AccessRouterViewController.swift in Sources */,
@@ -549,19 +600,28 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C0F97E4423B040AD0091E974 /* StudentViewController.swift in Sources */,
+				C092C18523B6B11500032C5E /* ConfettiView.swift in Sources */,
+				C092C17023B674E500032C5E /* Progression.swift in Sources */,
+				C092C17323B676BE00032C5E /* String+Error.swift in Sources */,
+				C092C18B23B6BBC800032C5E /* StudentGameFinishedViewController.swift in Sources */,
+				C0F97E4423B040AD0091E974 /* StudentGameViewController.swift in Sources */,
+				C092C18223B6ACC000032C5E /* StudentGameCorrectViewController.swift in Sources */,
 				D61171CB2397755A00A6DF1A /* Session.swift in Sources */,
 				D6BDF5CC23977AE300638352 /* QError.swift in Sources */,
 				C010E31223905F2F00D07047 /* Callback.swift in Sources */,
 				C010E308239058AE00D07047 /* AccessRouterViewController.swift in Sources */,
 				D61171C82397748F00A6DF1A /* SessionManager.swift in Sources */,
+				C037BCFF23B4E70700231119 /* Reagent.swift in Sources */,
+				C092C17F23B6868A00032C5E /* ReagentSelectionWrapper.swift in Sources */,
 				C07C2E0B23A57441005B5423 /* TeacherWrapperViewController.swift in Sources */,
 				C098D08F238CAED6006B6E20 /* LoginViewController.swift in Sources */,
 				C07C2E1123A5845E005B5423 /* CourseView.swift in Sources */,
 				C049D86F23AFF05B00DFE9DA /* ReagentSelectionView.swift in Sources */,
 				C010E30F23905D5500D07047 /* User.swift in Sources */,
 				C07C2E1423A6CF47005B5423 /* TeacherCoursesViewController.swift in Sources */,
+				C092C17C23B67B8300032C5E /* AnswerChecker.swift in Sources */,
 				C010E3152390613500D07047 /* FirestoreRepresentable.swift in Sources */,
+				C092C16D23B66D4700032C5E /* StudentStagingViewController.swift in Sources */,
 				C03C8AEF238C35DC00715032 /* bbnQUALTests.swift in Sources */,
 				C010E30C23905B2C00D07047 /* UserManager.swift in Sources */,
 				D67F5A24239826B8008C7EDC /* StudentRouterViewController.swift in Sources */,

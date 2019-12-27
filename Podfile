@@ -13,13 +13,14 @@ target 'bbnQUAL' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
 	pod 'Firebase/Functions'
-
   pod 'Firebase/Auth'
+	
   pod 'GTMAppAuth'
   pod 'GoogleAPIClientForREST'
 
   pod 'Alamofire', '~> 5.0.0-rc.3'
 
+	pod 'SwiftyJSON'
   pod 'KeychainSwift'
   pod 'Signals'
 	pod 'Bond'
