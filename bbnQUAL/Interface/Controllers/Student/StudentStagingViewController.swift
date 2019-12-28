@@ -19,11 +19,14 @@ class StudentStagingViewController: UIViewController {
 	Controller to manage the states inbetween selection, loading, etc.
 	*/
 	
+	// TODO: Handle dismiss
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
 		// Create loading view
 		let loadingView = UIActivityIndicatorView()
+		loadingView.style = .large
 		loadingView.startAnimating()
 		
 		// Add loading to self
@@ -47,8 +50,10 @@ class StudentStagingViewController: UIViewController {
 				switch progression.status {
 				case .finished:
 					self.presentFinishedController(progress: progression.progress)
-				case let .active(prefix, difficulty, reagents):
-					self.presentStudentController(prefix: prefix, difficulty: difficulty, reagents: reagents, progress: progression.progress)
+				case .frozen(let icebergCode):
+					self.presentFrozenController(icebergCode: icebergCode)
+				case let .active(prefix, difficulty, attempts, reagents):
+					self.presentStudentController(prefix: prefix, difficulty: difficulty, attempts: attempts, reagents: reagents, progress: progression.progress)
 				}
 				
 			case .failure(let error):
@@ -57,7 +62,7 @@ class StudentStagingViewController: UIViewController {
 		}
 	}
 	
-	func presentStudentController(prefix: String, difficulty: ProgressionDifficulty, reagents: [Reagent], progress: ProgressionProgress) {
+	func presentStudentController(prefix: String, difficulty: ProgressionDifficulty, attempts: Int, reagents: [Reagent], progress: ProgressionProgress) {
 		if let controller = self.storyboard?.instantiateViewController(identifier: "Game") as? StudentGameViewController {
 			
 			// Set necessary variables
@@ -73,8 +78,18 @@ class StudentStagingViewController: UIViewController {
 		}
 	}
 	
+	func presentFrozenController(icebergCode: String) {
+		let controller = StudentGameFrozenViewController()
+		
+		controller.icebergCode = icebergCode
+		
+		// Present fullscreen
+		controller.modalPresentationStyle = .fullScreen
+		self.present(controller, animated: false, completion: nil)
+	}
+	
 	func presentFinishedController(progress: ProgressionProgress) {
-		let controller = StudentGameFinishedViewController()
+		let controller = StudentFinishedViewController()
 		
 		controller.progression = progress
 		controller.modalTransitionStyle = .crossDissolve

@@ -36,7 +36,7 @@ final class AnswerChecker {
 					let json = JSON(result.data)
 					
 					// Pull out progression from JSON
-					guard let checkResult = AnswerCheckResult(string: json["result"].stringValue) else {
+					guard let checkResult = AnswerCheckResult(json) else {
 						throw "Invalid arguments prevented acceptance of checkAnswers"
 					}
 					
@@ -60,19 +60,45 @@ final class AnswerChecker {
 
 enum AnswerCheckResult {
 	
-	case correct
-	case incorrect
+	case correct(Int)
+	case incorrect(Int)
+	case frozen(String)
+	
 	case finished
+	
 	case formattingError
 	
-	init?(string: String) {
-		switch string {
+	init?(_ json: JSON) {		
+		guard let result = json["result"].string else {
+			return nil
+		}
+		
+		switch result {
 		case "correct":
-			self = .correct
+			guard let attempts = json["groupAttempts"].int else {
+				return nil
+			}
+			
+			self = .correct(attempts)
+			
 		case "incorrect":
-			self = .incorrect
+			guard let attempts = json["attempts"].int else {
+				return nil
+			}
+			
+			self = .incorrect(attempts)
+			
+		case "frozen":
+			guard let code = json["iceberg"].string else {
+				return nil
+			}
+			
+			self = .frozen(code)
+			return
+			
 		case "finished":
 			self = .finished
+			
 		default:
 			return nil
 		}

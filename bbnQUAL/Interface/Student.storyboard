@@ -42,28 +42,22 @@
                                 <rect key="frame" x="80" y="80" width="1340" height="740"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="9us-rI-hbe" userLabel="Header Stack">
-                                        <rect key="frame" x="0.0" y="0.0" width="1340" height="40"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="1340" height="45"/>
                                         <subviews>
                                             <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="VQ7-T2-2Zz" userLabel="Left Header">
-                                                <rect key="frame" x="0.0" y="0.0" width="418" height="40"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="263" height="45"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="R6J-eQ-AZm">
-                                                        <rect key="frame" x="0.0" y="0.0" width="97" height="40"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="97" height="45"/>
                                                         <fontDescription key="fontDescription" name="PTSans-Bold" family="PT Sans" pointSize="40"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="B7G-FJ-ghA" userLabel="Completed List">
-                                                        <rect key="frame" x="117" y="0.0" width="301" height="40"/>
+                                                        <rect key="frame" x="117" y="0.0" width="146" height="45"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 Sets Complete" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfa-bn-aTo">
-                                                                <rect key="frame" x="0.0" y="0.0" width="153" height="40"/>
-                                                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
-                                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="+2 Bonus Sets" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eha-WV-gJB">
-                                                                <rect key="frame" x="168" y="0.0" width="133" height="40"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Svatek C (2020)" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Mfa-bn-aTo">
+                                                                <rect key="frame" x="0.0" y="0.0" width="146" height="45"/>
                                                                 <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
                                                                 <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 <nil key="highlightedColor"/>
@@ -73,7 +67,7 @@
                                                 </subviews>
                                             </stackView>
                                             <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EdH-PQ-ACY" userLabel="Right Header">
-                                                <rect key="frame" x="1186" y="7" width="154" height="26"/>
+                                                <rect key="frame" x="1186" y="10" width="154" height="26"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VgD-OT-Psi">
                                                         <rect key="frame" x="0.0" y="0.0" width="154" height="26"/>
@@ -88,32 +82,32 @@
                                             </stackView>
                                         </subviews>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="V6k-c9-r8u"/>
+                                            <constraint firstAttribute="height" constant="45" id="V6k-c9-r8u"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="YeM-sQ-61L" userLabel="Body Stack">
-                                        <rect key="frame" x="0.0" y="90" width="1340" height="650"/>
+                                        <rect key="frame" x="0.0" y="95" width="1340" height="645"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h7E-ji-3T5">
-                                                <rect key="frame" x="0.0" y="0.0" width="335" height="650"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="335" height="645"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2uS-sy-lar">
-                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="650"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="335" height="645"/>
                                                         <subviews>
                                                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ke7-Rm-TwC">
-                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="595"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="590"/>
                                                                 <subviews>
                                                                     <stackView opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="1" verticalHuggingPriority="1" axis="vertical" distribution="equalSpacing" alignment="top" spacing="30" translatesAutoresizingMaskIntoConstraints="NO" id="PD0-ZI-AU3">
                                                                         <rect key="frame" x="30" y="30" width="275" height="681"/>
                                                                         <subviews>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Regent Set 3/4" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Na5-Zc-cLn">
-                                                                                <rect key="frame" x="0.0" y="0.0" width="193" height="35"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Header" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Na5-Zc-cLn">
+                                                                                <rect key="frame" x="0.0" y="0.0" width="92" height="35"/>
                                                                                 <fontDescription key="fontDescription" name="PTSans-Bold" family="PT Sans" pointSize="30"/>
                                                                                 <nil key="textColor"/>
                                                                                 <nil key="highlightedColor"/>
                                                                             </label>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Locate all 4 test tubes for your set. Your test tubes are:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ev6-6H-qQd">
-                                                                                <rect key="frame" x="0.0" y="65" width="264" height="52"/>
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Locate all test tubes for your set. Your test tubes are:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ev6-6H-qQd">
+                                                                                <rect key="frame" x="0.0" y="65" width="274" height="52"/>
                                                                                 <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
                                                                                 <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
                                                                                 <nil key="highlightedColor"/>
@@ -143,7 +137,7 @@
                                                                                     </label>
                                                                                 </subviews>
                                                                             </stackView>
-                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You must match each test tube to one of these 4 compounds:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRr-f3-IHp">
+                                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="You must match each test tube to one of these compounds:" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QRr-f3-IHp">
                                                                                 <rect key="frame" x="0.0" y="296" width="247" height="78"/>
                                                                                 <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
                                                                                 <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
@@ -202,7 +196,7 @@
                                                                 <viewLayoutGuide key="frameLayoutGuide" id="zcH-Ce-CSo"/>
                                                             </scrollView>
                                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="18B-V8-bMW">
-                                                                <rect key="frame" x="0.0" y="595" width="335" height="55"/>
+                                                                <rect key="frame" x="0.0" y="590" width="335" height="55"/>
                                                                 <color key="backgroundColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="55" id="1YZ-CG-LG6"/>
@@ -210,7 +204,7 @@
                                                                 <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
                                                                 <inset key="contentEdgeInsets" minX="35" minY="10" maxX="35" maxY="10"/>
                                                                 <state key="normal" title="Check Answers">
-                                                                    <color key="titleColor" systemColor="secondarySystemGroupedBackgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                                    <color key="titleColor" systemColor="secondarySystemBackgroundColor" red="0.94901960780000005" green="0.94901960780000005" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="checkAnswersSelected:" destination="m0l-ny-w2e" eventType="touchUpInside" id="eJ8-RT-OHS"/>
@@ -228,13 +222,13 @@
                                                 </constraints>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="NwI-We-ryt">
-                                                <rect key="frame" x="365" y="0.0" width="975" height="650"/>
+                                                <rect key="frame" x="365" y="0.0" width="975" height="645"/>
                                                 <subviews>
                                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="hIX-Js-6RW">
-                                                        <rect key="frame" x="0.0" y="0.0" width="975" height="650"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="975" height="645"/>
                                                         <subviews>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which tube contains which regent?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVs-m7-DWK">
-                                                                <rect key="frame" x="263" y="0.0" width="450" height="39"/>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Which tube contains which reagent?" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tVs-m7-DWK">
+                                                                <rect key="frame" x="255" y="0.0" width="465" height="39"/>
                                                                 <constraints>
                                                                     <constraint firstAttribute="height" constant="39" id="aZ6-sn-mdf"/>
                                                                 </constraints>
@@ -243,7 +237,7 @@
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uaX-YF-ZCJ">
-                                                                <rect key="frame" x="0.0" y="89" width="975" height="561"/>
+                                                                <rect key="frame" x="0.0" y="89" width="975" height="556"/>
                                                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                                             </view>
                                                         </subviews>
@@ -281,7 +275,9 @@
                     </view>
                     <size key="freeformSize" width="1500" height="900"/>
                     <connections>
-                        <outlet property="titleLabel" destination="tVs-m7-DWK" id="sCB-jp-QAT"/>
+                        <outlet property="compoundNamesStack" destination="Zbd-od-c6q" id="9ba-34-xZ3"/>
+                        <outlet property="currentGroupLabel" destination="Na5-Zc-cLn" id="BeJ-Cs-zWh"/>
+                        <outlet property="testTubeNamesStack" destination="Qth-6s-1Nh" id="Gd5-91-S9G"/>
                         <outlet property="tubeWrapperView" destination="uaX-YF-ZCJ" id="0bM-JW-YSg"/>
                     </connections>
                 </viewController>

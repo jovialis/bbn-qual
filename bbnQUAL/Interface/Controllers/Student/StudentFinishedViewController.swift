@@ -11,7 +11,7 @@ import UIKit
 import SnapKit
 import Bond
 
-class StudentGameFinishedViewController: UIViewController {
+class StudentFinishedViewController: UIViewController {
 		
 	var progression: ProgressionProgress!
 	private var confettiView: ConfettiView!

@@ -15,10 +15,12 @@ import FirebaseFunctions
 
 class StudentGameViewController: UIViewController {
 	
-	@IBOutlet weak var titleLabel: UILabel!
 	@IBOutlet weak var tubeWrapperView: UIView!
-	
 	private var collectionView: CollectionView!
+	
+	@IBOutlet weak var currentGroupLabel: UILabel!
+	@IBOutlet weak var testTubeNamesStack: UIStackView!
+	@IBOutlet weak var compoundNamesStack: UIStackView!
 	
 	// Variables configured/updated by presenting controller
 	var prefix: String!
@@ -32,6 +34,9 @@ class StudentGameViewController: UIViewController {
 			// Reload collection view
 			if let collectionView = self.collectionView {
 				collectionView.reloadData()
+				
+				// Reload sidebar if views are loaded
+				self.updateSidebar()
 			}
 		}
 	}
@@ -78,6 +83,64 @@ class StudentGameViewController: UIViewController {
 		
 		provider.layout = layout
 		collectionView.provider = provider
+		
+		// Update sidebar
+		self.updateSidebar()
+	}
+	
+	private func updateSidebar() {
+		// Update sidebar title
+		if let difficulty = self.difficulty, let progress = self.progress {
+			if difficulty != .practice {
+				let difficultyProgress = progress.forDifficulty(difficulty)
+				let difficultyName = difficulty.displayName
+				
+				self.currentGroupLabel.text = "\( difficultyName ) Set \( (difficultyProgress.completed + 1) )/\( difficultyProgress.required )"
+			} else {
+				self.currentGroupLabel.text = "Practice Set"
+			}
+		}
+		
+		// Tube labels
+		if let prefix = self.prefix {
+			var tubeNames: [String] = []
+			
+			for i in 0..<self.reagents.count {
+				tubeNames.append("\( prefix )\( (i + 1) )")
+			}
+			
+			// Update items in stack
+			self.addTestTubeNamesToSidebar(names: tubeNames)
+		}
+		
+		// Reagent names
+		self.addCompoundNamesToSidebar(names: self.reagents)
+	}
+	
+	private func addTestTubeNamesToSidebar(names: [String]) {
+		// Clear current items
+		self.testTubeNamesStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
+		
+		for name in names {
+			let label = UILabel()
+			self.testTubeNamesStack.addArrangedSubview(label)
+
+			label.text = "- \(name)"
+			label.font = UIFont(name: "PTSans-Regular", size: 22.0)
+		}
+	}
+	
+	private func addCompoundNamesToSidebar(names: [Reagent]) {
+		// Clear current items
+		self.compoundNamesStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
+		
+		for name in names {
+			let label = UILabel()
+			self.compoundNamesStack.addArrangedSubview(label)
+
+			label.text = "- \(name.name)"
+			label.font = UIFont(name: "PTSans-Regular", size: 22.0)
+		}
 	}
 	
 	@IBAction func checkAnswersSelected(_ sender: Any) {
@@ -94,14 +157,22 @@ class StudentGameViewController: UIViewController {
 					case .formattingError:
 						print("Incorrect data format!? That should not be possible. Why are we here??")
 						break
-					case .incorrect:
-						print("Incorrect answer")
+						
+					case .incorrect(let attempts):
+						self.presentIncorrectAnswerController(attemptsLeft: attempts)
 						break
+						
 					case .finished:
+						// Dismiss to staging so it can present the big congratulations controller
 						self.dismiss(animated: false, completion: nil)
 						break
-					case .correct:
-						self.presentCorrectAnswerController()
+						
+					case .frozen(let code):
+						self.presentFrozenController(iceberg: code)
+						break
+						
+					case .correct(let attempts):
+						self.presentCorrectAnswerController(attempts: attempts)
 						break
 					}
 					
@@ -116,7 +187,36 @@ class StudentGameViewController: UIViewController {
 		}
 	}
 	
-	private func presentCorrectAnswerController() {
+	private func presentIncorrectAnswerController(attemptsLeft: Int) {
+		let controller = StudentGameIncorrectViewController()
+		
+		controller.attemptsLeft = attemptsLeft
+		
+		// Handle the continue button
+		controller.onContinueClicked = {
+			// Nothing
+		}
+
+		controller.modalPresentationStyle = .pageSheet
+		controller.modalTransitionStyle = .crossDissolve
+
+		self.present(controller, animated: true, completion: nil)
+	}
+	
+	private func presentFrozenController(iceberg: String) {
+		let controller = StudentGameFrozenViewController()
+		
+		controller.icebergCode = iceberg
+		
+		controller.modalPresentationStyle = .pageSheet
+		controller.modalTransitionStyle = .crossDissolve
+		
+		self.present(controller, animated: true, completion: nil)
+		
+		// TODO: Dismiss when signal
+	}
+	
+	private func presentCorrectAnswerController(attempts: Int) {
 		let controller = StudentGameCorrectViewController()
 		
 		// Handle the continue button
@@ -125,6 +225,8 @@ class StudentGameViewController: UIViewController {
 		}
 		
 		controller.modalPresentationStyle = .pageSheet
+		controller.modalTransitionStyle = .crossDissolve
+
 		self.present(controller, animated: true, completion: nil)
 	}
 	

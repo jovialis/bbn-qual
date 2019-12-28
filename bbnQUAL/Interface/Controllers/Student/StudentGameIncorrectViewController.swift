@@ -1,8 +1,8 @@
 //
-//  StudentGameCorrectViewController.swift
+//  StudentGameIncorrectViewController.swift
 //  bbnQUAL
 //
-//  Created by Dylan Hanson on 12/27/19.
+//  Created by Dylan Hanson on 12/28/19.
 //  Copyright © 2019 Jovialis. All rights reserved.
 //
 
@@ -11,12 +11,11 @@ import UIKit
 import SnapKit
 import Bond
 
-class StudentGameCorrectViewController: UIViewController {
+class StudentGameIncorrectViewController: UIViewController {
 	
 	var onContinueClicked: () -> Void = {}
-	
-	private var confettiView: ConfettiView!
-	
+	var attemptsLeft: Int!
+		
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
@@ -44,21 +43,20 @@ class StudentGameCorrectViewController: UIViewController {
 
 		let subLabel = UILabel()
 		stack.addArrangedSubview(subLabel)
+		
+		let attemptsLabel = UILabel()
+		stack.addArrangedSubview(attemptsLabel)
 
 		// Configure labels
-		mainLabel.text = "Congratulations!"
-		subLabel.text = "You answered correctly"
+		mainLabel.text = "Oops"
+		subLabel.text = "That's not quite right..."
+		attemptsLabel.text = "Teacher check-in after \( self.attemptsLeft! ) more attempts"
 
 		mainLabel.font = UIFont(name: "PTSans-Bold", size: 40)
 		subLabel.font = UIFont(name: "PTSans-Regular", size: 30)
-
-		// Confetti
-		let confettiView = ConfettiView(frame: self.view.bounds)
-		self.confettiView = confettiView
-		self.view.addSubview(confettiView)
-
-		// Configure confetti
-		confettiView.startConfetti()
+		attemptsLabel.font = UIFont(name: "PTSans-Regular", size: 20)
+		
+		attemptsLabel.textColor = .tertiaryLabel
 
 		// Create continue button
 		let button = UIButton()
@@ -67,7 +65,7 @@ class StudentGameCorrectViewController: UIViewController {
 		// Configure button
 		button.backgroundColor = .label
 		button.setTitleColor(.systemBackground, for: .normal)
-		button.setTitle("Next Reagent Set", for: .normal)
+		button.setTitle("Try Again", for: .normal)
 		button.contentEdgeInsets = UIEdgeInsets(top: 10, left: 35, bottom: 10, right: 35)
 		button.titleLabel?.font = UIFont(name: "PTSans-Regular", size: 24)
 
@@ -83,13 +81,6 @@ class StudentGameCorrectViewController: UIViewController {
 			self.onContinueClicked()
 		}
 
-	}
-	
-	// Stop confetti
-	override func viewDidDisappear(_ animated: Bool) {
-		super.viewDidDisappear(animated)
-		
-		self.confettiView.stopConfetti()
 	}
 	
 }

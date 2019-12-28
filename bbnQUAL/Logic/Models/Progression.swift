@@ -48,6 +48,17 @@ struct ProgressionProgress {
 		self.challenge = challenge
 	}
 	
+	func forDifficulty(_ difficulty: ProgressionDifficulty) -> ProgressionTrackProgress {
+		switch difficulty {
+		case .practice:
+			return self.beginner
+		case .regular:
+			return self.regular
+		case .challenge:
+			return self.challenge
+		}
+	}
+	
 }
 
 struct ProgressionTrackProgress {
@@ -68,7 +79,8 @@ struct ProgressionTrackProgress {
 
 enum ProgressionStatus {
 	
-	case active(String, ProgressionDifficulty, [Reagent])
+	case active(String, ProgressionDifficulty, Int, [Reagent])
+	case frozen(String)
 	case finished
 	
 }
@@ -89,9 +101,17 @@ extension ProgressionStatus {
 		case "finished":
 			self = .finished
 			return
+		case "frozen":
+			guard let code = json["iceberg"].string else {
+				return nil
+			}
+			
+			self = .frozen(code)
+			return
 		case "active":
 			// Continue parse
 			break
+
 		default:
 			// Broken
 			return nil
@@ -99,15 +119,16 @@ extension ProgressionStatus {
 		
 		let prefix = json["prefix"].string
 		let difficulty = ProgressionDifficulty(val: json["difficulty"].int ?? -1)
+		let attempts = json["attempts"].int
 		let reagents = json["reagents"].array
 		
-		if prefix == nil || difficulty == nil || reagents == nil {
+		if prefix == nil || difficulty == nil || attempts == nil || reagents == nil {
 			return nil
 		}
 		
 		let reagentsList = reagents!.map{ Reagent($0.stringValue) }
 		
-		self = .active(prefix!, difficulty!, reagentsList)
+		self = .active(prefix!, difficulty!, attempts!, reagentsList)
 	}
 	
 }

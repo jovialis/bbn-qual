@@ -43,6 +43,10 @@
 		C0604BF6238EF47400686D89 /* PTSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0604BEE238EF47400686D89 /* PTSans-Italic.ttf */; };
 		C0604C00238F0C7D00686D89 /* TestTubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0604BFF238F0C7D00686D89 /* TestTubeView.swift */; };
 		C0604C01238F0C7D00686D89 /* TestTubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0604BFF238F0C7D00686D89 /* TestTubeView.swift */; };
+		C076C18523B78F5C0060074D /* StudentGameIncorrectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C076C18423B78F5C0060074D /* StudentGameIncorrectViewController.swift */; };
+		C076C18623B78F5C0060074D /* StudentGameIncorrectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C076C18423B78F5C0060074D /* StudentGameIncorrectViewController.swift */; };
+		C076C18823B790620060074D /* StudentGameFrozenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C076C18723B790620060074D /* StudentGameFrozenViewController.swift */; };
+		C076C18923B790620060074D /* StudentGameFrozenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C076C18723B790620060074D /* StudentGameFrozenViewController.swift */; };
 		C07C2E0A23A57441005B5423 /* TeacherWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C2E0923A57441005B5423 /* TeacherWrapperViewController.swift */; };
 		C07C2E0B23A57441005B5423 /* TeacherWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C2E0923A57441005B5423 /* TeacherWrapperViewController.swift */; };
 		C07C2E0D23A57EFF005B5423 /* Course.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C2E0C23A57EFF005B5423 /* Course.swift */; };
@@ -67,8 +71,8 @@
 		C092C18523B6B11500032C5E /* ConfettiView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C18323B6B11500032C5E /* ConfettiView.swift */; };
 		C092C18723B6B1F600032C5E /* diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = C092C18623B6B1F600032C5E /* diamond.png */; };
 		C092C18823B6B1F600032C5E /* diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = C092C18623B6B1F600032C5E /* diamond.png */; };
-		C092C18A23B6BBC800032C5E /* StudentGameFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C18923B6BBC800032C5E /* StudentGameFinishedViewController.swift */; };
-		C092C18B23B6BBC800032C5E /* StudentGameFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C18923B6BBC800032C5E /* StudentGameFinishedViewController.swift */; };
+		C092C18A23B6BBC800032C5E /* StudentFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C18923B6BBC800032C5E /* StudentFinishedViewController.swift */; };
+		C092C18B23B6BBC800032C5E /* StudentFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C18923B6BBC800032C5E /* StudentFinishedViewController.swift */; };
 		C098D088238C9A8F006B6E20 /* macOS-GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C098D087238C9A8F006B6E20 /* macOS-GoogleService-Info.plist */; };
 		C098D089238C9A8F006B6E20 /* macOS-GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C098D087238C9A8F006B6E20 /* macOS-GoogleService-Info.plist */; };
 		C098D08B238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C098D08A238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist */; };
@@ -136,6 +140,8 @@
 		C0604BED238EF47400686D89 /* PTSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		C0604BEE238EF47400686D89 /* PTSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Italic.ttf"; sourceTree = "<group>"; };
 		C0604BFF238F0C7D00686D89 /* TestTubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTubeView.swift; sourceTree = "<group>"; };
+		C076C18423B78F5C0060074D /* StudentGameIncorrectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentGameIncorrectViewController.swift; sourceTree = "<group>"; };
+		C076C18723B790620060074D /* StudentGameFrozenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentGameFrozenViewController.swift; sourceTree = "<group>"; };
 		C07C2E0923A57441005B5423 /* TeacherWrapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherWrapperViewController.swift; sourceTree = "<group>"; };
 		C07C2E0C23A57EFF005B5423 /* Course.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Course.swift; sourceTree = "<group>"; };
 		C07C2E0F23A5845E005B5423 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
@@ -148,7 +154,7 @@
 		C092C18023B6ACC000032C5E /* StudentGameCorrectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentGameCorrectViewController.swift; sourceTree = "<group>"; };
 		C092C18323B6B11500032C5E /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		C092C18623B6B1F600032C5E /* diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diamond.png; sourceTree = "<group>"; };
-		C092C18923B6BBC800032C5E /* StudentGameFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentGameFinishedViewController.swift; sourceTree = "<group>"; };
+		C092C18923B6BBC800032C5E /* StudentFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentFinishedViewController.swift; sourceTree = "<group>"; };
 		C098D087238C9A8F006B6E20 /* macOS-GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "macOS-GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C098D08A238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iPadOS-GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C098D08D238CAED6006B6E20 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -372,7 +378,9 @@
 				C092C16B23B66D4700032C5E /* StudentStagingViewController.swift */,
 				C0F97E4223B040AD0091E974 /* StudentGameViewController.swift */,
 				C092C18023B6ACC000032C5E /* StudentGameCorrectViewController.swift */,
-				C092C18923B6BBC800032C5E /* StudentGameFinishedViewController.swift */,
+				C076C18423B78F5C0060074D /* StudentGameIncorrectViewController.swift */,
+				C076C18723B790620060074D /* StudentGameFrozenViewController.swift */,
+				C092C18923B6BBC800032C5E /* StudentFinishedViewController.swift */,
 			);
 			path = Student;
 			sourceTree = "<group>";
@@ -568,6 +576,7 @@
 				C092C18423B6B11500032C5E /* ConfettiView.swift in Sources */,
 				C07C2E1323A6CF47005B5423 /* TeacherCoursesViewController.swift in Sources */,
 				C092C17E23B6868A00032C5E /* ReagentSelectionWrapper.swift in Sources */,
+				C076C18523B78F5C0060074D /* StudentGameIncorrectViewController.swift in Sources */,
 				C07C2E1023A5845E005B5423 /* CourseView.swift in Sources */,
 				C092C16C23B66D4700032C5E /* StudentStagingViewController.swift in Sources */,
 				C07C2E0A23A57441005B5423 /* TeacherWrapperViewController.swift in Sources */,
@@ -577,11 +586,12 @@
 				C010E30B23905B2C00D07047 /* UserManager.swift in Sources */,
 				C049D86E23AFF05B00DFE9DA /* ReagentSelectionView.swift in Sources */,
 				C010E31123905F2F00D07047 /* Callback.swift in Sources */,
-				C092C18A23B6BBC800032C5E /* StudentGameFinishedViewController.swift in Sources */,
+				C092C18A23B6BBC800032C5E /* StudentFinishedViewController.swift in Sources */,
 				C010E30E23905D5500D07047 /* User.swift in Sources */,
 				C092C17223B676BE00032C5E /* String+Error.swift in Sources */,
 				D64B2C4B2399F98C003FCA64 /* TeacherRouterViewController.swift in Sources */,
 				C037BCFE23B4E70700231119 /* Reagent.swift in Sources */,
+				C076C18823B790620060074D /* StudentGameFrozenViewController.swift in Sources */,
 				C0F97E4323B040AD0091E974 /* StudentGameViewController.swift in Sources */,
 				C092C16F23B674E500032C5E /* Progression.swift in Sources */,
 				C092C18123B6ACC000032C5E /* StudentGameCorrectViewController.swift in Sources */,
@@ -603,8 +613,9 @@
 				C092C18523B6B11500032C5E /* ConfettiView.swift in Sources */,
 				C092C17023B674E500032C5E /* Progression.swift in Sources */,
 				C092C17323B676BE00032C5E /* String+Error.swift in Sources */,
-				C092C18B23B6BBC800032C5E /* StudentGameFinishedViewController.swift in Sources */,
+				C092C18B23B6BBC800032C5E /* StudentFinishedViewController.swift in Sources */,
 				C0F97E4423B040AD0091E974 /* StudentGameViewController.swift in Sources */,
+				C076C18923B790620060074D /* StudentGameFrozenViewController.swift in Sources */,
 				C092C18223B6ACC000032C5E /* StudentGameCorrectViewController.swift in Sources */,
 				D61171CB2397755A00A6DF1A /* Session.swift in Sources */,
 				D6BDF5CC23977AE300638352 /* QError.swift in Sources */,
@@ -620,6 +631,7 @@
 				C010E30F23905D5500D07047 /* User.swift in Sources */,
 				C07C2E1423A6CF47005B5423 /* TeacherCoursesViewController.swift in Sources */,
 				C092C17C23B67B8300032C5E /* AnswerChecker.swift in Sources */,
+				C076C18623B78F5C0060074D /* StudentGameIncorrectViewController.swift in Sources */,
 				C010E3152390613500D07047 /* FirestoreRepresentable.swift in Sources */,
 				C092C16D23B66D4700032C5E /* StudentStagingViewController.swift in Sources */,
 				C03C8AEF238C35DC00715032 /* bbnQUALTests.swift in Sources */,
