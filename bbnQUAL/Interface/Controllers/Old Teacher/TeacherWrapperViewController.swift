@@ -10,9 +10,7 @@ import Foundation
 import UIKit
 
 class TeacherWrapperViewController: UIViewController {
-	
-	var teacher: QualUser!
-	
+		
 	@IBOutlet weak var consoleNameLabel: UILabel!
 	@IBOutlet weak var teacherNameButton: UIButton!
 	
@@ -23,8 +21,8 @@ class TeacherWrapperViewController: UIViewController {
 		super.viewDidLoad()
 		
 		// Setup view
-		self.consoleNameLabel.text = (self.teacher.access == 1 ? "Teacher" : "Admin") + " Console"
-		self.teacherNameButton.setTitle(self.teacher.name, for: .normal)
+//		self.consoleNameLabel.text = (self.teacher.access == 1 ? "Teacher" : "Admin") + " Console"
+//		self.teacherNameButton.setTitle(self.teacher.name, for: .normal)
 		
 		// Setup container
 		self.setupContainerView()
@@ -60,7 +58,6 @@ class TeacherWrapperViewController: UIViewController {
 	private func initialView() {
 		// Push to course list view
 		let controller = TeacherCoursesViewController()
-		controller.teacher = self.teacher
 		
 		self.childNavigation.pushViewController(controller, animated: false)
 	}

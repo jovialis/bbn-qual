@@ -62,7 +62,7 @@ class StudentGameFrozenViewController: UIViewController {
 	}
 	
 	private func listenToChanges() {
-		let docRef = Firestore.firestore().collection("icebergs").document(self.icebergCode)
+		let docRef = Firestore.firestore().document(self.icebergCode)
 		docRef.addSnapshotListener { (snapshot: DocumentSnapshot?, error: Error?) in
 			if let snapshot = snapshot {
 				if snapshot.exists, let data = snapshot.data() {
@@ -82,8 +82,12 @@ class StudentGameFrozenViewController: UIViewController {
 	}
 	
 	private func resolve() {
-		// Dismiss to resolve
-		self.dismiss(animated: true, completion: nil)
+		// Pop from stack if presented in nav controller, otherwise dismiss
+		if let navigationController = self.navigationController {
+			navigationController.popViewController(animated: false)
+		} else {
+			self.dismiss(animated: true, completion: nil)
+		}
 	}
 	
 }

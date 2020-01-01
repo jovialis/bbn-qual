@@ -102,7 +102,7 @@ extension ProgressionStatus {
 			self = .finished
 			return
 		case "frozen":
-			guard let code = json["iceberg"].string else {
+			guard let code = json["icebergRef"].string else {
 				return nil
 			}
 			
@@ -119,7 +119,7 @@ extension ProgressionStatus {
 		
 		let prefix = json["prefix"].string
 		let difficulty = ProgressionDifficulty(val: json["difficulty"].int ?? -1)
-		let attempts = json["attempts"].int
+		let attempts = json["attemptsRemaining"].int
 		let reagents = json["reagents"].array
 		
 		if prefix == nil || difficulty == nil || attempts == nil || reagents == nil {

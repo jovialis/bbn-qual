@@ -14,7 +14,7 @@ import ReactiveKit
 
 class TeacherCourseViewController: UIViewController {
 	
-	var course: Course!
+//	var course: Course!
 	
 	// Storyboard bindings
 	// Teacher labels

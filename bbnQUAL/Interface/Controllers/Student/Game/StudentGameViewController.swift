@@ -12,8 +12,12 @@ import CollectionKit
 import SnapKit
 import Bond
 import FirebaseFunctions
+import Firebase
 
 class StudentGameViewController: UIViewController {
+	
+	@IBOutlet weak var courseNameLabel: UILabel!
+	@IBOutlet weak var groupInfoButton: UIButton!
 	
 	@IBOutlet weak var tubeWrapperView: UIView!
 	private var collectionView: CollectionView!
@@ -43,9 +47,26 @@ class StudentGameViewController: UIViewController {
 	
 	private lazy var reagentsSelectionWrapper = ReagentSelectionWrapper(reagents: self.reagents)
 				
+	var course: Course!
+	var team: Team!
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 		
+		// Course name label
+		self.courseNameLabel.text = self.course.name
+		
+		// Button name
+		self.groupInfoButton.setTitle(Auth.auth().currentUser!.displayName, for: .normal)
+		
+		// Set up collection
+		self.setupCollection()
+		
+		// Update sidebar
+		self.updateSidebar()
+	}
+	
+	private func setupCollection() {
 		let collectionView = CollectionView()
 		self.collectionView = collectionView
 		self.tubeWrapperView.addSubview(collectionView)
@@ -83,9 +104,7 @@ class StudentGameViewController: UIViewController {
 		
 		provider.layout = layout
 		collectionView.provider = provider
-		
-		// Update sidebar
-		self.updateSidebar()
+
 	}
 	
 	private func updateSidebar() {
@@ -164,7 +183,7 @@ class StudentGameViewController: UIViewController {
 						
 					case .finished:
 						// Dismiss to staging so it can present the big congratulations controller
-						self.dismiss(animated: false, completion: nil)
+						self.navigationController?.popViewController(animated: false)
 						break
 						
 					case .frozen(let code):
@@ -221,7 +240,7 @@ class StudentGameViewController: UIViewController {
 		
 		// Handle the continue button
 		controller.onContinueClicked = {
-			self.dismiss(animated: false, completion: nil)
+			self.navigationController?.popViewController(animated: false)
 		}
 		
 		controller.modalPresentationStyle = .pageSheet

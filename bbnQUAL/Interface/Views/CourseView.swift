@@ -14,11 +14,11 @@ import Signals
 class CourseView: UIView {
 
 	// Represented course
-	var course: Course? {
-		didSet {
-			self.setNeedsLayout()
-		}
-	}
+//	var course: Course? {
+//		didSet {
+//			self.setNeedsLayout()
+//		}
+//	}
 	
 	var infoStack: UIStackView?
 	
@@ -89,13 +89,13 @@ class CourseView: UIView {
 	}
 	
 	private func updateContent() {
-		if self.courseNameLabel != nil {
-			self.courseNameLabel!.text = self.course?.name
-		}
-		
-		if self.archivedLabel != nil {
-			self.archivedLabel!.text = "\(self.course?.archived)"
-		}
+//		if self.courseNameLabel != nil {
+//			self.courseNameLabel!.text = self.course?.name
+//		}
+//
+//		if self.archivedLabel != nil {
+//			self.archivedLabel!.text = "\(self.course?.archived)"
+//		}
 	}
 	
 }

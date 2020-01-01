@@ -35,6 +35,8 @@ final class AnswerChecker {
 				do {
 					let json = JSON(result.data)
 					
+					print(json)
+					
 					// Pull out progression from JSON
 					guard let checkResult = AnswerCheckResult(json) else {
 						throw "Invalid arguments prevented acceptance of checkAnswers"
@@ -82,14 +84,14 @@ enum AnswerCheckResult {
 			self = .correct(attempts)
 			
 		case "incorrect":
-			guard let attempts = json["attempts"].int else {
+			guard let attempts = json["attemptsRemaining"].int else {
 				return nil
 			}
 			
 			self = .incorrect(attempts)
 			
 		case "frozen":
-			guard let code = json["iceberg"].string else {
+			guard let code = json["icebergRef"].string else {
 				return nil
 			}
 			

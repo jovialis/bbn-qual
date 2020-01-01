@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="XTz-5P-SDG">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="m0l-ny-w2e">
     <device id="mac" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -15,25 +15,10 @@
         </array>
     </customFonts>
     <scenes>
-        <!--Student Staging View Controller-->
-        <scene sceneID="o9z-3b-eog">
-            <objects>
-                <viewController id="XTz-5P-SDG" customClass="StudentStagingViewController" customModule="bbnQUAL" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="Q05-Uf-rrZ">
-                        <rect key="frame" x="0.0" y="0.0" width="800" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                        <viewLayoutGuide key="safeArea" id="pGE-Pv-YHd"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="9Gs-Uh-Bct" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="-1349" y="1064"/>
-        </scene>
         <!--Student Game View Controller-->
         <scene sceneID="0PG-aK-0o7">
             <objects>
-                <viewController storyboardIdentifier="Game" id="m0l-ny-w2e" customClass="StudentGameViewController" customModule="bbnQUAL" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="m0l-ny-w2e" customClass="StudentGameViewController" customModule="bbnQUAL" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="7Ij-kh-fGv">
                         <rect key="frame" x="0.0" y="0.0" width="1500" height="900"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -276,7 +261,9 @@
                     <size key="freeformSize" width="1500" height="900"/>
                     <connections>
                         <outlet property="compoundNamesStack" destination="Zbd-od-c6q" id="9ba-34-xZ3"/>
+                        <outlet property="courseNameLabel" destination="Mfa-bn-aTo" id="3g7-ik-RrT"/>
                         <outlet property="currentGroupLabel" destination="Na5-Zc-cLn" id="BeJ-Cs-zWh"/>
+                        <outlet property="groupInfoButton" destination="VgD-OT-Psi" id="dWv-6w-Wm8"/>
                         <outlet property="testTubeNamesStack" destination="Qth-6s-1Nh" id="Gd5-91-S9G"/>
                         <outlet property="tubeWrapperView" destination="uaX-YF-ZCJ" id="0bM-JW-YSg"/>
                     </connections>

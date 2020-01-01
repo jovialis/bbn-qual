@@ -1,5 +1,5 @@
 //
-//  StudentStagingViewController.swift
+//  StudentViewController.swift
 //  bbnQUAL
 //
 //  Created by Dylan Hanson on 12/27/19.
@@ -13,16 +13,28 @@ import Signals
 import FirebaseFunctions
 import SwiftyJSON
 
-class StudentStagingViewController: UIViewController {
+class StudentViewController: UIViewController {
 	
 	/*
 	Controller to manage the states inbetween selection, loading, etc.
 	*/
 	
-	// TODO: Handle dismiss
+	var isTopController: Bool { return self.navigationController?.topViewController == self }
+	
+	private var course: Course!
+	private var team: Team!
+	
+	convenience init(course: Course, team: Team) {
+		self.init()
+		
+		self.course = course
+		self.team = team
+	}
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
+		self.view.backgroundColor = .systemBackground
 		
 		// Create loading view
 		let loadingView = UIActivityIndicatorView()
@@ -40,6 +52,7 @@ class StudentStagingViewController: UIViewController {
 	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
+		// Route upon appearance
 		self.doRouting()
 	}
 	
@@ -50,10 +63,18 @@ class StudentStagingViewController: UIViewController {
 				switch progression.status {
 				case .finished:
 					self.presentFinishedController(progress: progression.progress)
+					
 				case .frozen(let icebergCode):
 					self.presentFrozenController(icebergCode: icebergCode)
+					
 				case let .active(prefix, difficulty, attempts, reagents):
-					self.presentStudentController(prefix: prefix, difficulty: difficulty, attempts: attempts, reagents: reagents, progress: progression.progress)
+					self.presentStudentController(
+						prefix: prefix,
+						difficulty: difficulty,
+						attempts: attempts,
+						reagents: reagents,
+						progress: progression.progress
+					)
 				}
 				
 			case .failure(let error):
@@ -63,39 +84,55 @@ class StudentStagingViewController: UIViewController {
 	}
 	
 	func presentStudentController(prefix: String, difficulty: ProgressionDifficulty, attempts: Int, reagents: [Reagent], progress: ProgressionProgress) {
-		if let controller = self.storyboard?.instantiateViewController(identifier: "Game") as? StudentGameViewController {
+		// Pop to self
+		self.popToSelf()
+		
+		// Instantiate Game controller from storyboard
+		let storyboard = UIStoryboard(name: "Game", bundle: nil)
+		if let controller = storyboard.instantiateInitialViewController() as? StudentGameViewController {
 			
 			// Set necessary variables
+			controller.course = self.course
+			controller.team = self.team
+			
 			controller.prefix = prefix
 			controller.difficulty = difficulty
 			controller.reagents = reagents
 			controller.progress = progress
 			
 			// Present fullscreen
-			controller.modalPresentationStyle = .fullScreen
-			self.present(controller, animated: false, completion: nil)
-			
+			self.navigationController?.pushViewController(controller, animated: false)
 		}
 	}
 	
 	func presentFrozenController(icebergCode: String) {
+		// Pop to self
+		self.popToSelf()
+		
 		let controller = StudentGameFrozenViewController()
 		
 		controller.icebergCode = icebergCode
 		
 		// Present fullscreen
-		controller.modalPresentationStyle = .fullScreen
-		self.present(controller, animated: false, completion: nil)
+		self.navigationController?.pushViewController(controller, animated: false)
 	}
 	
 	func presentFinishedController(progress: ProgressionProgress) {
+		// Pop to self
+		self.popToSelf()
+		
 		let controller = StudentFinishedViewController()
 		
 		controller.progression = progress
-		controller.modalTransitionStyle = .crossDissolve
-		controller.modalPresentationStyle = .fullScreen
 		
-		self.present(controller, animated: true, completion: nil)
+		self.navigationController?.pushViewController(controller, animated: false)
+	}
+	
+	// Clear the navigation stack back to self.
+	private func popToSelf() {
+		if !self.isTopController {
+			self.navigationController?.popToViewController(self, animated: false)
+		}
 	}
 	
 	// Fetches the current reagent group
