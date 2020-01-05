@@ -24,6 +24,24 @@
 		C03CC82D23B3FD5200D8482C /* TestTube-Dark.svg in Resources */ = {isa = PBXBuildFile; fileRef = C03CC82B23B3FD5200D8482C /* TestTube-Dark.svg */; };
 		C049D86E23AFF05B00DFE9DA /* ReagentSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C049D86D23AFF05B00DFE9DA /* ReagentSelectionView.swift */; };
 		C049D86F23AFF05B00DFE9DA /* ReagentSelectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C049D86D23AFF05B00DFE9DA /* ReagentSelectionView.swift */; };
+		C04F64A023BF2E8500225746 /* TeacherCourse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C04F649F23BF2E8500225746 /* TeacherCourse.storyboard */; };
+		C04F64A123BF2E8500225746 /* TeacherCourse.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C04F649F23BF2E8500225746 /* TeacherCourse.storyboard */; };
+		C04F64A423BF673000225746 /* TeacherCourseSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F64A323BF673000225746 /* TeacherCourseSessionController.swift */; };
+		C04F64A523BF673000225746 /* TeacherCourseSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F64A323BF673000225746 /* TeacherCourseSessionController.swift */; };
+		C04F64A723BF6BC500225746 /* TeacherCourseTeamsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F64A623BF6BC500225746 /* TeacherCourseTeamsController.swift */; };
+		C04F64A823BF6BC500225746 /* TeacherCourseTeamsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F64A623BF6BC500225746 /* TeacherCourseTeamsController.swift */; };
+		C04F64AA23BF741B00225746 /* ActionGetClassSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F64A923BF741B00225746 /* ActionGetClassSession.swift */; };
+		C04F64AB23BF741B00225746 /* ActionGetClassSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C04F64A923BF741B00225746 /* ActionGetClassSession.swift */; };
+		C0502E2B23BDF06E00478BDD /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0502E2A23BDF06E00478BDD /* ProfileController.swift */; };
+		C0502E2C23BDF06E00478BDD /* ProfileController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0502E2A23BDF06E00478BDD /* ProfileController.swift */; };
+		C0502E2E23BE036900478BDD /* LogoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0502E2D23BE036900478BDD /* LogoutButton.swift */; };
+		C0502E2F23BE036900478BDD /* LogoutButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0502E2D23BE036900478BDD /* LogoutButton.swift */; };
+		C0502E3123BE054D00478BDD /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0502E3023BE054D00478BDD /* LoginButton.swift */; };
+		C0502E3223BE054D00478BDD /* LoginButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0502E3023BE054D00478BDD /* LoginButton.swift */; };
+		C0502E3523BE6A4E00478BDD /* CourseSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0502E3423BE6A4E00478BDD /* CourseSetup.storyboard */; };
+		C0502E3623BE6A4E00478BDD /* CourseSetup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C0502E3423BE6A4E00478BDD /* CourseSetup.storyboard */; };
+		C0502E3823BE6AAB00478BDD /* TeacherCourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0502E3723BE6AAB00478BDD /* TeacherCourseController.swift */; };
+		C0502E3923BE6AAB00478BDD /* TeacherCourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0502E3723BE6AAB00478BDD /* TeacherCourseController.swift */; };
 		C05EE36223BC358800788A1F /* ActionRefreshGoogleToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE36123BC358800788A1F /* ActionRefreshGoogleToken.swift */; };
 		C05EE36323BC358C00788A1F /* ActionRefreshGoogleToken.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE36123BC358800788A1F /* ActionRefreshGoogleToken.swift */; };
 		C05EE36623BCAF2B00788A1F /* StudentSessionController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C05EE36523BCAF2B00788A1F /* StudentSessionController.swift */; };
@@ -64,20 +82,18 @@
 		C076C18623B78F5C0060074D /* StudentGameIncorrectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C076C18423B78F5C0060074D /* StudentGameIncorrectViewController.swift */; };
 		C076C18823B790620060074D /* StudentGameFrozenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C076C18723B790620060074D /* StudentGameFrozenViewController.swift */; };
 		C076C18923B790620060074D /* StudentGameFrozenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C076C18723B790620060074D /* StudentGameFrozenViewController.swift */; };
-		C07C2E0A23A57441005B5423 /* TeacherWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C2E0923A57441005B5423 /* TeacherWrapperViewController.swift */; };
-		C07C2E0B23A57441005B5423 /* TeacherWrapperViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C2E0923A57441005B5423 /* TeacherWrapperViewController.swift */; };
+		C07C2E0A23A57441005B5423 /* TeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C2E0923A57441005B5423 /* TeacherViewController.swift */; };
+		C07C2E0B23A57441005B5423 /* TeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C2E0923A57441005B5423 /* TeacherViewController.swift */; };
 		C07C2E1023A5845E005B5423 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C2E0F23A5845E005B5423 /* CourseView.swift */; };
 		C07C2E1123A5845E005B5423 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C2E0F23A5845E005B5423 /* CourseView.swift */; };
-		C07C2E1323A6CF47005B5423 /* TeacherCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C2E1223A6CF47005B5423 /* TeacherCoursesViewController.swift */; };
-		C07C2E1423A6CF47005B5423 /* TeacherCoursesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C2E1223A6CF47005B5423 /* TeacherCoursesViewController.swift */; };
 		C092C16C23B66D4700032C5E /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C16B23B66D4700032C5E /* StudentViewController.swift */; };
 		C092C16D23B66D4700032C5E /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C16B23B66D4700032C5E /* StudentViewController.swift */; };
 		C092C16F23B674E500032C5E /* Progression.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C16E23B674E500032C5E /* Progression.swift */; };
 		C092C17023B674E500032C5E /* Progression.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C16E23B674E500032C5E /* Progression.swift */; };
 		C092C17223B676BE00032C5E /* String+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C17123B676BE00032C5E /* String+Error.swift */; };
 		C092C17323B676BE00032C5E /* String+Error.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C17123B676BE00032C5E /* String+Error.swift */; };
-		C092C17B23B67B8300032C5E /* AnswerChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C17A23B67B8300032C5E /* AnswerChecker.swift */; };
-		C092C17C23B67B8300032C5E /* AnswerChecker.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C17A23B67B8300032C5E /* AnswerChecker.swift */; };
+		C092C17B23B67B8300032C5E /* ActionCheckAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C17A23B67B8300032C5E /* ActionCheckAnswers.swift */; };
+		C092C17C23B67B8300032C5E /* ActionCheckAnswers.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C17A23B67B8300032C5E /* ActionCheckAnswers.swift */; };
 		C092C17E23B6868A00032C5E /* ReagentSelectionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C17D23B6868A00032C5E /* ReagentSelectionWrapper.swift */; };
 		C092C17F23B6868A00032C5E /* ReagentSelectionWrapper.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C17D23B6868A00032C5E /* ReagentSelectionWrapper.swift */; };
 		C092C18123B6ACC000032C5E /* StudentGameCorrectViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C18023B6ACC000032C5E /* StudentGameCorrectViewController.swift */; };
@@ -88,14 +104,25 @@
 		C092C18823B6B1F600032C5E /* diamond.png in Resources */ = {isa = PBXBuildFile; fileRef = C092C18623B6B1F600032C5E /* diamond.png */; };
 		C092C18A23B6BBC800032C5E /* StudentFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C18923B6BBC800032C5E /* StudentFinishedViewController.swift */; };
 		C092C18B23B6BBC800032C5E /* StudentFinishedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C18923B6BBC800032C5E /* StudentFinishedViewController.swift */; };
+		C096035423C251C5001848B0 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096035323C251C5001848B0 /* Session.swift */; };
+		C096035523C251C5001848B0 /* Session.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096035323C251C5001848B0 /* Session.swift */; };
+		C096035823C28900001848B0 /* ActionEndSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096035723C28900001848B0 /* ActionEndSession.swift */; };
+		C096035923C28900001848B0 /* ActionEndSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096035723C28900001848B0 /* ActionEndSession.swift */; };
+		C096035B23C28BC2001848B0 /* ActionStartSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096035A23C28BC2001848B0 /* ActionStartSession.swift */; };
+		C096035C23C28BC2001848B0 /* ActionStartSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096035A23C28BC2001848B0 /* ActionStartSession.swift */; };
+		C096035E23C28CE4001848B0 /* ActionExtendSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096035D23C28CE4001848B0 /* ActionExtendSession.swift */; };
+		C096035F23C28CE4001848B0 /* ActionExtendSession.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096035D23C28CE4001848B0 /* ActionExtendSession.swift */; };
+		C096036123C28DAB001848B0 /* ActionGetSessionContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096036023C28DAB001848B0 /* ActionGetSessionContent.swift */; };
+		C096036223C28DAB001848B0 /* ActionGetSessionContent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C096036023C28DAB001848B0 /* ActionGetSessionContent.swift */; };
 		C098D088238C9A8F006B6E20 /* macOS-GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C098D087238C9A8F006B6E20 /* macOS-GoogleService-Info.plist */; };
 		C098D089238C9A8F006B6E20 /* macOS-GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C098D087238C9A8F006B6E20 /* macOS-GoogleService-Info.plist */; };
 		C098D08B238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C098D08A238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist */; };
 		C098D08C238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C098D08A238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist */; };
+		C0C67A2923C248AC0023BF9E /* TeacherCourseSessionStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C67A2823C248AC0023BF9E /* TeacherCourseSessionStatusController.swift */; };
 		C0F97E4323B040AD0091E974 /* StudentGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F97E4223B040AD0091E974 /* StudentGameViewController.swift */; };
 		C0F97E4423B040AD0091E974 /* StudentGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0F97E4223B040AD0091E974 /* StudentGameViewController.swift */; };
-		C0FAADE723AE9DA100420A8C /* TeacherCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAADE623AE9DA100420A8C /* TeacherCourseViewController.swift */; };
-		C0FAADE823AE9DA100420A8C /* TeacherCourseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAADE623AE9DA100420A8C /* TeacherCourseViewController.swift */; };
+		C0FAADE723AE9DA100420A8C /* TeacherCourseSetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAADE623AE9DA100420A8C /* TeacherCourseSetupController.swift */; };
+		C0FAADE823AE9DA100420A8C /* TeacherCourseSetupController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0FAADE623AE9DA100420A8C /* TeacherCourseSetupController.swift */; };
 		D67F5A29239826FF008C7EDC /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67F5A28239826FF008C7EDC /* Game.storyboard */; };
 		D67F5A2A239826FF008C7EDC /* Game.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67F5A28239826FF008C7EDC /* Game.storyboard */; };
 		D67F5A2C2398270C008C7EDC /* Teacher.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D67F5A2B2398270C008C7EDC /* Teacher.storyboard */; };
@@ -135,6 +162,15 @@
 		C03CC82823B3C47A00D8482C /* TestTube-Light.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "TestTube-Light.svg"; sourceTree = "<group>"; };
 		C03CC82B23B3FD5200D8482C /* TestTube-Dark.svg */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = "TestTube-Dark.svg"; sourceTree = "<group>"; };
 		C049D86D23AFF05B00DFE9DA /* ReagentSelectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReagentSelectionView.swift; sourceTree = "<group>"; };
+		C04F649F23BF2E8500225746 /* TeacherCourse.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = TeacherCourse.storyboard; sourceTree = "<group>"; };
+		C04F64A323BF673000225746 /* TeacherCourseSessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCourseSessionController.swift; sourceTree = "<group>"; };
+		C04F64A623BF6BC500225746 /* TeacherCourseTeamsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCourseTeamsController.swift; sourceTree = "<group>"; };
+		C04F64A923BF741B00225746 /* ActionGetClassSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionGetClassSession.swift; sourceTree = "<group>"; };
+		C0502E2A23BDF06E00478BDD /* ProfileController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileController.swift; sourceTree = "<group>"; };
+		C0502E2D23BE036900478BDD /* LogoutButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogoutButton.swift; sourceTree = "<group>"; };
+		C0502E3023BE054D00478BDD /* LoginButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginButton.swift; sourceTree = "<group>"; };
+		C0502E3423BE6A4E00478BDD /* CourseSetup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = CourseSetup.storyboard; sourceTree = "<group>"; };
+		C0502E3723BE6AAB00478BDD /* TeacherCourseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCourseController.swift; sourceTree = "<group>"; };
 		C05EE36123BC358800788A1F /* ActionRefreshGoogleToken.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionRefreshGoogleToken.swift; sourceTree = "<group>"; };
 		C05EE36523BCAF2B00788A1F /* StudentSessionController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentSessionController.swift; sourceTree = "<group>"; };
 		C05EE36923BCB02900788A1F /* ActionGetStudentSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionGetStudentSession.swift; sourceTree = "<group>"; };
@@ -155,22 +191,27 @@
 		C06EF3EE23BC2D5900BDE6E0 /* ControllerAction.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ControllerAction.swift; sourceTree = "<group>"; };
 		C076C18423B78F5C0060074D /* StudentGameIncorrectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentGameIncorrectViewController.swift; sourceTree = "<group>"; };
 		C076C18723B790620060074D /* StudentGameFrozenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentGameFrozenViewController.swift; sourceTree = "<group>"; };
-		C07C2E0923A57441005B5423 /* TeacherWrapperViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherWrapperViewController.swift; sourceTree = "<group>"; };
+		C07C2E0923A57441005B5423 /* TeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherViewController.swift; sourceTree = "<group>"; };
 		C07C2E0F23A5845E005B5423 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
-		C07C2E1223A6CF47005B5423 /* TeacherCoursesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCoursesViewController.swift; sourceTree = "<group>"; };
 		C092C16B23B66D4700032C5E /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
 		C092C16E23B674E500032C5E /* Progression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progression.swift; sourceTree = "<group>"; };
-		C092C17123B676BE00032C5E /* String+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Error.swift"; path = "bbnQUAL/Logic/Models/String+Error.swift"; sourceTree = SOURCE_ROOT; };
-		C092C17A23B67B8300032C5E /* AnswerChecker.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnswerChecker.swift; sourceTree = "<group>"; };
+		C092C17123B676BE00032C5E /* String+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Error.swift"; path = "bbnQUAL/Interface/Utils/String+Error.swift"; sourceTree = SOURCE_ROOT; };
+		C092C17A23B67B8300032C5E /* ActionCheckAnswers.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCheckAnswers.swift; sourceTree = "<group>"; };
 		C092C17D23B6868A00032C5E /* ReagentSelectionWrapper.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReagentSelectionWrapper.swift; sourceTree = "<group>"; };
 		C092C18023B6ACC000032C5E /* StudentGameCorrectViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentGameCorrectViewController.swift; sourceTree = "<group>"; };
 		C092C18323B6B11500032C5E /* ConfettiView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfettiView.swift; sourceTree = "<group>"; };
 		C092C18623B6B1F600032C5E /* diamond.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = diamond.png; sourceTree = "<group>"; };
 		C092C18923B6BBC800032C5E /* StudentFinishedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentFinishedViewController.swift; sourceTree = "<group>"; };
+		C096035323C251C5001848B0 /* Session.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Session.swift; sourceTree = "<group>"; };
+		C096035723C28900001848B0 /* ActionEndSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionEndSession.swift; sourceTree = "<group>"; };
+		C096035A23C28BC2001848B0 /* ActionStartSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionStartSession.swift; sourceTree = "<group>"; };
+		C096035D23C28CE4001848B0 /* ActionExtendSession.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionExtendSession.swift; sourceTree = "<group>"; };
+		C096036023C28DAB001848B0 /* ActionGetSessionContent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionGetSessionContent.swift; sourceTree = "<group>"; };
 		C098D087238C9A8F006B6E20 /* macOS-GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "macOS-GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C098D08A238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iPadOS-GoogleService-Info.plist"; sourceTree = "<group>"; };
+		C0C67A2823C248AC0023BF9E /* TeacherCourseSessionStatusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCourseSessionStatusController.swift; sourceTree = "<group>"; };
 		C0F97E4223B040AD0091E974 /* StudentGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentGameViewController.swift; sourceTree = "<group>"; };
-		C0FAADE623AE9DA100420A8C /* TeacherCourseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCourseViewController.swift; sourceTree = "<group>"; };
+		C0FAADE623AE9DA100420A8C /* TeacherCourseSetupController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCourseSetupController.swift; sourceTree = "<group>"; };
 		D67F5A28239826FF008C7EDC /* Game.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Game.storyboard; sourceTree = "<group>"; };
 		D67F5A2B2398270C008C7EDC /* Teacher.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Teacher.storyboard; sourceTree = "<group>"; };
 		D6BDF5CA23977AE300638352 /* QError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = QError.swift; sourceTree = "<group>"; };
@@ -209,7 +250,6 @@
 				C010E31023905F2F00D07047 /* Callback.swift */,
 				D6BDF5CA23977AE300638352 /* QError.swift */,
 				C010E3132390613500D07047 /* FirestoreRepresentable.swift */,
-				C063093D23BABC7E00C540B6 /* Handlers */,
 				C00F11A32391F70700D66E7D /* Models */,
 			);
 			path = Logic;
@@ -218,7 +258,7 @@
 		C00F119E2391F5E200D66E7D /* Interface */ = {
 			isa = PBXGroup;
 			children = (
-				D64FE9FF239989F2007C7E29 /* Utils */,
+				C0502E2923BD391B00478BDD /* Utils */,
 				C00F11A02391F68000D66E7D /* Controllers */,
 				C00F11A12391F69200D66E7D /* Views */,
 			);
@@ -239,12 +279,13 @@
 			isa = PBXGroup;
 			children = (
 				C06EF3EE23BC2D5900BDE6E0 /* ControllerAction.swift */,
+				C0502E2A23BDF06E00478BDD /* ProfileController.swift */,
 				C06EF3E523BC29D800BDE6E0 /* ErrorRetryController.swift */,
 				C06EF3D723BBFFEC00BDE6E0 /* Root */,
 				C06EF3DE23BC04A500BDE6E0 /* Auth */,
 				C05EE36423BCAF1000788A1F /* Session */,
 				C0F97E4123B0403E0091E974 /* Student */,
-				C07C2E0823A57388005B5423 /* Old Teacher */,
+				C07C2E0823A57388005B5423 /* Teacher */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -253,6 +294,8 @@
 			isa = PBXGroup;
 			children = (
 				C07C2E0F23A5845E005B5423 /* CourseView.swift */,
+				C0502E2D23BE036900478BDD /* LogoutButton.swift */,
+				C0502E3023BE054D00478BDD /* LoginButton.swift */,
 				C092C18323B6B11500032C5E /* ConfettiView.swift */,
 				C0604BFF238F0C7D00686D89 /* TestTubeView.swift */,
 				C049D86D23AFF05B00DFE9DA /* ReagentSelectionView.swift */,
@@ -265,6 +308,7 @@
 			children = (
 				C037BCFD23B4E70700231119 /* Reagent.swift */,
 				C092C16E23B674E500032C5E /* Progression.swift */,
+				C096035323C251C5001848B0 /* Session.swift */,
 				C05EE37023BCF6F600788A1F /* Course.swift */,
 				C05EE37323BCF73400788A1F /* Team.swift */,
 			);
@@ -317,6 +361,51 @@
 			path = bbnQUALTests;
 			sourceTree = "<group>";
 		};
+		C04F649E23BF183400225746 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				C092C17A23B67B8300032C5E /* ActionCheckAnswers.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		C04F64A223BF66A900225746 /* Tabs */ = {
+			isa = PBXGroup;
+			children = (
+				C0C67A2723C248970023BF9E /* Session */,
+				C04F64A623BF6BC500225746 /* TeacherCourseTeamsController.swift */,
+			);
+			path = Tabs;
+			sourceTree = "<group>";
+		};
+		C0502E2923BD391B00478BDD /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C092C17123B676BE00032C5E /* String+Error.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
+		C0502E3323BE6A0000478BDD /* Course */ = {
+			isa = PBXGroup;
+			children = (
+				C04F649F23BF2E8500225746 /* TeacherCourse.storyboard */,
+				C0502E3723BE6AAB00478BDD /* TeacherCourseController.swift */,
+				C04F64A223BF66A900225746 /* Tabs */,
+				C0502E3A23BE6ABB00478BDD /* Setup */,
+			);
+			path = Course;
+			sourceTree = "<group>";
+		};
+		C0502E3A23BE6ABB00478BDD /* Setup */ = {
+			isa = PBXGroup;
+			children = (
+				C0502E3423BE6A4E00478BDD /* CourseSetup.storyboard */,
+				C0FAADE623AE9DA100420A8C /* TeacherCourseSetupController.swift */,
+			);
+			path = Setup;
+			sourceTree = "<group>";
+		};
 		C05EE36423BCAF1000788A1F /* Session */ = {
 			isa = PBXGroup;
 			children = (
@@ -330,6 +419,7 @@
 			isa = PBXGroup;
 			children = (
 				C05EE36923BCB02900788A1F /* ActionGetStudentSession.swift */,
+				C04F64A923BF741B00225746 /* ActionGetClassSession.swift */,
 				C05EE36C23BCB28200788A1F /* ActionWatchSessionExpiration.swift */,
 			);
 			path = Actions;
@@ -340,6 +430,7 @@
 			children = (
 				D67F5A28239826FF008C7EDC /* Game.storyboard */,
 				C0F97E4223B040AD0091E974 /* StudentGameViewController.swift */,
+				C04F649E23BF183400225746 /* Actions */,
 				C05EE37823BD19B800788A1F /* Data */,
 			);
 			path = Game;
@@ -385,14 +476,6 @@
 			path = Graphics;
 			sourceTree = "<group>";
 		};
-		C063093D23BABC7E00C540B6 /* Handlers */ = {
-			isa = PBXGroup;
-			children = (
-				C092C17A23B67B8300032C5E /* AnswerChecker.swift */,
-			);
-			path = Handlers;
-			sourceTree = "<group>";
-		};
 		C06EF3D723BBFFEC00BDE6E0 /* Root */ = {
 			isa = PBXGroup;
 			children = (
@@ -429,15 +512,35 @@
 			path = Actions;
 			sourceTree = "<group>";
 		};
-		C07C2E0823A57388005B5423 /* Old Teacher */ = {
+		C07C2E0823A57388005B5423 /* Teacher */ = {
 			isa = PBXGroup;
 			children = (
 				D67F5A2B2398270C008C7EDC /* Teacher.storyboard */,
-				C07C2E0923A57441005B5423 /* TeacherWrapperViewController.swift */,
-				C07C2E1223A6CF47005B5423 /* TeacherCoursesViewController.swift */,
-				C0FAADE623AE9DA100420A8C /* TeacherCourseViewController.swift */,
+				C07C2E0923A57441005B5423 /* TeacherViewController.swift */,
+				C0502E3323BE6A0000478BDD /* Course */,
 			);
-			path = "Old Teacher";
+			path = Teacher;
+			sourceTree = "<group>";
+		};
+		C096035623C288BD001848B0 /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				C096035723C28900001848B0 /* ActionEndSession.swift */,
+				C096035D23C28CE4001848B0 /* ActionExtendSession.swift */,
+				C096036023C28DAB001848B0 /* ActionGetSessionContent.swift */,
+				C096035A23C28BC2001848B0 /* ActionStartSession.swift */,
+			);
+			path = Actions;
+			sourceTree = "<group>";
+		};
+		C0C67A2723C248970023BF9E /* Session */ = {
+			isa = PBXGroup;
+			children = (
+				C096035623C288BD001848B0 /* Actions */,
+				C04F64A323BF673000225746 /* TeacherCourseSessionController.swift */,
+				C0C67A2823C248AC0023BF9E /* TeacherCourseSessionStatusController.swift */,
+			);
+			path = Session;
 			sourceTree = "<group>";
 		};
 		C0F97E4123B0403E0091E974 /* Student */ = {
@@ -448,14 +551,6 @@
 				C05EE37723BD19AA00788A1F /* States */,
 			);
 			path = Student;
-			sourceTree = "<group>";
-		};
-		D64FE9FF239989F2007C7E29 /* Utils */ = {
-			isa = PBXGroup;
-			children = (
-				C092C17123B676BE00032C5E /* String+Error.swift */,
-			);
-			path = Utils;
 			sourceTree = "<group>";
 		};
 		E450C1A960D788D184CA831A /* Pods */ = {
@@ -562,7 +657,9 @@
 				C0604BF5238EF47400686D89 /* PTSans-Italic.ttf in Resources */,
 				C098D08B238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist in Resources */,
 				C0604BF3238EF47400686D89 /* PTSans-BoldItalic.ttf in Resources */,
+				C04F64A023BF2E8500225746 /* TeacherCourse.storyboard in Resources */,
 				C0604BF1238EF47400686D89 /* PTSans-Regular.ttf in Resources */,
+				C0502E3523BE6A4E00478BDD /* CourseSetup.storyboard in Resources */,
 				D67F5A29239826FF008C7EDC /* Game.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -573,6 +670,7 @@
 			files = (
 				C03CC82A23B3C47A00D8482C /* TestTube-Light.svg in Resources */,
 				C098D089238C9A8F006B6E20 /* macOS-GoogleService-Info.plist in Resources */,
+				C0502E3623BE6A4E00478BDD /* CourseSetup.storyboard in Resources */,
 				C03CC82D23B3FD5200D8482C /* TestTube-Dark.svg in Resources */,
 				C0604BF4238EF47400686D89 /* PTSans-BoldItalic.ttf in Resources */,
 				D67F5A2A239826FF008C7EDC /* Game.storyboard in Resources */,
@@ -580,6 +678,7 @@
 				C098D08C238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist in Resources */,
 				C092C18823B6B1F600032C5E /* diamond.png in Resources */,
 				C0604BF2238EF47400686D89 /* PTSans-Regular.ttf in Resources */,
+				C04F64A123BF2E8500225746 /* TeacherCourse.storyboard in Resources */,
 				C0604BF0238EF47400686D89 /* PTSans-Bold.ttf in Resources */,
 				D67F5A2D2398270C008C7EDC /* Teacher.storyboard in Resources */,
 				C0604BF6238EF47400686D89 /* PTSans-Italic.ttf in Resources */,
@@ -639,36 +738,48 @@
 				C06EF3DC23BC007700BDE6E0 /* RootController.swift in Sources */,
 				C05EE36D23BCB28200788A1F /* ActionWatchSessionExpiration.swift in Sources */,
 				C092C18423B6B11500032C5E /* ConfettiView.swift in Sources */,
-				C07C2E1323A6CF47005B5423 /* TeacherCoursesViewController.swift in Sources */,
+				C0502E2E23BE036900478BDD /* LogoutButton.swift in Sources */,
 				C05EE37423BCF73400788A1F /* Team.swift in Sources */,
 				C092C17E23B6868A00032C5E /* ReagentSelectionWrapper.swift in Sources */,
 				C076C18523B78F5C0060074D /* StudentGameIncorrectViewController.swift in Sources */,
 				C07C2E1023A5845E005B5423 /* CourseView.swift in Sources */,
 				C092C16C23B66D4700032C5E /* StudentViewController.swift in Sources */,
-				C07C2E0A23A57441005B5423 /* TeacherWrapperViewController.swift in Sources */,
-				C0FAADE723AE9DA100420A8C /* TeacherCourseViewController.swift in Sources */,
+				C096035823C28900001848B0 /* ActionEndSession.swift in Sources */,
+				C07C2E0A23A57441005B5423 /* TeacherViewController.swift in Sources */,
+				C0FAADE723AE9DA100420A8C /* TeacherCourseSetupController.swift in Sources */,
+				C04F64AA23BF741B00225746 /* ActionGetClassSession.swift in Sources */,
 				D6BDF5CB23977AE300638352 /* QError.swift in Sources */,
 				C05EE36623BCAF2B00788A1F /* StudentSessionController.swift in Sources */,
-				C092C17B23B67B8300032C5E /* AnswerChecker.swift in Sources */,
+				C092C17B23B67B8300032C5E /* ActionCheckAnswers.swift in Sources */,
 				C049D86E23AFF05B00DFE9DA /* ReagentSelectionView.swift in Sources */,
 				C010E31123905F2F00D07047 /* Callback.swift in Sources */,
 				C092C18A23B6BBC800032C5E /* StudentFinishedViewController.swift in Sources */,
+				C0502E3123BE054D00478BDD /* LoginButton.swift in Sources */,
+				C096035B23C28BC2001848B0 /* ActionStartSession.swift in Sources */,
 				C06EF3EB23BC2CF900BDE6E0 /* ActionGetUserAccess.swift in Sources */,
 				C05EE36A23BCB02900788A1F /* ActionGetStudentSession.swift in Sources */,
 				C092C17223B676BE00032C5E /* String+Error.swift in Sources */,
+				C0502E3823BE6AAB00478BDD /* TeacherCourseController.swift in Sources */,
 				C037BCFE23B4E70700231119 /* Reagent.swift in Sources */,
 				C076C18823B790620060074D /* StudentGameFrozenViewController.swift in Sources */,
+				C0C67A2923C248AC0023BF9E /* TeacherCourseSessionStatusController.swift in Sources */,
+				C0502E2B23BDF06E00478BDD /* ProfileController.swift in Sources */,
 				C06EF3E023BC04B400BDE6E0 /* AuthController.swift in Sources */,
 				C06EF3E323BC057900BDE6E0 /* ActionOpenGoogleAuthDialogue.swift in Sources */,
+				C096036123C28DAB001848B0 /* ActionGetSessionContent.swift in Sources */,
 				C06EF3EF23BC2D5900BDE6E0 /* ControllerAction.swift in Sources */,
+				C096035423C251C5001848B0 /* Session.swift in Sources */,
 				C0F97E4323B040AD0091E974 /* StudentGameViewController.swift in Sources */,
+				C04F64A423BF673000225746 /* TeacherCourseSessionController.swift in Sources */,
 				C06EF3E623BC29D800BDE6E0 /* ErrorRetryController.swift in Sources */,
 				C092C16F23B674E500032C5E /* Progression.swift in Sources */,
 				C05EE36223BC358800788A1F /* ActionRefreshGoogleToken.swift in Sources */,
 				C05EE37123BCF6F600788A1F /* Course.swift in Sources */,
+				C04F64A723BF6BC500225746 /* TeacherCourseTeamsController.swift in Sources */,
 				C092C18123B6ACC000032C5E /* StudentGameCorrectViewController.swift in Sources */,
 				C03C8AD8238C35D900715032 /* AppDelegate.swift in Sources */,
 				C010E3142390613500D07047 /* FirestoreRepresentable.swift in Sources */,
+				C096035E23C28CE4001848B0 /* ActionExtendSession.swift in Sources */,
 				C03C8ADA238C35D900715032 /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -677,12 +788,18 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0502E2C23BDF06E00478BDD /* ProfileController.swift in Sources */,
+				C04F64A823BF6BC500225746 /* TeacherCourseTeamsController.swift in Sources */,
 				C092C18523B6B11500032C5E /* ConfettiView.swift in Sources */,
 				C092C17023B674E500032C5E /* Progression.swift in Sources */,
 				C05EE36323BC358C00788A1F /* ActionRefreshGoogleToken.swift in Sources */,
 				C092C17323B676BE00032C5E /* String+Error.swift in Sources */,
+				C096035C23C28BC2001848B0 /* ActionStartSession.swift in Sources */,
 				C06EF3EC23BC2CF900BDE6E0 /* ActionGetUserAccess.swift in Sources */,
+				C04F64A523BF673000225746 /* TeacherCourseSessionController.swift in Sources */,
 				C05EE36B23BCB02900788A1F /* ActionGetStudentSession.swift in Sources */,
+				C0502E2F23BE036900478BDD /* LogoutButton.swift in Sources */,
+				C096035923C28900001848B0 /* ActionEndSession.swift in Sources */,
 				C092C18B23B6BBC800032C5E /* StudentFinishedViewController.swift in Sources */,
 				C0F97E4423B040AD0091E974 /* StudentGameViewController.swift in Sources */,
 				C076C18923B790620060074D /* StudentGameFrozenViewController.swift in Sources */,
@@ -690,27 +807,32 @@
 				C05EE36E23BCB28200788A1F /* ActionWatchSessionExpiration.swift in Sources */,
 				D6BDF5CC23977AE300638352 /* QError.swift in Sources */,
 				C010E31223905F2F00D07047 /* Callback.swift in Sources */,
+				C096035523C251C5001848B0 /* Session.swift in Sources */,
 				C037BCFF23B4E70700231119 /* Reagent.swift in Sources */,
 				C05EE37523BCF73400788A1F /* Team.swift in Sources */,
+				C096035F23C28CE4001848B0 /* ActionExtendSession.swift in Sources */,
 				C092C17F23B6868A00032C5E /* ReagentSelectionWrapper.swift in Sources */,
-				C07C2E0B23A57441005B5423 /* TeacherWrapperViewController.swift in Sources */,
+				C07C2E0B23A57441005B5423 /* TeacherViewController.swift in Sources */,
 				C06EF3E423BC057900BDE6E0 /* ActionOpenGoogleAuthDialogue.swift in Sources */,
 				C07C2E1123A5845E005B5423 /* CourseView.swift in Sources */,
+				C0502E3923BE6AAB00478BDD /* TeacherCourseController.swift in Sources */,
 				C049D86F23AFF05B00DFE9DA /* ReagentSelectionView.swift in Sources */,
-				C07C2E1423A6CF47005B5423 /* TeacherCoursesViewController.swift in Sources */,
 				C06EF3E723BC29D800BDE6E0 /* ErrorRetryController.swift in Sources */,
-				C092C17C23B67B8300032C5E /* AnswerChecker.swift in Sources */,
+				C092C17C23B67B8300032C5E /* ActionCheckAnswers.swift in Sources */,
 				C076C18623B78F5C0060074D /* StudentGameIncorrectViewController.swift in Sources */,
 				C05EE37223BCF6F600788A1F /* Course.swift in Sources */,
 				C06EF3F023BC2D5900BDE6E0 /* ControllerAction.swift in Sources */,
+				C04F64AB23BF741B00225746 /* ActionGetClassSession.swift in Sources */,
 				C010E3152390613500D07047 /* FirestoreRepresentable.swift in Sources */,
 				C092C16D23B66D4700032C5E /* StudentViewController.swift in Sources */,
 				C05EE36723BCAF2B00788A1F /* StudentSessionController.swift in Sources */,
 				C03C8AEF238C35DC00715032 /* bbnQUALTests.swift in Sources */,
-				C0FAADE823AE9DA100420A8C /* TeacherCourseViewController.swift in Sources */,
+				C096036223C28DAB001848B0 /* ActionGetSessionContent.swift in Sources */,
+				C0FAADE823AE9DA100420A8C /* TeacherCourseSetupController.swift in Sources */,
 				C06EF3E123BC04B500BDE6E0 /* AuthController.swift in Sources */,
 				C0604C01238F0C7D00686D89 /* TestTubeView.swift in Sources */,
 				C06EF3DD23BC007700BDE6E0 /* RootController.swift in Sources */,
+				C0502E3223BE054D00478BDD /* LoginButton.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

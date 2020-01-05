@@ -11,9 +11,9 @@ import Signals
 import Firebase
 import SwiftyJSON
 
-class ActionGetStudentSession: ControllerAction<(session: DocumentReference, course: Course, team: Team)?> {
+class ActionGetStudentSession: Action<(session: DocumentReference, course: CourseOverview, team: TeamOverview)?> {
 	
-	override func execute() -> Signal<(session: DocumentReference, course: Course, team: Team)?> {
+	override func execute() -> Signal<(session: DocumentReference, course: CourseOverview, team: TeamOverview)?> {
 		// Grab callback from super
 		let callback = super.execute()
 		
@@ -23,7 +23,7 @@ class ActionGetStudentSession: ControllerAction<(session: DocumentReference, cou
 		return callback
 	}
 	
-	private func performQuery(callback: Signal<(session: DocumentReference, course: Course, team: Team)?>) {
+	private func performQuery(callback: Signal<(session: DocumentReference, course: CourseOverview, team: TeamOverview)?>) {
 		// Trigger getSession function
 		let functionRef = Functions.functions().httpsCallable("getSession")
 		functionRef.call { (result: HTTPSCallableResult?, error: Error?) in
@@ -41,8 +41,8 @@ class ActionGetStudentSession: ControllerAction<(session: DocumentReference, cou
 				
 				// Extract path variables
 				guard
-					let course = Course(json: json["course"]),
-					let team = Team(json: json["team"])
+					let course = CourseOverview(json: json["course"]),
+					let team = TeamOverview(json: json["team"])
 				else {
 					print("Failed to parse session result")
 					

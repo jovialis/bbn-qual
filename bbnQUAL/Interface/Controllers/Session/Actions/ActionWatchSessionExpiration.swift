@@ -10,7 +10,7 @@ import Foundation
 import Signals
 import Firebase
 
-class ActionWatchSessionExpiration: ControllerAction<Void> {
+class ActionWatchSessionExpiration: Action<Void> {
 	
 	private var executed: Bool = false
 
@@ -25,9 +25,14 @@ class ActionWatchSessionExpiration: ControllerAction<Void> {
 	
 	private var sessionExpirationTimer: Timer?
 	
-	init(controller: UIViewController, document: DocumentReference) {
+	init(document: DocumentReference) {
 		self.sessionRef = document
-		super.init(controller: controller)
+	}
+	
+	func cancel() {
+		if let listener = self.listener {
+			listener.remove()
+		}
 	}
 	
 	override func execute() -> Signal<Void> {
@@ -168,16 +173,20 @@ class ActionWatchSessionExpiration: ControllerAction<Void> {
 			listener.remove()
 		}
 		
-		// Call GetSession action
-		ActionGetStudentSession(controller: self.controller).execute().then(listener: self) { (res) in
-			// Session ref means success
-			if let res = res {
-				// Callback with res
-				callback.fire(res.session)
-			} else {
-				callback.fire(nil)
-			}
-		}
+		// Call GetSession action. I'm disabling this because if the session expires,
+		// there likely isn't another. Moreover, we don't want to drive Function usage through
+		// the roof.
+//		ActionGetStudentSession(controller: self.controller).execute().then(listener: self) { (res) in
+//			// Session ref means success
+//			if let res = res {
+//				// Callback with res
+//				callback.fire(res.session)
+//			} else {
+//				callback.fire(nil)
+//			}
+//		}
+		
+		callback.fire(nil)
 		
 		return callback
 	}
@@ -188,16 +197,12 @@ extension ActionWatchSessionExpiration {
 	
 	fileprivate struct SessionState {
 		
-		let duration: Int
+		let expiration: Date
 		let timestamp: Date
 		let expired: Bool
 		
-		var expirationDate: Date {
-			return timestamp.addingTimeInterval(Double(self.duration) * Double(60))
-		}
-		
 		init?(_ data: [String: Any]) {			
-			guard let duration = data["duration"] as? Int else {
+			guard let expiration = data["expiration"] as? Timestamp else {
 				return nil
 			}
 			
@@ -209,8 +214,8 @@ extension ActionWatchSessionExpiration {
 				return nil
 			}
 						
-			self.duration = duration
-			self.timestamp = Date(timeIntervalSince1970: Double(timestamp.seconds))
+			self.expiration = expiration.dateValue()
+			self.timestamp = timestamp.dateValue()
 			self.expired = expired
 		}
 		
@@ -220,17 +225,19 @@ extension ActionWatchSessionExpiration {
 			}
 			
 			// Check if expired
-			return self.expirationDate < Date()
+			return self.expiration < Date()
 		}
 		
 		func getExpirationTimer(onExpire: @escaping () -> Void) -> Timer {
 			// Create new timer to go off when the session expires
-			let expirationDate = timestamp.addingTimeInterval(Double(self.duration) * Double(60))
-			let timer = Timer(fire: expirationDate, interval: 0, repeats: false) { (_) in
+			let timer = Timer(fire: self.expiration, interval: 0, repeats: false) { (_) in
 				// Trigger closure
 				onExpire()
 			}
 			
+			// Add timer to runloop
+			RunLoop.main.add(timer, forMode: .common)
+						
 			return timer
 		}
 		

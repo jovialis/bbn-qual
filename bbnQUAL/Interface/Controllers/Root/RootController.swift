@@ -70,8 +70,6 @@ class RootController: UIViewController {
 	}
 	
 	private func pushToContent(user: User) {
-		print("Progressing to content with user \( user.email! )")
-		
 		// Call action to get the user's access level
 		ActionGetUserAccess(controller: self, user: user).execute().then(listener: self) { (access: Int) in
 			
@@ -85,6 +83,14 @@ class RootController: UIViewController {
 				
 			// Non 0 = teacher
 			default:
+				// Push to teacher storyboard
+				let storyboard = UIStoryboard(name: "Teacher", bundle: nil)
+				let controller = storyboard.instantiateInitialViewController() as! TeacherViewController
+				
+				// Pass through the access
+				controller.access = access
+				
+				self.navigationController?.pushViewController(controller, animated: false)
 				break
 			}
 			

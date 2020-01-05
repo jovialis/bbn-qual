@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wCx-bw-Ggh">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="PTSans-Bold.ttf">
+            <string>PTSans-Bold</string>
+        </array>
+        <array key="PTSans-Regular.ttf">
+            <string>PTSans-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Teacher View Controller-->
+        <scene sceneID="SLN-08-C6j">
+            <objects>
+                <viewController id="wCx-bw-Ggh" customClass="TeacherViewController" customModule="bbnQUAL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="bDA-cG-Be3">
+                        <rect key="frame" x="0.0" y="0.0" width="1280" height="800"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="50" translatesAutoresizingMaskIntoConstraints="NO" id="4Xl-fE-pns" userLabel="Master Stack">
+                                <rect key="frame" x="80" y="124" width="1120" height="642"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="vvY-UM-Xyb" userLabel="Header Stack">
+                                        <rect key="frame" x="0.0" y="0.0" width="1120" height="45"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="amv-QX-SEk" userLabel="Left Header">
+                                                <rect key="frame" x="0.0" y="0.0" width="269.5" height="45"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="QUAL" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="DD9-JE-QYn">
+                                                        <rect key="frame" x="0.0" y="0.0" width="97" height="45"/>
+                                                        <fontDescription key="fontDescription" name="PTSans-Bold" family="PT Sans" pointSize="40"/>
+                                                        <nil key="textColor"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="EIv-9P-4OS" userLabel="Completed List">
+                                                        <rect key="frame" x="117" y="0.0" width="152.5" height="45"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Teacher Console" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="P44-9Z-nO3">
+                                                                <rect key="frame" x="0.0" y="0.0" width="152.5" height="45"/>
+                                                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
+                                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                    </stackView>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fUz-2D-Ffy" userLabel="Right Header">
+                                                <rect key="frame" x="968" y="8" width="152" height="29"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="tVG-cm-lco">
+                                                        <rect key="frame" x="0.0" y="0.0" width="152" height="29"/>
+                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="22"/>
+                                                        <color key="tintColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        <inset key="imageEdgeInsets" minX="-15" minY="0.0" maxX="0.0" maxY="0.0"/>
+                                                        <state key="normal" title="Teacher Name" image="person" catalog="system">
+                                                            <color key="titleColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                                        </state>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="45" id="Gvz-LX-b2E"/>
+                                        </constraints>
+                                    </stackView>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xv9-n8-6bX">
+                                        <rect key="frame" x="0.0" y="95" width="1120" height="547"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                    </view>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="DDh-jm-7Zb" firstAttribute="leading" secondItem="4Xl-fE-pns" secondAttribute="leading" constant="-80" id="EDu-73-gXZ"/>
+                            <constraint firstItem="4Xl-fE-pns" firstAttribute="trailing" secondItem="DDh-jm-7Zb" secondAttribute="trailing" constant="-80" id="iYd-sp-3gG"/>
+                            <constraint firstItem="DDh-jm-7Zb" firstAttribute="top" secondItem="4Xl-fE-pns" secondAttribute="top" constant="-80" id="jIf-nE-ebR"/>
+                            <constraint firstItem="DDh-jm-7Zb" firstAttribute="bottom" secondItem="4Xl-fE-pns" secondAttribute="bottom" id="kKX-Hp-Fcm"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="DDh-jm-7Zb"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="g2F-p1-pZy"/>
+                    <size key="freeformSize" width="1280" height="800"/>
+                    <connections>
+                        <outlet property="collectionMountingView" destination="xv9-n8-6bX" id="R1k-Hj-IWE"/>
+                        <outlet property="consoleNameLabel" destination="P44-9Z-nO3" id="V4v-lj-Yjd"/>
+                        <outlet property="teacherNameButton" destination="tVG-cm-lco" id="kbL-0F-dcs"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="OD0-kE-YqT" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="217" y="191"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="person" catalog="system" width="64" height="58"/>
+    </resources>
+</document>

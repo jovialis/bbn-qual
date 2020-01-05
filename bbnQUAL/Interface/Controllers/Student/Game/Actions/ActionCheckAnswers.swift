@@ -1,5 +1,5 @@
 //
-//  AnswerChecker.swift
+//  ActionCheckAnswers.swift
 //  bbnQUAL
 //
 //  Created by Dylan Hanson on 12/27/19.
@@ -9,8 +9,9 @@
 import Foundation
 import FirebaseFunctions
 import SwiftyJSON
+import Signals
 
-final class AnswerChecker {
+class ActionCheckAnswers: Action<AnswerCheckResult?> {
 	
 	private let answers: [Reagent]
 	
@@ -18,9 +19,9 @@ final class AnswerChecker {
 		self.answers = answers
 	}
 	
-	func check() -> CallbackSignal<AnswerCheckResult> {
-		// Signal
-		let signal = CallbackSignal<AnswerCheckResult>()
+	override func execute() -> Signal<AnswerCheckResult?> {
+		// Grab signal from parent
+		let callback = super.execute()
 		
 		// Get the current reagent group
 		let function = Functions.functions().httpsCallable("checkAnswers")
@@ -34,29 +35,27 @@ final class AnswerChecker {
 				// Extract data
 				do {
 					let json = JSON(result.data)
-					
-					print(json)
-					
+										
 					// Pull out progression from JSON
 					guard let checkResult = AnswerCheckResult(json) else {
 						throw "Invalid arguments prevented acceptance of checkAnswers"
 					}
 					
-					signal.fire(.success(object: checkResult))
+					callback.fire(checkResult)
 				} catch {
-					signal.fire(.failure(error: error))
+					print(error)
+					callback.fire(nil)
 				}
 				
 			} else {
-				signal.fire(.failure(error: error!))
+				print(error!)
+				callback.fire(nil)
 			}
 				
 		}
-		
-		return signal
 
+		return callback
 	}
-
 	
 }
 

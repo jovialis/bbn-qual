@@ -1,5 +1,5 @@
 //
-//  TeacherCourseViewController.swift
+//  TeacherCourseSetupController.swift
 //  bbnQUAL
 //
 //  Created by Dylan Hanson on 12/21/19.
@@ -12,9 +12,9 @@ import CollectionKit
 import Bond
 import ReactiveKit
 
-class TeacherCourseViewController: UIViewController {
+class TeacherCourseSetupController: UIViewController {
 	
-//	var course: Course!
+	var course: Course!
 	
 	// Storyboard bindings
 	// Teacher labels

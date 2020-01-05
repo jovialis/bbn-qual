@@ -20,6 +20,7 @@ class StudentSessionController: UIViewController {
 	// Views
 	private var loadingIndicator: UIActivityIndicatorView!
 	private var fetchingStack: UIStackView!
+	private var logoutButton: LogoutButton!
 	
 	private var fetching = false
 	
@@ -83,6 +84,15 @@ class StudentSessionController: UIViewController {
 		_ = fetchSessionButton.reactive.tapGesture().observe { _ in
 			self.discoverSession()
 		}
+
+		// Add profile button
+		self.logoutButton = LogoutButton()
+		self.view.addSubview(self.logoutButton)
+		
+		self.logoutButton.snp.makeConstraints { (constrain: ConstraintMaker) in
+			constrain.centerX.equalToSuperview()
+			constrain.bottom.equalToSuperview().inset(30)
+		}
 		
 		// Showloading by default
 		self.showLoading()
@@ -93,11 +103,15 @@ class StudentSessionController: UIViewController {
 		self.loadingIndicator.startAnimating()
 		
 		self.fetchingStack.isHidden = true
+		
+		self.logoutButton.isHidden = true
 	}
 	
 	private func showRetry() {
 		self.loadingIndicator.isHidden = true
 		self.fetchingStack.isHidden = false
+		
+		self.logoutButton.isHidden = false
 	}
 	
 	private func discoverSession() {
@@ -109,14 +123,14 @@ class StudentSessionController: UIViewController {
 		self.fetching = true
 		
 		// Discover session action
-		ActionGetStudentSession(controller: self).execute().then(listener: self) { (res) in
+		ActionGetStudentSession().execute().then(listener: self) { (res) in
 			
 			// Handle result
 			if let res = res {
 				// Successfully grabbed a session. Create an expiration observer action
 				// and tell it to call sessionExpired once the session expires and is
 				// unrecoverable.
-				ActionWatchSessionExpiration(controller: self, document: res.session).execute().then(listener: self) {
+				ActionWatchSessionExpiration(document: res.session).execute().then(listener: self) {
 					// Session expired
 					self.sessionExpired()
 				}
@@ -151,7 +165,7 @@ class StudentSessionController: UIViewController {
 	}
 	
 	// Push to student VC
-	private func pushToStudent(course: Course, team: Team) {
+	private func pushToStudent(course: CourseOverview, team: TeamOverview) {
 		// Instantiate controller
 		let controller = StudentViewController(course: course, team: team)
 		self.navigationController?.pushViewController(controller, animated: false)

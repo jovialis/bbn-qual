@@ -45,10 +45,12 @@ class StudentGameViewController: UIViewController {
 		}
 	}
 	
-	private lazy var reagentsSelectionWrapper = ReagentSelectionWrapper(reagents: self.reagents)
+	private lazy var reagentsSelectionWrapper = ReagentSelectionWrapper(
+		reagents: self.reagents
+	)
 				
-	var course: Course!
-	var team: Team!
+	var course: CourseOverview!
+	var team: TeamOverview!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -61,6 +63,9 @@ class StudentGameViewController: UIViewController {
 		
 		// Set up collection
 		self.setupCollection()
+		
+		// Set up profile button
+		self.setupProfileButton()
 		
 		// Update sidebar
 		self.updateSidebar()
@@ -105,6 +110,17 @@ class StudentGameViewController: UIViewController {
 		provider.layout = layout
 		collectionView.provider = provider
 
+	}
+	
+	private func setupProfileButton() {
+		// On button click, show profile controller
+		self.groupInfoButton.reactive.tapGesture().observe { (_) in
+			
+			// Instantiate and present controller
+			let controller = ProfileController()
+			self.present(controller, animated: true, completion: nil)
+			
+		}
 	}
 	
 	private func updateSidebar() {
@@ -169,9 +185,8 @@ class StudentGameViewController: UIViewController {
 			self.reagentsSelectionWrapper.checkAnswers().then(listener: self) {
 				
 				// Handle success vs. failure
-				switch $0 {
-				case .success(let result):
-					
+				if let result = $0 {
+					// Success
 					switch result {
 					case .formattingError:
 						print("Incorrect data format!? That should not be possible. Why are we here??")
@@ -194,11 +209,17 @@ class StudentGameViewController: UIViewController {
 						self.presentCorrectAnswerController(attempts: attempts)
 						break
 					}
-					
-				case .failure(let error):
-					print(error)
-					
-					// TODO: Handle this
+
+				} else {
+					// Failure. Present error controlelr
+					self.present(ErrorRetryController (
+						
+						title: "Error Checking Answers",
+						message: "Something went wrong and we could not check your answers.",
+						alertTitle: "Dismiss",
+						onRetry: {}
+						
+					), animated: true, completion: nil)
 				}
 				
 			}
@@ -216,7 +237,7 @@ class StudentGameViewController: UIViewController {
 			// Nothing
 		}
 
-		controller.modalPresentationStyle = .pageSheet
+		controller.modalPresentationStyle = .fullScreen
 		controller.modalTransitionStyle = .crossDissolve
 
 		self.present(controller, animated: true, completion: nil)
@@ -227,7 +248,7 @@ class StudentGameViewController: UIViewController {
 		
 		controller.icebergCode = iceberg
 		
-		controller.modalPresentationStyle = .pageSheet
+		controller.modalPresentationStyle = .fullScreen
 		controller.modalTransitionStyle = .crossDissolve
 		
 		self.present(controller, animated: true, completion: nil)
@@ -243,7 +264,7 @@ class StudentGameViewController: UIViewController {
 			self.navigationController?.popViewController(animated: false)
 		}
 		
-		controller.modalPresentationStyle = .pageSheet
+		controller.modalPresentationStyle = .fullScreen
 		controller.modalTransitionStyle = .crossDissolve
 
 		self.present(controller, animated: true, completion: nil)

@@ -17,7 +17,7 @@ import AuthenticationServices
 class AuthController: UIViewController, ASWebAuthenticationPresentationContextProviding {
 	
 	private var loadingIndicator: UIActivityIndicatorView!
-	private var loginButton: UIButton!
+	private var loginButton: LoginButton!
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -67,14 +67,9 @@ class AuthController: UIViewController, ASWebAuthenticationPresentationContextPr
 		self.loadingIndicator.startAnimating()
 		
 		// Button
-		self.loginButton = UIButton()
+		self.loginButton = LoginButton()
 		stack.addArrangedSubview(self.loginButton)
-		
-		// Configure button
-		self.loginButton.setTitle("LOGIN WITH BB&N EMAIL", for: .normal)
-		self.loginButton.backgroundColor = .label
-		self.loginButton.setTitleColor(.systemBackground, for: .normal)
-		self.loginButton.titleEdgeInsets = UIEdgeInsets(top: 10, left: 35, bottom: 10, right: 35)
+		self.loginButton.layoutSubviews()
 		
 		// Hide
 		self.loginButton.isHidden = true
@@ -91,6 +86,7 @@ class AuthController: UIViewController, ASWebAuthenticationPresentationContextPr
 		
 		// Show login button
 		self.loginButton.isHidden = false
+		self.loginButton.stopAnimating()
 	}
 	
 	private func showLoading() {

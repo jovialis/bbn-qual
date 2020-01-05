@@ -8,6 +8,7 @@
 
 import Foundation
 import Bond
+import Signals
 
 class EmptyReagentSelectionWrapper: ReagentSelectionWrapper {
 	init() {
@@ -111,19 +112,21 @@ class ReagentSelectionWrapper {
 		return true
 	}
 	
-	func checkAnswers() -> CallbackSignal<AnswerCheckResult> {
+	func checkAnswers() -> Signal<AnswerCheckResult?> {
 		// Ensure proper data curation
 		if self.validateDataStructuring() {
 			
 			// Checker with a flattened indexedReagents array
-			let checker = AnswerChecker(answers: self.indexedReagents.value.compactMap{ $0 })
-			return checker.check()
-
+			let checker = ActionCheckAnswers(
+				answers: self.indexedReagents.value.compactMap { $0 }
+			)
+			
+			return checker.execute()
 		}
 		
 		// Create a signal to return a nonanswer
-		let signal = CallbackSignal<AnswerCheckResult>()
-		signal.fire(.success(object: .formattingError))
+		let signal = Signal<AnswerCheckResult?>()
+		signal.fire(.formattingError)
 		
 		return signal
 	}

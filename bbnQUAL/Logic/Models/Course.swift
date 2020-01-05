@@ -8,8 +8,18 @@
 
 import Foundation
 import SwiftyJSON
+import Firebase
 
-struct Course {
+protocol CourseSkeleton {
+	
+	var name: String { get }
+	var settings: CourseSettings { get }
+	
+}
+
+// Simple course struct for maintaining information security.
+// Primarily used by StudentSession fetching.
+struct CourseOverview: CourseSkeleton {
 	
 	let name: String
 	let settings: CourseSettings
@@ -24,6 +34,42 @@ struct Course {
 		}
 		
 		self.name = name
+		self.settings = settings
+	}
+	
+}
+
+// Represents a fully downloaded course, grabbed from database queries
+// rather than simply from an overview web call
+struct Course: CourseSkeleton {
+	
+	let ref: DocumentReference
+	let name: String
+	let archived: Bool
+	let live: Bool
+	let settings: CourseSettings
+	
+	init?(ref: DocumentReference, json: JSON) {
+		guard let name = json["name"].string else {
+			return nil
+		}
+		
+		guard let archived = json["archived"].bool else {
+			return nil
+		}
+		
+		guard let live = json["live"].bool else {
+			return nil
+		}
+		
+		guard let settings = CourseSettings(json: json["settings"]) else {
+			return nil
+		}
+		
+		self.ref = ref
+		self.name = name
+		self.archived = archived
+		self.live = live
 		self.settings = settings
 	}
 	

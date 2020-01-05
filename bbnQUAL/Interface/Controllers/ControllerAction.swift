@@ -10,18 +10,22 @@ import Foundation
 import UIKit
 import Signals
 
-class SpecificControllerAction<Controller: UIViewController, Result> {
-	
-	let controller: Controller
-	
-	init(controller: Controller) {
-		self.controller = controller
-	}
+class Action<Result> {
 	
 	@discardableResult
 	func execute() -> Signal<Result> {
 		let signal = Signal<Result>()
 		return signal
+	}
+	
+}
+
+class SpecificControllerAction<Controller: UIViewController, Result>: Action<Result> {
+	
+	let controller: Controller
+	
+	init(controller: Controller) {
+		self.controller = controller
 	}
 	
 }

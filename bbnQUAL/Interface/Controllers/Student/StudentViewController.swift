@@ -21,10 +21,10 @@ class StudentViewController: UIViewController {
 	
 	var isTopController: Bool { return self.navigationController?.topViewController == self }
 	
-	private var course: Course!
-	private var team: Team!
+	private var course: CourseOverview!
+	private var team: TeamOverview!
 	
-	convenience init(course: Course, team: Team) {
+	convenience init(course: CourseOverview, team: TeamOverview) {
 		self.init()
 		
 		self.course = course
@@ -151,7 +151,6 @@ class StudentViewController: UIViewController {
 					
 					// Pull out progression from JSON
 					guard let progression = Progression(json: json) else {
-						print(json)
 						throw "Invalid arguments prevented instantiation of Progression"
 					}
 					
