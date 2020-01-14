@@ -87,9 +87,9 @@ class TeacherViewController: UIViewController {
 			view.layoutSubviews()
 
 			// Open the course when clicked
-			_ = view.clickedButton?.reactive.tapGesture().observe { _ in
+			view.clickedButton?.onTouchUpInside.subscribe(with: self, callback: {
 				self.openCourse(course: data)
-			}
+			})
 		}
 
 		let sizeSource = { (index: Int, data: Course, collectionSize: CGSize) -> CGSize in

@@ -191,6 +191,7 @@ class TeacherCourseSessionStatusController: UIViewController {
 			self.loading.stopAnimating()
 		}
 		
+		
 		// Stop timer
 		if let timer = self.countdownTimer {
 			timer.invalidate()
@@ -292,73 +293,93 @@ class TeacherCourseSessionStatusController: UIViewController {
 			dismissLabel.text = "End Session"
 
 			// Extend session button
-			let extendSessionButton = UIButton()
-			extendButtonsStack.addArrangedSubview(extendSessionButton)
-			extendSessionButton.setTitle("+5 Min", for: .normal)
-			extendSessionButton.backgroundColor = UIColor(named: "Pink")
-			extendSessionButton.setTitleColor(self.view.backgroundColor, for: .normal)
-			extendSessionButton.titleLabel?.font = UIFont(name: "PTSans-Regular", size: 22)
-			extendSessionButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 35, bottom: 0, right: 35)
-			extendSessionButton.snp.makeConstraints { $0.height.equalToSuperview() }
+			let extendSessionButton = ActionButton(
+				title: "+5 Min",
+				background: UIColor(named: "Pink")!,
+				text: self.view.backgroundColor!
+			)
 			
-			extendSessionButton.onTouchDown.subscribe(with: self) {
+			extendButtonsStack.addArrangedSubview(extendSessionButton)
+			extendSessionButton.snp.makeConstraints { $0.height.equalToSuperview() }
+
+			extendSessionButton.onTouchUpInside.subscribe(with: self) {
 				
-				ActionExtendSession(session: session, seconds: 5 * 60).execute().then(listener: self) {
-					switch $0 {
-					case .success:
-						break
+				if !extendSessionButton.loading {
+					// Start animating
+					extendSessionButton.showLoading()
+
+					ActionExtendSession(session: session, seconds: 5 * 60).execute().then(listener: self) {
+						switch $0 {
+						case .success:
+							break
+							
+						case .failure(let error):
+							print(error)
+						}
 						
-					case .failure(let error):
-						print(error)
+						// Stop animating
+						extendSessionButton.hideLoading()
 					}
 				}
 				
 			}
 			
 			// Extend session now button
-			let endNowButton = UIButton()
-			dismissButtonsStack.addArrangedSubview(endNowButton)
-			endNowButton.setTitle("Now", for: .normal)
-			endNowButton.setTitleColor(.secondaryLabel, for: .normal)
-			endNowButton.titleLabel?.font = UIFont(name: "PTSans-Regular", size: 22)
-			endNowButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 35, bottom: 0, right: 35)
-			endNowButton.snp.makeConstraints { $0.height.equalToSuperview() }
-			endNowButton.layer.borderWidth = 1.0
-			endNowButton.layer.borderColor = UIColor.secondaryLabel.cgColor
+			let endNowButton = ActionButton(
+				title: "Now",
+				background: self.view.backgroundColor!,
+				text: .secondaryLabel,
+				border: true
+			)
 			
-			endNowButton.onTouchDown.subscribe(with: self) {
+			dismissButtonsStack.addArrangedSubview(endNowButton)
+			endNowButton.snp.makeConstraints { $0.height.equalToSuperview() }
+			
+			endNowButton.onTouchUpInside.subscribe(with: self) {
 				
-				ActionEndSession(sessionRef: session.ref).execute().then(listener: self) {
-					switch $0 {
-					case .success:
-						break
+				if !endNowButton.loading {
+					// Start animating
+					endNowButton.showLoading()
+
+					ActionEndSession(sessionRef: session.ref).execute().then(listener: self) {
+						switch $0 {
+						case .success:
+							break
+							
+						case .failure(let error):
+							print(error)
+						}
 						
-					case .failure(let error):
-						print(error)
+						// Stop animating
+						endNowButton.hideLoading()
 					}
 				}
 				
 			}
 			
 			// Extend session soon button
-			let endSoonButton = UIButton()
+			let endSoonButton = ActionButton(title: "In 30 Sec", background: .secondaryLabel, text: self.view.backgroundColor!)
+			
 			dismissButtonsStack.addArrangedSubview(endSoonButton)
-			endSoonButton.setTitle("In 30 Sec", for: .normal)
-			endSoonButton.backgroundColor = .secondaryLabel
-			endSoonButton.setTitleColor(self.view.backgroundColor, for: .normal)
-			endSoonButton.titleLabel?.font = UIFont(name: "PTSans-Regular", size: 22)
-			endSoonButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 35, bottom: 0, right: 35)
 			endSoonButton.snp.makeConstraints { $0.height.equalToSuperview() }
 			
-			endSoonButton.onTouchDown.subscribe(with: self) {
+			endSoonButton.onTouchUpInside.subscribe(with: self) {
 				
-				ActionEndSession(sessionRef: session.ref, remainingSeconds: 30).execute().then(listener: self) {
-					switch $0 {
-					case .success:
-						break
+				if !endSoonButton.loading {
+					// Start animating
+					endSoonButton.showLoading()
+
+					ActionEndSession(sessionRef: session.ref, remainingSeconds: 30).execute().then(listener: self) {
+						switch $0 {
+						case .success:
+							break
+							
+						case .failure(let error):
+							print(error)
+						}
 						
-					case .failure(let error):
-						print(error)
+						// Stop animating
+						endSoonButton.hideLoading()
 					}
 				}
 				
@@ -373,29 +394,37 @@ class TeacherCourseSessionStatusController: UIViewController {
 			classLabel.text = "Not In Class"
 			
 			// Start session button
-			let startSessionButton = UIButton()
+			let startSessionButton = ActionButton(
+				title: "Start Session",
+				background: UIColor(named: "Pink")!,
+				text: self.view.backgroundColor!
+			)
+						
 			self.rightStack.addArrangedSubview(startSessionButton)
-			startSessionButton.setTitle("Start Session", for: .normal)
-			startSessionButton.backgroundColor = UIColor(named: "Pink")
-			startSessionButton.setTitleColor(self.view.backgroundColor, for: .normal)
-			startSessionButton.titleLabel?.font = UIFont(name: "PTSans-Regular", size: 22)
-			startSessionButton.contentEdgeInsets = UIEdgeInsets(top: 0, left: 35, bottom: 0, right: 35)
 			startSessionButton.snp.makeConstraints { $0.height.equalToSuperview() }
 
+
 			// Start session when tapped
-			startSessionButton.onTouchDown.subscribe(with: self) {
 				
-				ActionStartSession(courseRef: self.course.ref).execute().then(listener: self) {
-					switch $0 {
-					case .success(let session):
-						self.session.fire(session)
+			startSessionButton.onTouchUpInside.subscribe(with: self) {
+				
+				if !startSessionButton.loading {
+					// Start animating
+					startSessionButton.showLoading()
+					
+					ActionStartSession(courseRef: self.course.ref).execute().then(listener: self) {
+						switch $0 {
+						case .success(let session):
+							self.session.fire(session)
+							
+						case .failure(let error):
+							print(error)
+						}
 						
-					case .failure(let error):
-						print(error)
-						
+						// Stop animating
+						startSessionButton.hideLoading()
 					}
 				}
-
 				
 			}
 			

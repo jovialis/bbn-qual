@@ -11,6 +11,12 @@
 		C010E31223905F2F00D07047 /* Callback.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010E31023905F2F00D07047 /* Callback.swift */; };
 		C010E3142390613500D07047 /* FirestoreRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010E3132390613500D07047 /* FirestoreRepresentable.swift */; };
 		C010E3152390613500D07047 /* FirestoreRepresentable.swift in Sources */ = {isa = PBXBuildFile; fileRef = C010E3132390613500D07047 /* FirestoreRepresentable.swift */; };
+		C0306F1923CD071E00A61C16 /* TeacherCourseSessionIcebergsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0306F1823CD071E00A61C16 /* TeacherCourseSessionIcebergsController.swift */; };
+		C0306F1A23CD071E00A61C16 /* TeacherCourseSessionIcebergsController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0306F1823CD071E00A61C16 /* TeacherCourseSessionIcebergsController.swift */; };
+		C0306F1C23CD0A6800A61C16 /* TeacherCourseSessionProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0306F1B23CD0A6800A61C16 /* TeacherCourseSessionProgressController.swift */; };
+		C0306F1D23CD0A6800A61C16 /* TeacherCourseSessionProgressController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0306F1B23CD0A6800A61C16 /* TeacherCourseSessionProgressController.swift */; };
+		C0306F1F23CE2A3E00A61C16 /* ProgressionTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0306F1E23CE2A3E00A61C16 /* ProgressionTrackView.swift */; };
+		C0306F2023CE2A3E00A61C16 /* ProgressionTrackView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0306F1E23CE2A3E00A61C16 /* ProgressionTrackView.swift */; };
 		C037BCFE23B4E70700231119 /* Reagent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C037BCFD23B4E70700231119 /* Reagent.swift */; };
 		C037BCFF23B4E70700231119 /* Reagent.swift in Sources */ = {isa = PBXBuildFile; fileRef = C037BCFD23B4E70700231119 /* Reagent.swift */; };
 		C03C8AD8238C35D900715032 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C03C8AD7238C35D900715032 /* AppDelegate.swift */; };
@@ -64,6 +70,7 @@
 		C0604BF6238EF47400686D89 /* PTSans-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C0604BEE238EF47400686D89 /* PTSans-Italic.ttf */; };
 		C0604C00238F0C7D00686D89 /* TestTubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0604BFF238F0C7D00686D89 /* TestTubeView.swift */; };
 		C0604C01238F0C7D00686D89 /* TestTubeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0604BFF238F0C7D00686D89 /* TestTubeView.swift */; };
+		C0681BDA23C4E35800544928 /* ActionButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0681BD923C4E35800544928 /* ActionButton.swift */; };
 		C06EF3D923BC000100BDE6E0 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06EF3D823BC000100BDE6E0 /* Root.storyboard */; };
 		C06EF3DA23BC000100BDE6E0 /* Root.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C06EF3D823BC000100BDE6E0 /* Root.storyboard */; };
 		C06EF3DC23BC007700BDE6E0 /* RootController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C06EF3DB23BC007700BDE6E0 /* RootController.swift */; };
@@ -148,6 +155,9 @@
 		BC9DAB37B5D1A0B9F97D1329 /* Pods_bbnQUAL.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_bbnQUAL.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C010E31023905F2F00D07047 /* Callback.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Callback.swift; sourceTree = "<group>"; };
 		C010E3132390613500D07047 /* FirestoreRepresentable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirestoreRepresentable.swift; sourceTree = "<group>"; };
+		C0306F1823CD071E00A61C16 /* TeacherCourseSessionIcebergsController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCourseSessionIcebergsController.swift; sourceTree = "<group>"; };
+		C0306F1B23CD0A6800A61C16 /* TeacherCourseSessionProgressController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCourseSessionProgressController.swift; sourceTree = "<group>"; };
+		C0306F1E23CE2A3E00A61C16 /* ProgressionTrackView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressionTrackView.swift; sourceTree = "<group>"; };
 		C037BCFD23B4E70700231119 /* Reagent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reagent.swift; sourceTree = "<group>"; };
 		C03C8AD4238C35D900715032 /* bbnQUAL.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = bbnQUAL.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C03C8AD7238C35D900715032 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -182,6 +192,7 @@
 		C0604BED238EF47400686D89 /* PTSans-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-BoldItalic.ttf"; sourceTree = "<group>"; };
 		C0604BEE238EF47400686D89 /* PTSans-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "PTSans-Italic.ttf"; sourceTree = "<group>"; };
 		C0604BFF238F0C7D00686D89 /* TestTubeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestTubeView.swift; sourceTree = "<group>"; };
+		C0681BD923C4E35800544928 /* ActionButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionButton.swift; sourceTree = "<group>"; };
 		C06EF3D823BC000100BDE6E0 /* Root.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Root.storyboard; sourceTree = "<group>"; };
 		C06EF3DB23BC007700BDE6E0 /* RootController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootController.swift; sourceTree = "<group>"; };
 		C06EF3DF23BC04B400BDE6E0 /* AuthController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthController.swift; sourceTree = "<group>"; };
@@ -294,7 +305,9 @@
 			isa = PBXGroup;
 			children = (
 				C07C2E0F23A5845E005B5423 /* CourseView.swift */,
+				C0306F1E23CE2A3E00A61C16 /* ProgressionTrackView.swift */,
 				C0502E2D23BE036900478BDD /* LogoutButton.swift */,
+				C0681BD923C4E35800544928 /* ActionButton.swift */,
 				C0502E3023BE054D00478BDD /* LoginButton.swift */,
 				C092C18323B6B11500032C5E /* ConfettiView.swift */,
 				C0604BFF238F0C7D00686D89 /* TestTubeView.swift */,
@@ -539,6 +552,8 @@
 				C096035623C288BD001848B0 /* Actions */,
 				C04F64A323BF673000225746 /* TeacherCourseSessionController.swift */,
 				C0C67A2823C248AC0023BF9E /* TeacherCourseSessionStatusController.swift */,
+				C0306F1823CD071E00A61C16 /* TeacherCourseSessionIcebergsController.swift */,
+				C0306F1B23CD0A6800A61C16 /* TeacherCourseSessionProgressController.swift */,
 			);
 			path = Session;
 			sourceTree = "<group>";
@@ -734,6 +749,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0306F1F23CE2A3E00A61C16 /* ProgressionTrackView.swift in Sources */,
 				C0604C00238F0C7D00686D89 /* TestTubeView.swift in Sources */,
 				C06EF3DC23BC007700BDE6E0 /* RootController.swift in Sources */,
 				C05EE36D23BCB28200788A1F /* ActionWatchSessionExpiration.swift in Sources */,
@@ -741,12 +757,14 @@
 				C0502E2E23BE036900478BDD /* LogoutButton.swift in Sources */,
 				C05EE37423BCF73400788A1F /* Team.swift in Sources */,
 				C092C17E23B6868A00032C5E /* ReagentSelectionWrapper.swift in Sources */,
+				C0306F1C23CD0A6800A61C16 /* TeacherCourseSessionProgressController.swift in Sources */,
 				C076C18523B78F5C0060074D /* StudentGameIncorrectViewController.swift in Sources */,
 				C07C2E1023A5845E005B5423 /* CourseView.swift in Sources */,
 				C092C16C23B66D4700032C5E /* StudentViewController.swift in Sources */,
 				C096035823C28900001848B0 /* ActionEndSession.swift in Sources */,
 				C07C2E0A23A57441005B5423 /* TeacherViewController.swift in Sources */,
 				C0FAADE723AE9DA100420A8C /* TeacherCourseSetupController.swift in Sources */,
+				C0681BDA23C4E35800544928 /* ActionButton.swift in Sources */,
 				C04F64AA23BF741B00225746 /* ActionGetClassSession.swift in Sources */,
 				D6BDF5CB23977AE300638352 /* QError.swift in Sources */,
 				C05EE36623BCAF2B00788A1F /* StudentSessionController.swift in Sources */,
@@ -757,6 +775,7 @@
 				C0502E3123BE054D00478BDD /* LoginButton.swift in Sources */,
 				C096035B23C28BC2001848B0 /* ActionStartSession.swift in Sources */,
 				C06EF3EB23BC2CF900BDE6E0 /* ActionGetUserAccess.swift in Sources */,
+				C0306F1923CD071E00A61C16 /* TeacherCourseSessionIcebergsController.swift in Sources */,
 				C05EE36A23BCB02900788A1F /* ActionGetStudentSession.swift in Sources */,
 				C092C17223B676BE00032C5E /* String+Error.swift in Sources */,
 				C0502E3823BE6AAB00478BDD /* TeacherCourseController.swift in Sources */,
@@ -788,6 +807,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C0306F2023CE2A3E00A61C16 /* ProgressionTrackView.swift in Sources */,
 				C0502E2C23BDF06E00478BDD /* ProfileController.swift in Sources */,
 				C04F64A823BF6BC500225746 /* TeacherCourseTeamsController.swift in Sources */,
 				C092C18523B6B11500032C5E /* ConfettiView.swift in Sources */,
@@ -798,6 +818,7 @@
 				C06EF3EC23BC2CF900BDE6E0 /* ActionGetUserAccess.swift in Sources */,
 				C04F64A523BF673000225746 /* TeacherCourseSessionController.swift in Sources */,
 				C05EE36B23BCB02900788A1F /* ActionGetStudentSession.swift in Sources */,
+				C0306F1A23CD071E00A61C16 /* TeacherCourseSessionIcebergsController.swift in Sources */,
 				C0502E2F23BE036900478BDD /* LogoutButton.swift in Sources */,
 				C096035923C28900001848B0 /* ActionEndSession.swift in Sources */,
 				C092C18B23B6BBC800032C5E /* StudentFinishedViewController.swift in Sources */,
@@ -829,6 +850,7 @@
 				C03C8AEF238C35DC00715032 /* bbnQUALTests.swift in Sources */,
 				C096036223C28DAB001848B0 /* ActionGetSessionContent.swift in Sources */,
 				C0FAADE823AE9DA100420A8C /* TeacherCourseSetupController.swift in Sources */,
+				C0306F1D23CD0A6800A61C16 /* TeacherCourseSessionProgressController.swift in Sources */,
 				C06EF3E123BC04B500BDE6E0 /* AuthController.swift in Sources */,
 				C0604C01238F0C7D00686D89 /* TestTubeView.swift in Sources */,
 				C06EF3DD23BC007700BDE6E0 /* RootController.swift in Sources */,

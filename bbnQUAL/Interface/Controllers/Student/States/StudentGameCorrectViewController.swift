@@ -78,7 +78,7 @@ class StudentGameCorrectViewController: UIViewController {
 		}
 
 		// Action
-		_ = button.reactive.tapGesture().observe { _ in
+		button.onTouchUpInside.subscribe(with: self) {
 			self.dismiss(animated: true, completion: nil)
 			self.onContinueClicked()
 		}

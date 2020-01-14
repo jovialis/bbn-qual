@@ -125,7 +125,7 @@ class ReagentSelectionView: UIView {
 			button.setAttributedTitle(attributedString, for: .normal)
 			
 			// Selection handlers
-			_ = button.reactive.tapGesture().observe { _ in
+			button.onTouchUpInside.subscribe(with: self) {
 				// If it's our selected reagent, unselect
 				if self.selectionWrapper.isAtIndex(reagent, index: self.index) {
 					self.selectionWrapper.unselect(reagent)

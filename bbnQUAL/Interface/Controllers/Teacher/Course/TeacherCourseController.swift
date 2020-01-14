@@ -126,7 +126,7 @@ class TeacherCourseController: UIViewController, UITabBarDelegate {
 						
 			// On button click, change selected tab
 			if !isSelected {
-				_ = button.reactive.tap.observeNext { (_) in
+				button.onTouchUpInside.subscribe(with: self) {
 					self.tabController.selectedIndex = i
 					
 					// Refresh views

@@ -75,7 +75,7 @@ class AuthController: UIViewController, ASWebAuthenticationPresentationContextPr
 		self.loginButton.isHidden = true
 		
 		// On button click
-		self.loginButton.reactive.tapGesture().observe { _ in
+		self.loginButton.onTouchUpInside.subscribe(with: self) {
 			self.openLoginDialogue()
 		}
 	}

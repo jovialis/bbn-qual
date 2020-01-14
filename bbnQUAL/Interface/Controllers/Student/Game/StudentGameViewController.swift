@@ -114,7 +114,7 @@ class StudentGameViewController: UIViewController {
 	
 	private func setupProfileButton() {
 		// On button click, show profile controller
-		self.groupInfoButton.reactive.tapGesture().observe { (_) in
+		self.groupInfoButton.onTouchUpInside.subscribe(with: self) {
 			
 			// Instantiate and present controller
 			let controller = ProfileController()

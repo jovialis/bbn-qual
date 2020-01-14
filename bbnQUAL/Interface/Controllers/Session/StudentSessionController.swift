@@ -81,7 +81,7 @@ class StudentSessionController: UIViewController {
 		fetchSessionButton.titleEdgeInsets = UIEdgeInsets(top: -10, left: -35, bottom: -10, right: -35)
 		
 		// On click
-		_ = fetchSessionButton.reactive.tapGesture().observe { _ in
+		fetchSessionButton.onTouchUpInside.subscribe(with: self) {
 			self.discoverSession()
 		}
 

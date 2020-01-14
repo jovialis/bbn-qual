@@ -48,7 +48,7 @@ class LoginButton: UIButton {
 		self.contentEdgeInsets = UIEdgeInsets(top: 10, left: 35, bottom: 10, right: 35)
 		
 		// Observe click
-		_ = self.reactive.tapGesture().observe { (_) in
+		self.onTouchUpInside.subscribe(with: self) {
 			// Show loading indicator when clicked
 			self.loadingIndicator.isHidden = false
 			self.loadingIndicator.startAnimating()

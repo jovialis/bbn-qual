@@ -17,6 +17,7 @@ class TeacherCourseSessionController: UIViewController {
 	var course: Course!
 	
 	private var stack: UIStackView!
+	private var bottomStack: UIStackView!
 	private var loading: UIActivityIndicatorView!
 	
 	convenience init(course: Course) {
@@ -46,10 +47,11 @@ class TeacherCourseSessionController: UIViewController {
 		self.stack.axis = .vertical
 		self.stack.distribution = .fill
 		self.stack.alignment = .fill
+		self.stack.spacing = 40
 		
 		// Constrain stack
 		self.stack.snp.makeConstraints { (constrain: ConstraintMaker) in
-			constrain.leading.trailing.top.equalToSuperview()
+			constrain.leading.trailing.top.bottom.equalToSuperview()
 		}
 	}
 //
@@ -70,9 +72,40 @@ class TeacherCourseSessionController: UIViewController {
 		let sessionController = TeacherCourseSessionStatusController(course: self.course)
 		self.stack.addArrangedSubview(sessionController.view)
 		
-		// Add child
 		self.addChild(sessionController)
 		sessionController.willMove(toParent: self)
+
+		// Bottom stack
+		self.bottomStack = UIStackView()
+		self.stack.addArrangedSubview(self.bottomStack)
+		
+		// Configure bottom stack
+		self.bottomStack.axis = .horizontal
+		self.bottomStack.distribution = .fill
+		self.bottomStack.alignment = .fill
+		self.bottomStack.spacing = 20
+		
+		// Icebergs controller
+		let icebergsController = TeacherCourseSessionIcebergsController(course: self.course)
+		self.bottomStack.addArrangedSubview(icebergsController.view)
+		
+		// Add child
+		self.addChild(icebergsController)
+		icebergsController.willMove(toParent: self)
+		
+		// Spacing Vifew
+		let spacer = UIView()
+		self.bottomStack.addArrangedSubview(spacer)
+		spacer.snp.makeConstraints{ $0.width.equalTo(1) }
+		spacer.backgroundColor = .secondarySystemBackground
+		
+		// Progress controller
+		let progressController = TeacherCourseSessionProgressController(course: self.course)
+		self.bottomStack.addArrangedSubview(progressController.view)
+		
+		// Add child
+		self.addChild(progressController)
+		progressController.willMove(toParent: self)
 	}
 	
 }

@@ -27,6 +27,7 @@ target 'bbnQUAL' do
 	
   pod 'Macaw'
   pod 'CollectionKit'
+	pod 'TableManager'
 	pod 'SnapKit'
 
 end
