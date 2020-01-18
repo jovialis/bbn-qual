@@ -9,6 +9,8 @@
 import Foundation
 import UIKit
 import SnapKit
+import Firebase
+import TableManager
 
 class TeacherCourseSessionProgressController: UIViewController {
 	
@@ -16,6 +18,9 @@ class TeacherCourseSessionProgressController: UIViewController {
 	
 	private var loading: UIActivityIndicatorView!
 	private var masterStack: UIStackView!
+	private var tableView: UITableView!
+	
+	private var progressionCollectionListener: ListenerRegistration!
 
 	convenience init(course: Course) {
 		self.init()
@@ -29,49 +34,8 @@ class TeacherCourseSessionProgressController: UIViewController {
 		self.setupLoading()
 		self.setupMasterStack()
 		
-//		// Handle changes in the session
-//		self.observeSessionAndUpdateViews()
-//
-//		// Observe changes in the sessions document
-//		self.observeChangesInSessionsCollection()
-		
-		// Create progression view
-		let progressionView = ProgressionTrackView()
-		progressionView.groupName = "Group 1"
-		progressionView.members = ["Dylan", "Joseph"]
-		
-		progressionView.numRegular = 3
-		progressionView.numChallenge = 2
-		
-		progressionView.assignedBeginner = true
-		progressionView.assignedRegular = ["3", "1", "4"]
-		progressionView.assignedChallenge = ["6", "7"]
-		progressionView.finished = true
-		
-		self.masterStack.addArrangedSubview(progressionView)
-		
-		
-		let progressionView2 = ProgressionTrackView()
-		progressionView2.groupName = "Group 2"
-		progressionView2.members = ["Isabelle", "Julia"]
-		
-		progressionView2.numRegular = 3
-		progressionView2.numChallenge = 2
-		
-		progressionView2.assignedBeginner = true
-		progressionView2.assignedRegular = ["4", "1", "3"]
-		progressionView2.assignedChallenge = ["9"]
-		progressionView2.finished = false
-		
-		self.masterStack.addArrangedSubview(progressionView2)
-		
-		
-		
-		let labelView = ProgressionTrackLabelView()
-		labelView.numRegular = 3
-		labelView.numChallenge = 2
-		self.masterStack.addArrangedSubview(labelView)
-
+		// Observe changes in the sessions document
+		self.observeChangesInProgressionsCollection()
 	}
 	
 	private func setupLoading() {
@@ -94,14 +58,128 @@ class TeacherCourseSessionProgressController: UIViewController {
 		
 		// Configure stack
 		self.masterStack.axis = .vertical
-		self.masterStack.distribution = .equalSpacing
-		self.masterStack.spacing = 80
+		self.masterStack.distribution = .fill
+		self.masterStack.spacing = 10
 		self.masterStack.alignment = .fill
 		
 		// Constrain
 		self.masterStack.snp.makeConstraints { (constrain: ConstraintMaker) in
-			constrain.leading.trailing.top.equalToSuperview().inset(25)
+			constrain.leading.trailing.top.bottom.equalToSuperview()
 		}
+		
+		self.masterStack.isOpaque = true
+		self.masterStack.backgroundColor = .green
+		
+		// Add label
+		let label = UILabel()
+		label.text = "Team Progressions"
+		label.font = UIFont(name: "PTSans-Bold", size: 32)
+		self.masterStack.addArrangedSubview(label)
+		
+		// Add table view
+		self.tableView = UITableView()
+		self.tableView.separatorInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
+		self.tableView.separatorStyle = .none
+		self.masterStack.addArrangedSubview(self.tableView)
+	}
+	
+	// Observe changes in sessions collection. If we find one, attempt to re-fetch a session
+	private func observeChangesInProgressionsCollection() {
+		// Reference
+		let collectionRef = self.course.ref.collection("progressions")
+		self.progressionCollectionListener = collectionRef
+			.addSnapshotListener { (snapshot: QuerySnapshot?, error: Error?) in
+			
+			self.loading.stopAnimating()
+				
+			if let snapshot = snapshot {
+				
+				// Load documents into memory
+				var progressions = snapshot.documents.compactMap { (snapshot: QueryDocumentSnapshot) -> TeacherProgressionOverview? in
+					
+					// Parse iceberg
+					let json = JSONObject(snapshot.data())
+					
+					return TeacherProgressionOverview(ref: snapshot.reference, json: json)
+					
+				}
+				
+				// Put finished progressions at the end
+				progressions.sort { (a, _) in !a.finished }
+				
+				// Update our table view
+				self.updateTable(with: progressions)
+				
+			} else {
+				
+				print(error!)
+				
+			}
+				
+		}
+
+	}
+	
+	// Update the table
+	private func updateTable(with progressions: [TeacherProgressionOverview]) {
+		// Remove all rows
+		self.tableView.clearRows()
+				
+		// Create a row for each timestamp
+		progressions.forEach { (progression: TeacherProgressionOverview) in
+			
+			// Create a row
+			self.tableView
+				.addRow()
+				.setHeight(withStaticHeight: 100)
+				.setConfiguration { (row: Row, cell: UITableViewCell, path: IndexPath) in
+				
+					// Configure cell
+					cell.selectionStyle = .none
+					
+					// Remove all child views from the cell
+					cell.contentView.subviews.forEach { $0.removeFromSuperview() }
+						
+					// Add iceberg view
+					let progressionView = ProgressionTrackView(progression: progression, course: self.course)
+					cell.contentView.addSubview(progressionView)
+				
+					// Constrain iceberg view
+					progressionView.snp.makeConstraints {
+						$0.leading.trailing.top.bottom.equalToSuperview()
+					}
+				
+			}
+			
+			self.tableView.addSpace(height: 20, bgColor: .systemBackground)
+			
+		}
+		
+		// Add label row
+		self.tableView
+			.addRow()
+			.setHeight(withStaticHeight: 100)
+			.setConfiguration { (row: Row, cell: UITableViewCell, path: IndexPath) in
+			
+				// Configure cell
+				cell.selectionStyle = .none
+				
+				// Remove all child views from the cell
+				cell.contentView.subviews.forEach { $0.removeFromSuperview() }
+					
+				// Add iceberg view
+				let progressionView = ProgressionTrackLabelView(course: self.course)
+				cell.contentView.addSubview(progressionView)
+			
+				// Constrain iceberg view
+				progressionView.snp.makeConstraints {
+					$0.leading.trailing.top.bottom.equalToSuperview()
+				}
+			
+		}
+		
+		// Reload
+		self.tableView.reloadData()
 	}
 	
 }

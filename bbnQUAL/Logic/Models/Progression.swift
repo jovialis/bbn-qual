@@ -7,14 +7,14 @@
 //
 
 import Foundation
-import SwiftyJSON
 
+// Represents a team's progression. Served to students, NOT TEACHERS. Use TeacherProgression
 struct Progression {
 	
 	let status: ProgressionStatus
 	let progress: ProgressionProgress
 
-	init?(json: JSON) {
+	init?(json: JSONObject) {
 		guard let status = ProgressionStatus(json: json) else {
 			return nil
 		}
@@ -35,7 +35,7 @@ struct ProgressionProgress {
 	let regular: ProgressionTrackProgress
 	let challenge: ProgressionTrackProgress
 	
-	init?(json: JSON) {
+	init?(json: JSONObject) {
 		guard
 			let beginner = ProgressionTrackProgress(json: json["beginner"]),
 			let regular = ProgressionTrackProgress(json: json["regular"]),
@@ -66,7 +66,7 @@ struct ProgressionTrackProgress {
 	let completed: Int
 	let required: Int
 	
-	init?(json: JSON) {
+	init?(json: JSONObject) {
 		guard let completed = json["completed"].int, let required = json["required"].int else {
 			return nil
 		}
@@ -96,7 +96,7 @@ enum ProgressionDifficulty {
 
 extension ProgressionStatus {
 	
-	init?(json: JSON) {
+	init?(json: JSONObject) {
 		switch json["status"].stringValue {
 		case "finished":
 			self = .finished

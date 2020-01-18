@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 import SnapKit
-import Bond
-import ReactiveKit
 import CollectionKit
 
 class ReagentSelectionView: UIView {
@@ -125,6 +123,7 @@ class ReagentSelectionView: UIView {
 			button.setAttributedTitle(attributedString, for: .normal)
 			
 			// Selection handlers
+			button.onTouchUpInside.cancelAllSubscriptions()
 			button.onTouchUpInside.subscribe(with: self) {
 				// If it's our selected reagent, unselect
 				if self.selectionWrapper.isAtIndex(reagent, index: self.index) {

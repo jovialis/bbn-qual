@@ -9,7 +9,6 @@
 import Foundation
 import Signals
 import Firebase
-import SwiftyJSON
 
 class ActionGetClassSession: Action<Callback<DocumentReference?>> {
 	
@@ -41,7 +40,7 @@ class ActionGetClassSession: Action<Callback<DocumentReference?>> {
 			
 			if let result = result {
 				// Convert result to JSON
-				let json = JSON(result.data)
+				let json = JSONObject(result.data)
 
 				// Extract session path
 				guard let sessionPath = json["sessionPath"].string else {

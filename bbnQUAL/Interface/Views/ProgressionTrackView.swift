@@ -14,23 +14,9 @@ class ProgressionTrackView: UIView {
 	
 	/* ALL CONFIG VARIABLES TRIGGER LAYOUT UPDATES WHEN CHANGED */
 	
-	// Team finished
-	var finished: Bool = false { didSet { self.setNeedsLayout() } }
-	
-	// Number required
-	var assignBeginner: Bool = true { didSet { self.setNeedsLayout() } }
-	var numRegular: Int = 3 { didSet { self.setNeedsLayout() } }
-	var numChallenge: Int = 2 { didSet { self.setNeedsLayout() } }
-	
-	// Group information
-	var groupName: String = "" { didSet { self.setNeedsLayout() } }
-	var members: [String] = [] { didSet { self.setNeedsLayout() } }
-	
-	// Assigned items information. This is the sum of all completed groups
-	// and any currently assigned groups.
-	var assignedBeginner: Bool = false { didSet { self.setNeedsLayout() } }
-	var assignedRegular: [String] = [] { didSet { self.setNeedsLayout() } }
-	var assignedChallenge: [String] = [] { didSet { self.setNeedsLayout() } }
+	// Details
+	var progression: TeacherProgressionOverview? { didSet { self.setNeedsLayout() } }
+	var settings: CourseSettings? { didSet { self.setNeedsLayout() } }
 	
 	// VIEWS
 	fileprivate var teamLabel: UILabel!
@@ -39,6 +25,13 @@ class ProgressionTrackView: UIView {
 	fileprivate var progressLine: UIView!
 	
 	private let markerWidth: Int = 30
+	
+	convenience init(progression: TeacherProgressionOverview, course: Course) {
+		self.init(frame: .zero)
+		
+		self.progression = progression
+		self.settings = course.settings
+	}
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -112,7 +105,7 @@ class ProgressionTrackView: UIView {
 		// Add group label
 		let groupLabel = UILabel()
 		groupLabel.textColor = .secondaryLabel
-		groupLabel.font = UIFont(name: "PTSans-Regular", size: 22)
+		groupLabel.font = UIFont(name: "PTSans-Regular", size: 24)
 		
 		stack.addArrangedSubview(groupLabel)
 		
@@ -136,9 +129,13 @@ class ProgressionTrackView: UIView {
 	}
 	
 	fileprivate func updateContent() {
+		guard let progression = self.progression, let settings = self.settings else {
+			return
+		}
+		
 		// Update team info
-		self.teamLabel.text = self.groupName
-		self.teamMembersLabel.text = self.members.joined(separator: ", ")
+		self.teamLabel.text = "Group X"
+		self.teamMembersLabel.text = progression.members.map({ $0.name }).joined(separator: ", ")
 		
 		// Wipe all currently laid out markers
 		self.groupMarkerStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
@@ -146,7 +143,7 @@ class ProgressionTrackView: UIView {
 		var lastRealMarker: UIView?
 		
 		// Create a marker for the beginner group
-		if self.assignBeginner {
+		if settings.beginnerGroup {
 			// We always want to create a real marker for beginner
 			let beginnerMarker = self.generateGroupMarker(groupName: "0")
 			self.groupMarkerStack.addArrangedSubview(beginnerMarker)
@@ -155,12 +152,12 @@ class ProgressionTrackView: UIView {
 		}
 		
 		// Create markers for regular groups
-		for iR in 0..<self.numRegular {
+		for iR in 0..<settings.numRegularGroups {
 			var generatedGroup: UIView
 			
 			// If this group has been assigned
-			if iR < self.assignedRegular.count {
-				let completedGroup = self.assignedRegular.item(at: iR)
+			if iR < progression.allAssignedRegular.count {
+				let completedGroup = progression.allAssignedRegular.item(at: iR)
 				generatedGroup = self.generateGroupMarker(groupName: completedGroup)
 				
 				lastRealMarker = generatedGroup
@@ -172,12 +169,12 @@ class ProgressionTrackView: UIView {
 		}
 		
 		// Create markers for challenge groups
-		for iC in 0..<self.numChallenge {
+		for iC in 0..<settings.numChallengeGroups {
 			var generatedGroup: UIView
 			
 			// If this group has been assigned
-			if iC < self.assignedChallenge.count {
-				let completedGroup = self.assignedChallenge.item(at: iC)
+			if iC < progression.allAssignedChallenge.count {
+				let completedGroup = progression.allAssignedChallenge.item(at: iC)
 				generatedGroup = self.generateGroupMarker(groupName: completedGroup)
 				
 				lastRealMarker = generatedGroup
@@ -189,7 +186,7 @@ class ProgressionTrackView: UIView {
 		}
 		
 		// Create finished marker
-		if self.finished {
+		if progression.finished {
 			let finishedShield = self.generateFinishedShield()
 			self.groupMarkerStack.addArrangedSubview(finishedShield)
 			
@@ -299,7 +296,16 @@ class ProgressionTrackView: UIView {
 
 class ProgressionTrackLabelView: ProgressionTrackView {
 		
+	convenience init(course: Course) {
+		self.init(frame: .zero)
+		self.settings = course.settings
+	}
+	
 	override fileprivate func updateContent() {
+		guard let settings = self.settings else {
+			return
+		}
+		
 		// Update team info
 		self.teamLabel.text = ""
 		self.teamMembersLabel.text = ""
@@ -308,20 +314,20 @@ class ProgressionTrackLabelView: ProgressionTrackView {
 		self.groupMarkerStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
 				
 		// Create a marker for the beginner group
-		if self.assignBeginner {
+		if settings.beginnerGroup {
 			let labelStack = self.generateLabelStack(num: 0, difficulty: .practice)
 			self.groupMarkerStack.addArrangedSubview(labelStack)
 		}
 		
 		// Create markers for regular groups
-		for iR in 0..<self.numRegular {
+		for iR in 0..<settings.numRegularGroups {
 			let labelStack = self.generateLabelStack(num: iR + 1, difficulty: .regular)
 			self.groupMarkerStack.addArrangedSubview(labelStack)
 		}
 		
 		// Create markers for challenge groups
-		for iC in 0..<self.numChallenge {
-			let labelStack = self.generateLabelStack(num: self.numRegular + iC + 1, difficulty: .challenge)
+		for iC in 0..<settings.numChallengeGroups {
+			let labelStack = self.generateLabelStack(num: settings.numRegularGroups + iC + 1, difficulty: .challenge)
 			self.groupMarkerStack.addArrangedSubview(labelStack)
 		}
 		

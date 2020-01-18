@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 import Firebase
 
 protocol TeamSkeleton {
@@ -23,7 +22,7 @@ struct TeamOverview: TeamSkeleton {
 	
 	let members: [TeamMemberOverview]
 	
-	init?(json: JSON) {
+	init?(json: JSONObject) {
 		guard let members = json["members"].array else {
 			return nil
 		}
@@ -38,7 +37,7 @@ struct Team: TeamSkeleton {
 	let ref: DocumentReference
 	let members: [TeamMember]
 	
-	init?(reference: DocumentReference, json: JSON) {
+	init?(reference: DocumentReference, json: JSONObject) {
 		guard let members = json["members"].array else {
 			return nil
 		}
@@ -61,7 +60,7 @@ struct TeamMemberOverview: TeamMemberSkeleton {
 	let name: String
 	let email: String
 	
-	init?(json: JSON) {
+	init?(json: JSONObject) {
 		guard let name = json["name"].string else {
 			return nil
 		}
@@ -82,7 +81,7 @@ struct TeamMember: TeamMemberSkeleton {
 	let name: String
 	let email: String
 	
-	init?(json: JSON) {
+	init?(json: JSONObject) {
 		guard let name = json["name"].string else {
 			return nil
 		}
@@ -91,7 +90,7 @@ struct TeamMember: TeamMemberSkeleton {
 			return nil
 		}
 		
-		guard let ref = json["ref"].rawValue as? DocumentReference else {
+		guard let ref = json["ref"].raw as? DocumentReference else {
 			return nil
 		}
 		

@@ -11,7 +11,6 @@ import UIKit
 import Firebase
 import SnapKit
 import Bond
-import SwiftyJSON
 import ReactiveKit
 
 class TeacherCourseController: UIViewController, UITabBarDelegate {
@@ -142,7 +141,7 @@ class TeacherCourseController: UIViewController, UITabBarDelegate {
 		self.listener = ref.addSnapshotListener({ (snapshot: DocumentSnapshot?, error: Error?) in
 			if let snapshot = snapshot {
 				// Parse JSON from snapshot
-				let json = JSON(snapshot.data())
+				let json = JSONObject(snapshot.data())
 				
 				guard let course = Course(ref: ref, json: json) else {
 					print("Could not observe live status for course.")

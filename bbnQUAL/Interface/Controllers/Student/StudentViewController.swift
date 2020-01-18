@@ -11,7 +11,6 @@ import UIKit
 import SnapKit
 import Signals
 import FirebaseFunctions
-import SwiftyJSON
 
 class StudentViewController: UIViewController {
 	
@@ -147,7 +146,7 @@ class StudentViewController: UIViewController {
 				
 				// Extract data
 				do {
-					let json = JSON(result.data)
+					let json = JSONObject(result.data)
 					
 					// Pull out progression from JSON
 					guard let progression = Progression(json: json) else {

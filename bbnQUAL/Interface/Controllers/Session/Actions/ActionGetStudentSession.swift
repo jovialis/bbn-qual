@@ -9,7 +9,6 @@
 import Foundation
 import Signals
 import Firebase
-import SwiftyJSON
 
 class ActionGetStudentSession: Action<(session: DocumentReference, course: CourseOverview, team: TeamOverview)?> {
 	
@@ -29,7 +28,7 @@ class ActionGetStudentSession: Action<(session: DocumentReference, course: Cours
 		functionRef.call { (result: HTTPSCallableResult?, error: Error?) in
 			if let result = result {
 				// Convert result to JSON
-				let json = JSON(result.data)
+				let json = JSONObject(result.data)
 
 				// Extract session path individually
 				guard let sessionPath = json["sessionPath"].string else {

@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 import Firebase
 
 struct CourseSession {
@@ -19,24 +18,24 @@ struct CourseSession {
 	let teacherRef: DocumentReference
 	let courseRef: DocumentReference
 	
-	init?(ref: DocumentReference, data: [String: Any]) {		
-		guard let expired = data["expired"] as? Bool else {
+	init?(ref: DocumentReference, json: JSONObject) {
+		guard let expired = json["expired"].bool else {
 			return nil
 		}
 		
-		guard let timestamp = data["timestamp"] as? Timestamp else {
+		guard let timestamp = json["timestamp"].raw as? Timestamp else {
 			return nil
 		}
 		
-		guard let expiration = data["expiration"] as? Timestamp else {
+		guard let expiration = json["expiration"].raw as? Timestamp else {
 			return nil
 		}
 		
-		guard let teacherRef = data["teacherRef"] as? DocumentReference else {
+		guard let teacherRef = json["teacherRef"].raw as? DocumentReference else {
 			return nil
 		}
 		
-		guard let courseRef = data["courseRef"] as? DocumentReference else {
+		guard let courseRef = json["courseRef"].raw as? DocumentReference else {
 			return nil
 		}
 		

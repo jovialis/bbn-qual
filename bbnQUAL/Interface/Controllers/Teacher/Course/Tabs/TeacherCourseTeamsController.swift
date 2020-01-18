@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import Firebase
 import SnapKit
-import SwiftyJSON
 import Bond
 
 class TeacherCourseTeamsController: UIViewController {
@@ -73,7 +72,7 @@ class TeacherCourseTeamsController: UIViewController {
 					let data = snapshot.data()
 					
 					// Parse JSON
-					let json = JSON(data)
+					let json = JSONObject(data)
 					return Team(reference: snapshot.reference, json: json)
 				}
 				

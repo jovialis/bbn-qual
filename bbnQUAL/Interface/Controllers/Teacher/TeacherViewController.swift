@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import Firebase
 import CollectionKit
-import SwiftyJSON
 
 class TeacherViewController: UIViewController {
 		
@@ -93,7 +92,7 @@ class TeacherViewController: UIViewController {
 		}
 
 		let sizeSource = { (index: Int, data: Course, collectionSize: CGSize) -> CGSize in
-			return CGSize(width: 200, height: 75)
+			return CGSize(width: 300, height: 100)
 		}
 
 		let activeCoursesProvider = BasicProvider(
@@ -116,10 +115,10 @@ class TeacherViewController: UIViewController {
 		  headerViewSource: { (view: UILabel, data, index) in
 			
 			  view.textColor = .white
-			  view.textAlignment = .center
+			view.textAlignment = .left
 			  view.text = "Active Courses"
-		      view.font = UIFont(name: "PTSans-Regular", size: 26.0)
-			
+			  view.font = UIFont(name: "PTSans-Bold", size: 26)
+
 		  },
 		  headerSizeSource: { (index, data, maxSize) -> CGSize in
 			return CGSize(width: maxSize.width, height: 50)
@@ -134,9 +133,9 @@ class TeacherViewController: UIViewController {
 			headerViewSource: { (view: UILabel, data, index) in
 				
 				view.textColor = .white
-				view.textAlignment = .center
+				view.textAlignment = .left
 				view.text = "Archived Courses"
-				view.font = UIFont(name: "PTSans-Regular", size: 22.0)
+				view.font = UIFont(name: "PTSans-Bold", size: 26)
 				
 			},
 			headerSizeSource: { (index, data, maxSize) -> CGSize in
@@ -178,7 +177,7 @@ class TeacherViewController: UIViewController {
 					// Get document ID
 					let data = doc.data()
 					
-					let json = JSON(data)
+					let json = JSONObject(data)
 					if let course = Course(ref: doc.reference, json: json) {
 						return course
 					} else {

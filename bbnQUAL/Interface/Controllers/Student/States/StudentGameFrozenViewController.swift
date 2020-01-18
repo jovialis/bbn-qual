@@ -12,7 +12,6 @@ import SnapKit
 import Bond
 import Firebase
 import FirebaseFirestoreSwift
-import SwiftyJSON
 
 class StudentGameFrozenViewController: UIViewController {
 			
@@ -54,8 +53,8 @@ class StudentGameFrozenViewController: UIViewController {
 		subLabel.font = UIFont(name: "PTSans-Regular", size: 25)
 		
 		// Create continue button
-		let button = UIButton()
-		self.view.addSubview(button)
+		let logoutButton = LogoutButton()
+		stack.addArrangedSubview(logoutButton)
 		
 		// Listen for when the teacher clears the iceberg
 		self.listenToChanges()

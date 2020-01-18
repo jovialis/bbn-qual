@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SwiftyJSON
 import Firebase
 
 protocol CourseSkeleton {
@@ -24,7 +23,7 @@ struct CourseOverview: CourseSkeleton {
 	let name: String
 	let settings: CourseSettings
 	
-	init?(json: JSON) {
+	init?(json: JSONObject) {
 		guard let name = json["name"].string else {
 			return nil
 		}
@@ -49,7 +48,7 @@ struct Course: CourseSkeleton {
 	let live: Bool
 	let settings: CourseSettings
 	
-	init?(ref: DocumentReference, json: JSON) {
+	init?(ref: DocumentReference, json: JSONObject) {
 		guard let name = json["name"].string else {
 			return nil
 		}
@@ -83,7 +82,7 @@ struct CourseSettings {
 	let numChallengeGroups: Int
 	let numRegularGroups: Int
 	
-	init?(json: JSON) {
+	init?(json: JSONObject) {
 		guard let beginnerGroup = json["assignBeginnerGroup"].bool else {
 			return nil
 		}

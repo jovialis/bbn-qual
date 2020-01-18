@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import SnapKit
 import Firebase
-import SwiftyJSON
 import Bond
 import Signals
 

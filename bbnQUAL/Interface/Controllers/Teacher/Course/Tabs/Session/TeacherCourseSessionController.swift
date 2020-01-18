@@ -10,7 +10,6 @@ import Foundation
 import UIKit
 import SnapKit
 import Firebase
-import SwiftyJSON
 
 class TeacherCourseSessionController: UIViewController {
 	
@@ -83,7 +82,7 @@ class TeacherCourseSessionController: UIViewController {
 		self.bottomStack.axis = .horizontal
 		self.bottomStack.distribution = .fill
 		self.bottomStack.alignment = .fill
-		self.bottomStack.spacing = 20
+		self.bottomStack.spacing = 30
 		
 		// Icebergs controller
 		let icebergsController = TeacherCourseSessionIcebergsController(course: self.course)

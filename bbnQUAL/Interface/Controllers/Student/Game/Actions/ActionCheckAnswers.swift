@@ -8,7 +8,6 @@
 
 import Foundation
 import FirebaseFunctions
-import SwiftyJSON
 import Signals
 
 class ActionCheckAnswers: Action<AnswerCheckResult?> {
@@ -34,7 +33,7 @@ class ActionCheckAnswers: Action<AnswerCheckResult?> {
 				
 				// Extract data
 				do {
-					let json = JSON(result.data)
+					let json = JSONObject(result.data)
 										
 					// Pull out progression from JSON
 					guard let checkResult = AnswerCheckResult(json) else {
@@ -69,7 +68,7 @@ enum AnswerCheckResult {
 	
 	case formattingError
 	
-	init?(_ json: JSON) {		
+	init?(_ json: JSONObject) {		
 		guard let result = json["result"].string else {
 			return nil
 		}

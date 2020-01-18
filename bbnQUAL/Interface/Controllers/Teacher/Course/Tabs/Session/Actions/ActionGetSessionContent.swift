@@ -25,9 +25,7 @@ class ActionGetSessionContent: Action<Callback<CourseSession>> {
 		self.sessionRef.getDocument { (snapshot: DocumentSnapshot?, error: Error?) in
 			if let snapshot = snapshot {
 				// Unwrap data since we know the document isn't null
-				let data = snapshot.data()!
-				
-				if let course = CourseSession(ref: self.sessionRef, data: data) {
+				if let course = CourseSession(ref: self.sessionRef, json: JSONObject(snapshot.data())) {
 					callback.fire(.success(object: course))
 				} else {
 					callback.fire(.failure(error: "Could not parse Session"))

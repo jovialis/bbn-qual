@@ -41,7 +41,7 @@ class ActionStartSession: Action<Callback<CourseSession>> {
 					let sessionRef = Firestore.firestore().document(sessionPath)
 										
 					// Parse
-					if let session = CourseSession(ref: sessionRef, data: (data["session"] as? [String: Any]) ?? [:]) {
+					if let session = CourseSession(ref: sessionRef, json: JSONObject(data["session"])) {
 						// Update observer
 						callback.fire(.success(object: session))
 					} else {
