@@ -97,6 +97,8 @@
 		C07C2E0B23A57441005B5423 /* TeacherViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C2E0923A57441005B5423 /* TeacherViewController.swift */; };
 		C07C2E1023A5845E005B5423 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C2E0F23A5845E005B5423 /* CourseView.swift */; };
 		C07C2E1123A5845E005B5423 /* CourseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C07C2E0F23A5845E005B5423 /* CourseView.swift */; };
+		C0897FCD23D402150025360C /* CreateCourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0897FCC23D402150025360C /* CreateCourseController.swift */; };
+		C0897FCE23D402150025360C /* CreateCourseController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0897FCC23D402150025360C /* CreateCourseController.swift */; };
 		C092C16C23B66D4700032C5E /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C16B23B66D4700032C5E /* StudentViewController.swift */; };
 		C092C16D23B66D4700032C5E /* StudentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C16B23B66D4700032C5E /* StudentViewController.swift */; };
 		C092C16F23B674E500032C5E /* Progression.swift in Sources */ = {isa = PBXBuildFile; fileRef = C092C16E23B674E500032C5E /* Progression.swift */; };
@@ -130,6 +132,8 @@
 		C098D08B238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C098D08A238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist */; };
 		C098D08C238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = C098D08A238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist */; };
 		C0C67A2923C248AC0023BF9E /* TeacherCourseSessionStatusController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0C67A2823C248AC0023BF9E /* TeacherCourseSessionStatusController.swift */; };
+		C0EDB7B523D512AC006DBE0D /* ActionCourseNameExists.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EDB7B423D512AC006DBE0D /* ActionCourseNameExists.swift */; };
+		C0EDB7B623D512AC006DBE0D /* ActionCourseNameExists.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EDB7B423D512AC006DBE0D /* ActionCourseNameExists.swift */; };
 		C0EF8C3F23D0D3F700DB8ECA /* Iceberg.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF8C3E23D0D3F700DB8ECA /* Iceberg.swift */; };
 		C0EF8C4023D0D3F700DB8ECA /* Iceberg.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF8C3E23D0D3F700DB8ECA /* Iceberg.swift */; };
 		C0EF8C4223D0D85300DB8ECA /* IcebergView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C0EF8C4123D0D85300DB8ECA /* IcebergView.swift */; };
@@ -214,6 +218,7 @@
 		C076C18723B790620060074D /* StudentGameFrozenViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentGameFrozenViewController.swift; sourceTree = "<group>"; };
 		C07C2E0923A57441005B5423 /* TeacherViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherViewController.swift; sourceTree = "<group>"; };
 		C07C2E0F23A5845E005B5423 /* CourseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CourseView.swift; sourceTree = "<group>"; };
+		C0897FCC23D402150025360C /* CreateCourseController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateCourseController.swift; sourceTree = "<group>"; };
 		C092C16B23B66D4700032C5E /* StudentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentViewController.swift; sourceTree = "<group>"; };
 		C092C16E23B674E500032C5E /* Progression.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Progression.swift; sourceTree = "<group>"; };
 		C092C17123B676BE00032C5E /* String+Error.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "String+Error.swift"; path = "bbnQUAL/Interface/Utils/String+Error.swift"; sourceTree = SOURCE_ROOT; };
@@ -231,6 +236,7 @@
 		C098D087238C9A8F006B6E20 /* macOS-GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "macOS-GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C098D08A238C9AC9006B6E20 /* iPadOS-GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "iPadOS-GoogleService-Info.plist"; sourceTree = "<group>"; };
 		C0C67A2823C248AC0023BF9E /* TeacherCourseSessionStatusController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TeacherCourseSessionStatusController.swift; sourceTree = "<group>"; };
+		C0EDB7B423D512AC006DBE0D /* ActionCourseNameExists.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActionCourseNameExists.swift; sourceTree = "<group>"; };
 		C0EF8C3E23D0D3F700DB8ECA /* Iceberg.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Iceberg.swift; sourceTree = "<group>"; };
 		C0EF8C4123D0D85300DB8ECA /* IcebergView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IcebergView.swift; sourceTree = "<group>"; };
 		C0F97E4223B040AD0091E974 /* StudentGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StudentGameViewController.swift; sourceTree = "<group>"; };
@@ -546,9 +552,19 @@
 			children = (
 				D67F5A2B2398270C008C7EDC /* Teacher.storyboard */,
 				C07C2E0923A57441005B5423 /* TeacherViewController.swift */,
+				C0897FCB23D401EE0025360C /* Create Course */,
 				C0502E3323BE6A0000478BDD /* Course */,
 			);
 			path = Teacher;
+			sourceTree = "<group>";
+		};
+		C0897FCB23D401EE0025360C /* Create Course */ = {
+			isa = PBXGroup;
+			children = (
+				C0EDB7B323D5129B006DBE0D /* Actions */,
+				C0897FCC23D402150025360C /* CreateCourseController.swift */,
+			);
+			path = "Create Course";
 			sourceTree = "<group>";
 		};
 		C096035623C288BD001848B0 /* Actions */ = {
@@ -572,6 +588,14 @@
 				C0306F1B23CD0A6800A61C16 /* TeacherCourseSessionProgressController.swift */,
 			);
 			path = Session;
+			sourceTree = "<group>";
+		};
+		C0EDB7B323D5129B006DBE0D /* Actions */ = {
+			isa = PBXGroup;
+			children = (
+				C0EDB7B423D512AC006DBE0D /* ActionCourseNameExists.swift */,
+			);
+			path = Actions;
 			sourceTree = "<group>";
 		};
 		C0F97E4123B0403E0091E974 /* Student */ = {
@@ -797,6 +821,7 @@
 				C0306F1923CD071E00A61C16 /* TeacherCourseSessionIcebergsController.swift in Sources */,
 				C05EE36A23BCB02900788A1F /* ActionGetStudentSession.swift in Sources */,
 				C092C17223B676BE00032C5E /* String+Error.swift in Sources */,
+				C0897FCD23D402150025360C /* CreateCourseController.swift in Sources */,
 				C0502E3823BE6AAB00478BDD /* TeacherCourseController.swift in Sources */,
 				C037BCFE23B4E70700231119 /* Reagent.swift in Sources */,
 				C076C18823B790620060074D /* StudentGameFrozenViewController.swift in Sources */,
@@ -804,6 +829,7 @@
 				C0502E2B23BDF06E00478BDD /* ProfileController.swift in Sources */,
 				C06EF3E023BC04B400BDE6E0 /* AuthController.swift in Sources */,
 				C06EF3E323BC057900BDE6E0 /* ActionOpenGoogleAuthDialogue.swift in Sources */,
+				C0EDB7B523D512AC006DBE0D /* ActionCourseNameExists.swift in Sources */,
 				C096036123C28DAB001848B0 /* ActionGetSessionContent.swift in Sources */,
 				C06EF3EF23BC2D5900BDE6E0 /* ControllerAction.swift in Sources */,
 				C096035423C251C5001848B0 /* Session.swift in Sources */,
@@ -849,8 +875,10 @@
 				C05EE36E23BCB28200788A1F /* ActionWatchSessionExpiration.swift in Sources */,
 				D6BDF5CC23977AE300638352 /* QError.swift in Sources */,
 				C010E31223905F2F00D07047 /* Callback.swift in Sources */,
+				C0897FCE23D402150025360C /* CreateCourseController.swift in Sources */,
 				C096035523C251C5001848B0 /* Session.swift in Sources */,
 				C037BCFF23B4E70700231119 /* Reagent.swift in Sources */,
+				C0EDB7B623D512AC006DBE0D /* ActionCourseNameExists.swift in Sources */,
 				C05EE37523BCF73400788A1F /* Team.swift in Sources */,
 				C096035F23C28CE4001848B0 /* ActionExtendSession.swift in Sources */,
 				C092C17F23B6868A00032C5E /* ReagentSelectionWrapper.swift in Sources */,

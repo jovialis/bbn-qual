@@ -220,4 +220,12 @@ class TeacherViewController: UIViewController {
 		self.present(controller, animated: true, completion: nil)
 	}
 	
+	@IBAction func createCourseSelected(_ sender: UIButton) {
+		
+		// Push to the create course controller
+		let createController = CreateCourseController()
+		self.present(createController, animated: true, completion: nil)
+		
+	}
+	
 }
