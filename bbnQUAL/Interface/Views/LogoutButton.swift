@@ -13,17 +13,21 @@ import KeychainSwift
 import SnapKit
 
 class LogoutButton: UIButton {
-	
-	private var setup = false
-	
+		
 	private var loadingIndicator: UIActivityIndicatorView!
 	
-	override func layoutSubviews() {
-		super.layoutSubviews()
-		
-		if !self.setup {
-			self.setupView()
-		}
+	convenience init() {
+		self.init(frame: .zero)
+	}
+	
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		self.setupView()
+	}
+	
+	required init?(coder: NSCoder) {
+		super.init(coder: coder)
+		self.setupView()
 	}
 	
 	private func setupView() {

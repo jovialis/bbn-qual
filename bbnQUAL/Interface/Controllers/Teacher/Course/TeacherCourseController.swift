@@ -25,7 +25,7 @@ class TeacherCourseController: UIViewController, UITabBarDelegate {
 	var access: Int!
 	lazy var courseObserver = Observable<Course>(self.coursePreset)
 	
-	private lazy var cachedLiveStatus: Bool = self.coursePreset.live
+	private lazy var cachedStatus: CourseStatus = self.coursePreset.status
 	var isTopController: Bool { return self.navigationController?.topViewController == self }
 	
 	private var listener: ListenerRegistration!
@@ -87,15 +87,7 @@ class TeacherCourseController: UIViewController, UITabBarDelegate {
 		// Update course title
 		self.classNameLabel.text = self.courseObserver.value.name
 		
-		var controllers: [ (String, UIViewController) ] = []
-		
-		// Add session tab if live
-		if self.courseObserver.value.live {
-			controllers.append(("Session Dashboard", TeacherCourseSessionController(course: self.courseObserver.value)))
-		}
-		
-		// TODO: Append other controllers
-		controllers.append(("Teams", TeacherCourseTeamsController(course: self.courseObserver.value)))
+		let controllers = self.getTabControllers(for: self.courseObserver.value)
 		
 		// Set tabs
 		self.tabController.setViewControllers(controllers.map { $0.1 }, animated: false)
@@ -103,6 +95,28 @@ class TeacherCourseController: UIViewController, UITabBarDelegate {
 		
 		// Update the buttons based on the tabs
 		self.updateButtons(controllers: controllers)
+	}
+	
+	private func getTabControllers(for course: Course) -> [ (String, UIViewController) ] {
+		var controllers: [ (String, UIViewController) ] = []
+		
+		// Add session tab if live
+		switch course.status {
+		case .setup:
+			controllers.append(("Teams", TeacherCourseTeamsController(course: course)))
+			controllers.append(("Teachers", TeacherCourseAccessController(course: course)))
+			controllers.append(("Config", TeacherCourseSettingsController(course: course)))
+			
+		case .live:
+			controllers.append(("Dashboard", TeacherCourseSessionController(course: course)))
+			controllers.append(("Teams", TeacherCourseTeamsController(course: course)))
+			
+		case .archived:
+			controllers.append(("Teams", TeacherCourseTeamsController(course: course)))
+			
+		}
+		
+		return controllers
 	}
 		
 	private func updateButtons(controllers: [(String, UIViewController)]) {
@@ -145,6 +159,11 @@ class TeacherCourseController: UIViewController, UITabBarDelegate {
 				
 				guard let course = Course(ref: ref, json: json) else {
 					print("Could not observe live status for course.")
+					return
+				}
+				
+				// Only update if course status has changed
+				if course.status == self.courseObserver.value.status {
 					return
 				}
 				

@@ -15,8 +15,8 @@ class ActionCourseNameExists: Action<Callback<Bool>> {
 	private let name: String
 	
 	init(name: String) {
-		super.init()
 		self.name = name
+		super.init()
 	}
 	
 	override func execute() -> CallbackSignal<Bool> {

@@ -20,55 +20,102 @@ class CourseView: UIView {
 		}
 	}
 	
-	var infoStack: UIStackView?
+	private var infoStack: UIStackView!
 	
-	var courseNameLabel: UILabel?
-	var archivedLabel: UILabel?
+	private var courseNameLabel: UILabel!
+	private var statusLabel: UILabel!
+	private var teachersLabel: UILabel!
 	
-	var clickedButton: UIButton?
+	private(set) var clickedButton: UIButton!
+	
+	convenience init(course: Course) {
+		self.init()
+		self.course = course
+	}
+	
+	convenience init() {
+		self.init(frame: .zero)
+	}
+	
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		self.setupViews()
+		
+	}
+	
+	required init?(coder: NSCoder) {
+		super.init(coder: coder)
+		self.setupViews()
+	}
+	
+	private func setupViews() {
+		// Create stack
+		self.setupStack()
+		
+		// Course name label
+		let nameLabel = UILabel()
+		self.infoStack.addArrangedSubview(nameLabel)
+		self.courseNameLabel = nameLabel
+		
+		// Configure label
+		nameLabel.font = UIFont(name: "PTSans-Regular", size: 24)
+		
+		// Archived label
+		let statusLabel = UILabel()
+		self.statusLabel = statusLabel
+		self.addSubview(self.statusLabel)
+		
+		// Configure label
+		statusLabel.font = UIFont(name: "PTSans-Regular", size: 20)
+		
+		// Constrain status label
+		statusLabel.snp.makeConstraints { constrain in
+			constrain.trailing.equalToSuperview().inset(20)
+			constrain.centerY.equalTo(nameLabel.snp.centerY)
+		}
+		
+		// Create teachers label
+		let teachersLabel = UILabel()
+		self.teachersLabel = teachersLabel
+		self.infoStack.addArrangedSubview(teachersLabel)
+		
+		// Configure label
+		teachersLabel.font = UIFont(name: "PTSans-Regular", size: 20)
+		teachersLabel.textColor = .tertiaryLabel
+		
+		// Create clicked button
+		let button = UIButton()
+		button.setTitle(nil, for: .normal)
+		
+		self.addSubview(button)
+		button.snp.makeConstraints { (constrain) in
+			constrain.leading.equalToSuperview()
+			constrain.trailing.equalToSuperview()
+			constrain.top.equalToSuperview()
+			constrain.bottom.equalToSuperview()
+		}
+		
+		self.clickedButton = button
+	}
 	
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		
-		// Set subviews if they don't exist already
-		if self.infoStack == nil {
-			self.setupStack()
+		guard let course = self.course else {
+			return
 		}
 		
-		if self.courseNameLabel == nil {
-			let label = UILabel()
-			self.infoStack!.addArrangedSubview(label)
-			self.courseNameLabel = label
-		}
+		self.courseNameLabel!.text = course.name
+		self.teachersLabel.text = "Taught by \((course.teachers.map { $0.name.split(separator: " ").last ?? "-" }).joined(separator: ", "))"
 		
-		if self.archivedLabel == nil {
-			let label = UILabel()
-			self.infoStack!.addArrangedSubview(label)
-			self.archivedLabel = label
-		}
-		
-		if self.clickedButton == nil {
-			let button = UIButton()
-			button.setTitle(nil, for: .normal)
-			
-			self.addSubview(button)
-			button.snp.makeConstraints { (constrain) in
-				constrain.leading.equalToSuperview()
-				constrain.trailing.equalToSuperview()
-				constrain.top.equalToSuperview()
-				constrain.bottom.equalToSuperview()
-			}
-			
-			self.clickedButton = button
-		}
-		
-		self.updateContent()
+		self.statusLabel!.text = "\(course.status.displayName)"
+		self.statusLabel.textColor = (course.status == .live ? UIColor(named: "Pink")! : .secondaryLabel)
 	}
 	
 	private func setupStack() {
 		// Set up stack view
 		let stack = UIStackView()
-		stack.alignment = .center
+		stack.alignment = .leading
 		stack.axis = .vertical
 	
 		// Add subview
@@ -77,25 +124,13 @@ class CourseView: UIView {
 		// Constrain subview
 		stack.snp.makeConstraints { (constrain) in
 			// Sides
-			constrain.leading.greaterThanOrEqualToSuperview()
-			constrain.trailing.greaterThanOrEqualToSuperview()
+			constrain.leading.equalToSuperview().offset(20)
 			
 			// Center
-			constrain.centerX.equalToSuperview()
 			constrain.centerY.equalToSuperview()
 		}
 		
 		self.infoStack = stack
-	}
-	
-	private func updateContent() {
-		if self.courseNameLabel != nil {
-			self.courseNameLabel!.text = self.course?.name
-		}
-
-		if self.archivedLabel != nil {
-			self.archivedLabel!.text = "\(self.course!.archived)"
-		}
 	}
 	
 }

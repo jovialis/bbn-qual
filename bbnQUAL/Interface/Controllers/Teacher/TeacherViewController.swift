@@ -82,11 +82,11 @@ class TeacherViewController: UIViewController {
 			view.course = data
 			view.backgroundColor = .secondarySystemBackground
 
-			// Layout
-			view.layoutSubviews()
-
+			// Deregister other listeners
+			view.clickedButton.onTouchUpInside.cancelAllSubscriptions()
+			
 			// Open the course when clicked
-			view.clickedButton?.onTouchUpInside.subscribe(with: self, callback: {
+			view.clickedButton.onTouchUpInside.subscribe(with: self, callback: {
 				self.openCourse(course: data)
 			})
 		}
@@ -112,18 +112,19 @@ class TeacherViewController: UIViewController {
 
 		// Active header provider
 		let activeHeaderProvider = ComposedHeaderProvider(
-		  headerViewSource: { (view: UILabel, data, index) in
+		  headerViewSource:
+			{ (view: UILabel, data, index) in
 			
 			  view.textColor = .white
 			view.textAlignment = .left
-			  view.text = "Active Courses"
+			view.text = "Active Courses"
 			  view.font = UIFont(name: "PTSans-Bold", size: 26)
 
-		  },
-		  headerSizeSource: { (index, data, maxSize) -> CGSize in
-			return CGSize(width: maxSize.width, height: 50)
-		  },
-		  sections: [activeCoursesProvider]
+			},
+				headerSizeSource: { (index, data, maxSize) -> CGSize in
+				return CGSize(width: maxSize.width, height: 50)
+			},
+			sections: [activeCoursesProvider]
 		)
 
 		activeHeaderProvider.layout = FlowLayout(spacing: 20)
@@ -186,8 +187,8 @@ class TeacherViewController: UIViewController {
 					}
 				}
 
-				self.activeCoursesSource.data = courses.filter({ !$0.archived })
-				self.archivedCoursesSource.data = courses.filter({ $0.archived })
+				self.activeCoursesSource.data = courses.filter({ $0.status != .archived })
+				self.archivedCoursesSource.data = courses.filter({ $0.status == .archived })
 			} else {
 				print(error!)
 

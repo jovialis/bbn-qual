@@ -55,11 +55,8 @@ class StudentFinishedViewController: UIViewController {
 		let tubeWrapper = UIView()
 		stack.addArrangedSubview(tubeWrapper)
 		
-		let tubeLabel = TestTubeView()
+		let tubeLabel = TestTubeView(label: ":)")
 		tubeWrapper.addSubview(tubeLabel)
-		
-		// Configure tube view
-		tubeLabel.label = ":)"
 		
 		// Constrain tube view
 		tubeLabel.snp.makeConstraints { constrain in

@@ -41,28 +41,40 @@ class CreateCourseController: UIViewController {
 		let field = UITextField()
 		field.placeholder = "Course Name"
 		
-		field.onValueChanged.subscribe(with: self) {
+		field.onEditingChanged.subscribe(with: self) {
 			self.courseName = field.text ?? ""
 		}
 		
 		stack.addArrangedSubview(field)
 		
 		// Create button
-		self.createButton = ActionButton()
+		self.createButton = ActionButton(title: "Create Course", background: .label, text: .systemBackground)
 		self.createButton.onTouchUpInside.subscribe(with: self) {
 			self.create()
 		}
+		
+		stack.addArrangedSubview(self.createButton)
 		
 		self.view.addSubview(stack)
 		
 		// Constrain stack
 		stack.snp.makeConstraints { $0.center.equalToSuperview() }
+		
+		// Update button
+		self.updateButton()
 	}
 	
 	private func checkCourseNameValidity() {
 		// Mark invalid
 		self.nameValid = false
 
+		// No course name given
+		if self.courseName.trimmingCharacters(in: .whitespaces).isEmpty {
+			// Update button
+			self.updateButton()
+			return
+		}
+		
 		// Show loading
 		self.createButton.showLoading()
 		

@@ -44,20 +44,17 @@ struct Course: CourseSkeleton {
 	
 	let ref: DocumentReference
 	let name: String
-	let archived: Bool
-	let live: Bool
 	let settings: CourseSettings
+	let teachers: [TeamMember]
+	let timestamp: Date
+	let status: CourseStatus
 	
 	init?(ref: DocumentReference, json: JSONObject) {
 		guard let name = json["name"].string else {
 			return nil
 		}
 		
-		guard let archived = json["archived"].bool else {
-			return nil
-		}
-		
-		guard let live = json["live"].bool else {
+		guard let statusInt = json["status"].int, let status = CourseStatus(rawValue: statusInt) else {
 			return nil
 		}
 		
@@ -65,11 +62,18 @@ struct Course: CourseSkeleton {
 			return nil
 		}
 		
+		let teachersArray = json["teacherRefs"].arrayValue.compactMap { TeamMember(json: $0) }
+		
+		guard let timestamp = json["timestamp"].raw as? Timestamp else {
+			return nil
+		}
+		
 		self.ref = ref
 		self.name = name
-		self.archived = archived
-		self.live = live
+		self.status = status
 		self.settings = settings
+		self.teachers = teachersArray
+		self.timestamp = timestamp.dateValue()
 	}
 	
 }
@@ -108,6 +112,28 @@ struct CourseSettings {
 		self.attemptsBeforeFreeze = attemptsBeforeFreeze
 		self.numChallengeGroups = numChallengeGroups
 		self.numRegularGroups = numRegularGroups
+	}
+	
+}
+
+enum CourseStatus: Int {
+	
+	case setup
+	case live
+	case archived
+	
+	var displayName: String {
+		switch self {
+		case .setup:
+			return "Setup"
+			
+		case .live:
+			return "Live"
+			
+		case .archived:
+			return "Archived"
+			
+		}
 	}
 	
 }

@@ -69,7 +69,6 @@ class AuthController: UIViewController, ASWebAuthenticationPresentationContextPr
 		// Button
 		self.loginButton = LoginButton()
 		stack.addArrangedSubview(self.loginButton)
-		self.loginButton.layoutSubviews()
 		
 		// Hide
 		self.loginButton.isHidden = true

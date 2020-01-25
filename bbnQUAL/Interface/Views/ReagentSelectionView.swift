@@ -15,26 +15,19 @@ class ReagentSelectionView: UIView {
 	
 	static let REAGANT_BUTTON_HEIGHT: CGFloat = 50
 	static let REAGANT_BUTTON_PADDING_HEIGHT: CGFloat = 5
-	
-	private var setup: Bool = false
-	
+		
 	var index: Int = -1
 	
 	// Content descriptions
 	var tubeName: String = "XXXX" {
 		didSet {
-			if let tube = self.testTubeView {
-				tube.label = tubeName
-			}
+			self.setNeedsLayout()
 		}
 	}
 	
 	var selectionWrapper: ReagentSelectionWrapper = EmptyReagentSelectionWrapper() {
 		didSet {
-			if let collection = self.collectionView {
-				collection.reloadData()
-				self.updateCollectionHeight()
-			}
+			self.setNeedsLayout()
 		}
 	}
 		
@@ -42,21 +35,29 @@ class ReagentSelectionView: UIView {
 	private var testTubeView: TestTubeView!
 	private var collectionView: CollectionView!
 	
+	override init(frame: CGRect) {
+		super.init(frame: frame)
+		self.setupSubviews()
+	}
+	
+	required init?(coder: NSCoder) {
+		super.init(coder: coder)
+		self.setupSubviews()
+	}
+	
 	override func layoutSubviews() {
 		super.layoutSubviews()
 		
-		// Setup subviews if not already setup
-		if !self.setup {
-			self.setupSubviews()
-		}
+		// Update test tube view
+		self.testTubeView.label = self.tubeName
 		
+		// Reload data
+		self.updateCollectionHeight()
 		self.collectionView!.reloadData()
 	}
 	
 	// Layout subviews
 	private func setupSubviews() {
-		self.setup = true
-
 		// Test tube display stack
 		let mainStack = UIStackView()
 		
@@ -67,8 +68,7 @@ class ReagentSelectionView: UIView {
 		mainStack.spacing = 50
 		
 		// Add tube stack subviews
-		self.testTubeView = TestTubeView()
-		self.testTubeView.label = self.tubeName
+		self.testTubeView = TestTubeView(label: self.tubeName)
 		
 		// Constrain
 		self.testTubeView.snp.makeConstraints { constrain in
@@ -86,7 +86,7 @@ class ReagentSelectionView: UIView {
 		// View source
 		let viewSource = ClosureViewSource { (button: UIButton, reagent: Reagent, index: Int) in
 			// Configure button
-			button.layoutSubviews()
+//			button.layoutSubviews()
 			button.backgroundColor = .red
 			
 			// Button text

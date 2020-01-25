@@ -81,6 +81,20 @@ struct TeamMember: TeamMemberSkeleton {
 	let name: String
 	let email: String
 	
+	init?(ref: DocumentReference, json: JSONObject) {
+		guard let name = json["name"].string else {
+			return nil
+		}
+		
+		guard let email = json["email"].string else {
+			return nil
+		}
+		
+		self.ref = ref
+		self.name = name
+		self.email = email
+	}
+	
 	init?(json: JSONObject) {
 		guard let name = json["name"].string else {
 			return nil

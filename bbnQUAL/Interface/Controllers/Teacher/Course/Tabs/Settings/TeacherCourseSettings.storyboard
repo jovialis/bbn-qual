@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="d98-QY-8XE">
+    <device id="mac" appearance="light"/>
+    <dependencies>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="PTSans-Regular.ttf">
+            <string>PTSans-Regular</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Teacher Course Settings Storyboard Controller-->
+        <scene sceneID="Nb7-o4-2bU">
+            <objects>
+                <viewController id="d98-QY-8XE" customClass="TeacherCourseSettingsStoryboardController" customModule="bbnQUAL" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="7cO-Ft-Dkr">
+                        <rect key="frame" x="0.0" y="0.0" width="1200" height="900"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" showsHorizontalScrollIndicator="NO" showsVerticalScrollIndicator="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rDb-wM-GCe">
+                                <rect key="frame" x="0.0" y="0.0" width="1200" height="900"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="60" translatesAutoresizingMaskIntoConstraints="NO" id="fOu-zS-zL9">
+                                        <rect key="frame" x="0.0" y="0.0" width="1200" height="691"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Config" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="AbY-PM-0y7">
+                                                <rect key="frame" x="0.0" y="0.0" width="1200" height="38"/>
+                                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="32"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="bRY-Wb-q53">
+                                                <rect key="frame" x="0.0" y="98" width="1200" height="65"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="NbZ-hb-P0m">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1200" height="31"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Assign Demo Group" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Xta-R5-IFK">
+                                                                <rect key="frame" x="0.0" y="0.0" width="202" height="31"/>
+                                                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="24"/>
+                                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="SY2-IX-hcE">
+                                                                <rect key="frame" x="1151" y="0.0" width="51" height="31"/>
+                                                            </switch>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Allow students to review their demo groups using the QUAL program" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="g2e-Zx-vh3">
+                                                        <rect key="frame" x="0.0" y="41" width="1200" height="24"/>
+                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="20"/>
+                                                        <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="m1A-9W-lLm">
+                                                <rect key="frame" x="0.0" y="223" width="1200" height="66"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="Nl8-ZM-h3j">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1200" height="32"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="4 Normal Groups" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TbY-8Q-3QN">
+                                                                <rect key="frame" x="0.0" y="0.0" width="174" height="32"/>
+                                                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="24"/>
+                                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="4" minimumValue="1" maximumValue="8" translatesAutoresizingMaskIntoConstraints="NO" id="RkG-GG-0MB">
+                                                                <rect key="frame" x="1106" y="0.0" width="94" height="32"/>
+                                                            </stepper>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many normal groups to assign students before assigning challenge groups" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cRe-zL-iz4">
+                                                        <rect key="frame" x="0.0" y="42" width="1200" height="24"/>
+                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="20"/>
+                                                        <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="LZV-xD-rFJ">
+                                                <rect key="frame" x="0.0" y="349" width="1200" height="90"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="YN5-74-qEt">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1200" height="32"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="3 Challenge Groups" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YKl-hA-nEV">
+                                                                <rect key="frame" x="0.0" y="0.0" width="201" height="32"/>
+                                                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="24"/>
+                                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minimumValue="1" maximumValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="R0N-lD-2sW">
+                                                                <rect key="frame" x="1106" y="0.0" width="94" height="32"/>
+                                                            </stepper>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xlp-Zg-pRi">
+                                                        <rect key="frame" x="0.0" y="42" width="1200" height="48"/>
+                                                        <string key="text">How many challenge reagent groups to assign students. Students will be finished with QUAL once they have finished all assigned challenge groups</string>
+                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="20"/>
+                                                        <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="FwS-Be-PIT">
+                                                <rect key="frame" x="0.0" y="499" width="1200" height="66"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="KuB-3z-xHT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1200" height="32"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="2 Incorrect Attempts Before Check-In" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XfL-wQ-Qgl">
+                                                                <rect key="frame" x="0.0" y="0.0" width="377" height="32"/>
+                                                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="24"/>
+                                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minimumValue="1" maximumValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="CQm-69-e0C">
+                                                                <rect key="frame" x="1106" y="0.0" width="94" height="32"/>
+                                                            </stepper>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many attempts a team may submit before a teacher must check in with them." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YSF-LC-5ab">
+                                                        <rect key="frame" x="0.0" y="42" width="1200" height="24"/>
+                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="20"/>
+                                                        <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="aga-6u-V4j">
+                                                <rect key="frame" x="0.0" y="625" width="1200" height="66"/>
+                                                <subviews>
+                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="aJH-iq-fCE">
+                                                        <rect key="frame" x="0.0" y="0.0" width="1200" height="32"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1 Incorrect Attempt After Check-In" lineBreakMode="wordWrap" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SvS-P8-VyO">
+                                                                <rect key="frame" x="0.0" y="0.0" width="349" height="32"/>
+                                                                <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="24"/>
+                                                                <color key="textColor" systemColor="secondaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <stepper opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minimumValue="1" maximumValue="6" translatesAutoresizingMaskIntoConstraints="NO" id="gyb-O6-i8i">
+                                                                <rect key="frame" x="1106" y="0.0" width="94" height="32"/>
+                                                            </stepper>
+                                                        </subviews>
+                                                    </stackView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="How many incorrect attempts a team may submit after their check-in is approved before they must check in again." lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Wjv-o0-pHN">
+                                                        <rect key="frame" x="0.0" y="42" width="1200" height="24"/>
+                                                        <fontDescription key="fontDescription" name="PTSans-Regular" family="PT Sans" pointSize="20"/>
+                                                        <color key="textColor" systemColor="tertiaryLabelColor" red="0.23529411759999999" green="0.23529411759999999" blue="0.26274509800000001" alpha="0.29999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstItem="fOu-zS-zL9" firstAttribute="trailing" secondItem="x04-qi-CAv" secondAttribute="trailing" id="0Tv-cY-Lfy"/>
+                                    <constraint firstItem="fOu-zS-zL9" firstAttribute="trailing" secondItem="YAT-Bj-aOV" secondAttribute="trailing" id="EEg-Hn-lcZ"/>
+                                    <constraint firstItem="YAT-Bj-aOV" firstAttribute="top" secondItem="fOu-zS-zL9" secondAttribute="top" id="Xia-Gx-UVm"/>
+                                    <constraint firstItem="fOu-zS-zL9" firstAttribute="leading" secondItem="x04-qi-CAv" secondAttribute="leading" id="aYi-eF-nEX"/>
+                                    <constraint firstItem="fOu-zS-zL9" firstAttribute="bottom" secondItem="YAT-Bj-aOV" secondAttribute="bottom" id="uIU-57-kmf"/>
+                                    <constraint firstItem="fOu-zS-zL9" firstAttribute="leading" secondItem="YAT-Bj-aOV" secondAttribute="leading" id="uix-S1-69R"/>
+                                </constraints>
+                                <viewLayoutGuide key="contentLayoutGuide" id="YAT-Bj-aOV"/>
+                                <viewLayoutGuide key="frameLayoutGuide" id="x04-qi-CAv"/>
+                            </scrollView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="rDb-wM-GCe" firstAttribute="leading" secondItem="o0y-qS-F6Y" secondAttribute="leading" id="Env-Ff-P4S"/>
+                            <constraint firstItem="o0y-qS-F6Y" firstAttribute="trailing" secondItem="rDb-wM-GCe" secondAttribute="trailing" id="Zni-SB-ONZ"/>
+                            <constraint firstItem="rDb-wM-GCe" firstAttribute="top" secondItem="o0y-qS-F6Y" secondAttribute="top" id="omM-LG-Xr9"/>
+                            <constraint firstItem="o0y-qS-F6Y" firstAttribute="bottom" secondItem="rDb-wM-GCe" secondAttribute="bottom" id="puU-p6-qT7"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="o0y-qS-F6Y"/>
+                    </view>
+                    <size key="freeformSize" width="1200" height="900"/>
+                    <connections>
+                        <outlet property="assignDemoGroupLabel" destination="Xta-R5-IFK" id="phE-D9-nmL"/>
+                        <outlet property="assignDemoGroupSwitch" destination="SY2-IX-hcE" id="phz-CD-nfP"/>
+                        <outlet property="numAttemptsAfterCheckinLabel" destination="SvS-P8-VyO" id="Lb7-sg-pth"/>
+                        <outlet property="numAttemptsAfterCheckinStepper" destination="gyb-O6-i8i" id="H1k-vZ-b2m"/>
+                        <outlet property="numAttemptsBeforeCheckinLabel" destination="XfL-wQ-Qgl" id="fxp-De-7Ju"/>
+                        <outlet property="numAttemptsBeforeCheckinStepper" destination="CQm-69-e0C" id="5pC-st-Zo7"/>
+                        <outlet property="numChallengeGroupsLabel" destination="YKl-hA-nEV" id="VJG-fc-eHC"/>
+                        <outlet property="numChallengeGroupsStepper" destination="R0N-lD-2sW" id="WjU-ZK-vWl"/>
+                        <outlet property="numNormalGroupsLabel" destination="TbY-8Q-3QN" id="Eof-0M-xFf"/>
+                        <outlet property="numNormalGroupsStepper" destination="RkG-GG-0MB" id="rsj-k0-jU6"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wfL-6A-Nls" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="16" y="-271"/>
+        </scene>
+    </scenes>
+</document>
