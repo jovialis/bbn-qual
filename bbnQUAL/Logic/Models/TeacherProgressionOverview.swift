@@ -15,6 +15,8 @@ struct TeacherProgressionOverview {
 	let ref: DocumentReference
 	let completed: TeacherProgressionCompleted
 	let current: TeacherProgressionCurrent?
+	
+	let name: String
 	let members: [TeamMember]
 	
 	let totalAttempts: Int
@@ -39,6 +41,11 @@ struct TeacherProgressionOverview {
 			return nil
 		}
 		
+		guard let name = json["name"].string else {
+			return nil
+		}
+		
+		self.name = name
 		self.members = membersJSON.compactMap { TeamMember(json: $0) }
 		
 		self.ref = ref

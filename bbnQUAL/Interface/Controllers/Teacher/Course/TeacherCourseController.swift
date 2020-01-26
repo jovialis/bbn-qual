@@ -103,17 +103,18 @@ class TeacherCourseController: UIViewController, UITabBarDelegate {
 		// Add session tab if live
 		switch course.status {
 		case .setup:
-			controllers.append(("Teams", TeacherCourseTeamsController(course: course)))
-			controllers.append(("Teachers", TeacherCourseAccessController(course: course)))
+			controllers.append(("Setup Teams", TeacherCourseTeamsController(course: course)))
+			controllers.append(("Teacher Access", TeacherCourseAccessController(course: course)))
 			controllers.append(("Config", TeacherCourseSettingsController(course: course)))
-			
+			controllers.append(("Complete Setup", TeacherCourseLiveController(course: course)))
+
 		case .live:
 			controllers.append(("Dashboard", TeacherCourseSessionController(course: course)))
-			controllers.append(("Teams", TeacherCourseTeamsController(course: course)))
-			
+			controllers.append(("Teacher Access", TeacherCourseAccessController(course: course)))
+
 		case .archived:
-			controllers.append(("Teams", TeacherCourseTeamsController(course: course)))
-			
+			controllers.append(("Dashboard", TeacherCourseSessionController(course: course)))
+
 		}
 		
 		return controllers
@@ -134,7 +135,14 @@ class TeacherCourseController: UIViewController, UITabBarDelegate {
 			self.pageButtonsStack.addArrangedSubview(button)
 			
 			button.setTitle(buttonNames[i], for: .normal)
-			button.setTitleColor(isSelected ? UIColor.secondaryLabel : .tertiaryLabel, for: .normal)
+			button.setTitleColor((
+				isSelected ?
+				
+					((buttonNames[i] == "Complete Setup") ? UIColor(named: "Pink")! : UIColor.secondaryLabel) :
+					.tertiaryLabel
+				
+				), for: .normal)
+			
 			button.titleLabel?.font = UIFont(name: "PTSans-Regular", size: 22)
 						
 			// On button click, change selected tab

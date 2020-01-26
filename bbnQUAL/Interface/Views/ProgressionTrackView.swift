@@ -134,7 +134,7 @@ class ProgressionTrackView: UIView {
 		}
 		
 		// Update team info
-		self.teamLabel.text = "Group X"
+		self.teamLabel.text = progression.name
 		self.teamMembersLabel.text = progression.members.map({ $0.name }).joined(separator: ", ")
 		
 		// Wipe all currently laid out markers
