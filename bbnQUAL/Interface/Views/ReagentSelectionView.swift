@@ -28,12 +28,15 @@ class ReagentSelectionView: UIView {
 	var selectionWrapper: ReagentSelectionWrapper = EmptyReagentSelectionWrapper() {
 		didSet {
 			self.setNeedsLayout()
+			self.listenToSelectionWrapper()
 		}
 	}
 		
 	// Subviews
 	private var testTubeView: TestTubeView!
-	private var collectionView: CollectionView!
+	
+	private var buttonsCollectionView: CollectionView!
+	private var buttonsCollectionDataSource: ArrayDataSource<Reagent>!
 	
 	override init(frame: CGRect) {
 		super.init(frame: frame)
@@ -47,13 +50,16 @@ class ReagentSelectionView: UIView {
 	
 	override func layoutSubviews() {
 		super.layoutSubviews()
-		
+
 		// Update test tube view
 		self.testTubeView.label = self.tubeName
+
+		// Update contents of the collection
+		self.buttonsCollectionDataSource.data = self.selectionWrapper.reagents
 		
 		// Reload data
+		self.buttonsCollectionView!.reloadData()
 		self.updateCollectionHeight()
-		self.collectionView!.reloadData()
 	}
 	
 	// Layout subviews
@@ -78,17 +84,14 @@ class ReagentSelectionView: UIView {
 
 		// Button container view
 		let collectionView = CollectionView()
-		self.collectionView = collectionView
+		self.buttonsCollectionView = collectionView
 
 		// Configure collection view
 		let dataSource = ArrayDataSource(data: self.selectionWrapper.reagents)
-
+		self.buttonsCollectionDataSource = dataSource
+		
 		// View source
 		let viewSource = ClosureViewSource { (button: UIButton, reagent: Reagent, index: Int) in
-			// Configure button
-//			button.layoutSubviews()
-			button.backgroundColor = .red
-			
 			// Button text
 			button.contentEdgeInsets = UIEdgeInsets(top: 10.0, left: 0.0, bottom: 10.0, right: 0.0)
 			
@@ -168,15 +171,24 @@ class ReagentSelectionView: UIView {
 			constrain.bottom.equalToSuperview()
 		}
 		
+		// Listen to wrapper
+		self.listenToSelectionWrapper()
+	}
+	
+	private func listenToSelectionWrapper() {
+		// Cancel previous
+		self.selectionWrapper.indexedReagentsChanged.cancelSubscription(for: self)
+		
 		// Update data on reagant selected changed
-		_ = self.selectionWrapper.indexedReagents.observe { _ in
-			self.collectionView.reloadData()
+		self.selectionWrapper.indexedReagentsChanged.subscribe(with: self) { _ in
+			self.buttonsCollectionView.reloadData()
 		}
 	}
 	
 	private func updateCollectionHeight() {
 		// Constrain collection view to exact height needed
-		self.collectionView!.snp.makeConstraints { constrain in
+		self.buttonsCollectionView!.snp.removeConstraints()
+		self.buttonsCollectionView!.snp.makeConstraints { constrain in
 			let buttonHeight = ReagentSelectionView.REAGANT_BUTTON_HEIGHT
 			let buttonSpacing = ReagentSelectionView.REAGANT_BUTTON_PADDING_HEIGHT
 			
@@ -185,7 +197,7 @@ class ReagentSelectionView: UIView {
 			let height = buttonHeight * numRows
 			let paddingAdd = buttonSpacing * (numRows - 1)
 
-			constrain.height.equalTo(height + paddingAdd)
+			constrain.height.equalTo(max(0, height + paddingAdd))
 		}
 	}
 	

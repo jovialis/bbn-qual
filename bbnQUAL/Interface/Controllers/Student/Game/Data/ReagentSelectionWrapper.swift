@@ -21,10 +21,17 @@ class ReagentSelectionWrapper {
 	let reagents: [Reagent]
 	
 	// Instantiate an observable array with the same number of items as the reagents list
-	private(set) lazy var indexedReagents = Observable<[Reagent?]>([Reagent?].init(repeating: nil, count: self.reagents.count))
+	private var indexedReagents: [Reagent?]
+	let indexedReagentsChanged = Signal<[Reagent?]>()
 	
 	init(reagents: [Reagent]) {
 		self.reagents = reagents
+		self.indexedReagents = [Reagent?].init(repeating: nil, count: reagents.count)
+	}
+	
+	// Fire signal
+	private func notify() {
+		self.indexedReagentsChanged.fire(self.indexedReagents)
 	}
 	
 	// Valid reagent
@@ -38,23 +45,23 @@ class ReagentSelectionWrapper {
 	}
 	
 	func isSelected(_ reagent: Reagent) -> Bool {
-		return self.indexedReagents.value.contains(reagent)
+		return self.indexedReagents.contains(reagent)
 	}
 	
 	func isAtIndex(_ reagent: Reagent, index: Int) -> Bool {
-		return self.indexedReagents.value[index] == reagent
+		return self.indexedReagents[index] == reagent
 	}
 	
 	func indexEmpty(_ index: Int) -> Bool {
-		return self.indexedReagents.value[index] == nil
+		return self.indexedReagents[index] == nil
 	}
 	
 	func occupier(_ index: Int) -> Reagent? {
-		return self.indexedReagents.value[index]
+		return self.indexedReagents[index]
 	}
 	
 	func getIndex(_ reagent: Reagent) -> Int? {
-		return self.indexedReagents.value.firstIndex(of: reagent)
+		return self.indexedReagents.firstIndex(of: reagent)
 	}
 	
 	func setIndex(_ reagent: Reagent, index: Int?) {
@@ -71,11 +78,10 @@ class ReagentSelectionWrapper {
 			// If there's something at the given index, we need to unselect it
 			unselect(index)
 			
-			var curIndexReagents = self.indexedReagents.value
-			curIndexReagents[index] = reagent
+			self.indexedReagents[index] = reagent
 			
-			// Update handler
-			self.indexedReagents.value = curIndexReagents
+			// Update handlers of the change
+			self.notify()
 		}
 	}
 	
@@ -88,11 +94,10 @@ class ReagentSelectionWrapper {
 	
 	func unselect(_ index: Int) {
 		if !indexEmpty(index) {
-			var curIndexReagents = self.indexedReagents.value
-			curIndexReagents[index] = nil
+			self.indexedReagents[index] = nil
 			
 			// Update observers
-			self.indexedReagents.value = curIndexReagents
+			self.notify()
 		}
 	}
 	
@@ -103,7 +108,7 @@ class ReagentSelectionWrapper {
 		}
 		
 		var used: [Reagent] = []
-		for item in self.indexedReagents.value {
+		for item in self.indexedReagents {
 			if item == nil || !self.reagents.contains(item!) || used.contains(item!) {
 				return false
 			}
@@ -118,7 +123,7 @@ class ReagentSelectionWrapper {
 			
 			// Checker with a flattened indexedReagents array
 			let checker = ActionCheckAnswers(
-				answers: self.indexedReagents.value.compactMap { $0 }
+				answers: self.indexedReagents.compactMap { $0 }
 			)
 			
 			return checker.execute()
