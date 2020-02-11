@@ -51,22 +51,24 @@ class TeamSetupView: UIView, UITextFieldDelegate {
 		
 		// configure
 		masterStack.axis = .vertical
-		masterStack.spacing = 10
+		masterStack.spacing = 25
 		masterStack.alignment = .fill
 		masterStack.distribution = .fill
 		
 		// Constrain
-		masterStack.snp.makeConstraints { $0.leading.trailing.top.bottom.equalToSuperview() }
+		masterStack.snp.makeConstraints { $0.leading.trailing.top.bottom.equalToSuperview().inset(25) }
 		
 		// Name label
 		let teamName = UILabel()
 		teamName.text = "Team Name"
+		teamName.font = UIFont(name: "PTSans-Regular", size: 24)
 		masterStack.addArrangedSubview(teamName)
 		
 		// Name field
 		self.titleField = UITextField()
 		self.titleField.placeholder = "Team Name"
 		self.titleField.backgroundColor = .secondarySystemFill
+		self.titleField.font = UIFont(name: "PTSans-Regular", size: 20)
 		masterStack.addArrangedSubview(self.titleField)
 		
 		self.titleField.onEditingChanged.subscribe(with: self) {
@@ -76,6 +78,7 @@ class TeamSetupView: UIView, UITextFieldDelegate {
 		
 		// Members label
 		self.membersLabel = UILabel()
+		self.membersLabel.font = UIFont(name: "PTSans-Regular", size: 24)
 		masterStack.addArrangedSubview(self.membersLabel)
 		
 		// Members stack
@@ -91,6 +94,7 @@ class TeamSetupView: UIView, UITextFieldDelegate {
 		self.addMemberField = UITextField()
 		masterStack.addArrangedSubview(self.addMemberField)
 		self.addMemberField.placeholder = "Add member email"
+		self.addMemberField.font = UIFont(name: "PTSans-Regular", size: 20)
 		self.addMemberField.backgroundColor = .secondarySystemFill
 		
 		// configure
@@ -118,10 +122,11 @@ class TeamSetupView: UIView, UITextFieldDelegate {
 		
 		// Add email
 		self.team.insert(email: text)
-		self.layoutSubviews()
 		self.controller.attemptSave()
 		
-		textField.text = nil
+		// Reload controller
+		self.controller.updateTeamsDisplay()
+		
 		return true
 	}
 	
@@ -138,29 +143,41 @@ class TeamSetupView: UIView, UITextFieldDelegate {
 		self.team.emails.forEach {
 			self.membersStack.addArrangedSubview(self.generateMemberView(email: $0))
 		}
+		
+		// Add empty view
+		if self.team.emails.isEmpty {
+			self.membersStack.addArrangedSubview(self.generateEmptyView())
+		}
 	}
 	
 	private func generateMemberView(email: String) -> UIView {
 		// Create view
 		let view = UIView()
 		view.layer.borderColor = UIColor.secondarySystemFill.cgColor
+		view.layer.borderWidth = 0.5
 		
 		// Create label
 		let label = UILabel()
 		view.addSubview(label)
 		
 		label.text = email
+		label.font = UIFont(name: "PTSans-Regular", size: 20)
 		
 		// Constrain
-		label.snp.makeConstraints { $0.edges.equalToSuperview() }
+		label.snp.makeConstraints { $0.edges.equalToSuperview().inset(15) }
 		
 		// Button
 		let removeButton = UIButton()
 		removeButton.setTitle("Remove", for: .normal)
+		removeButton.setTitleColor(UIColor(named: "Pink"), for: .normal)
+		removeButton.titleLabel?.font = UIFont(name: "PTSans-Regular", size: 20)
 		
 		view.addSubview(removeButton)
 		
-		removeButton.snp.makeConstraints { $0.centerY.trailing.equalToSuperview() }
+		removeButton.snp.makeConstraints { make in
+			make.centerY.equalToSuperview()
+			make.trailing.equalToSuperview().inset(15)
+		}
 		
 		removeButton.onTouchUpInside.subscribe(with: self) {
 			self.team.remove(email: email)
@@ -168,6 +185,26 @@ class TeamSetupView: UIView, UITextFieldDelegate {
 			self.controller.attemptSave()
 		}
 		
+		return view
+	}
+	
+	private func generateEmptyView() -> UIView {
+		// Create view
+		let view = UIView()
+		view.layer.borderColor = UIColor.secondarySystemFill.cgColor
+		view.layer.borderWidth = 0.5
+
+		// Create label
+		let label = UILabel()
+		label.font = UIFont(name: "PTSans-Regular", size: 20)
+		view.addSubview(label)
+		
+		label.text = "No team members"
+		label.textColor = .tertiaryLabel
+		
+		// Constrain
+		label.snp.makeConstraints { $0.edges.equalToSuperview().inset(15) }
+				
 		return view
 	}
 	

@@ -128,7 +128,7 @@ enum CourseStatus: Int {
 			return "Setup"
 			
 		case .live:
-			return "Live"
+			return "Active"
 			
 		case .archived:
 			return "Archived"

@@ -105,7 +105,7 @@ class IcebergView: UIView {
 			return
 		}
 		
-		self.groupName.text = "Team X"
+		self.groupName.text = iceberg.team.name
 		self.membersLabel.text = iceberg.team.members.map({ $0.name }).joined(separator: ", ")
 	}
 	

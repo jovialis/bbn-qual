@@ -55,8 +55,16 @@ class TeacherCourseTeamsController: UIViewController {
 	}
 	
 	private func setupStack() {
+		// scroll
+		let scrollView = UIScrollView()
+		self.view.addSubview(scrollView)
+		scrollView.alwaysBounceVertical = true
+		
+		// constrain scroll
+		scrollView.snp.makeConstraints { $0.edges.equalToSuperview() }
+		
 		let masterStack = UIStackView()
-		self.view.addSubview(masterStack)
+		scrollView.addSubview(masterStack)
 		
 		masterStack.axis = .vertical
 		masterStack.spacing = 80
@@ -64,11 +72,12 @@ class TeacherCourseTeamsController: UIViewController {
 		masterStack.distribution = .fill
 		
 		// Constrain
-		masterStack.snp.makeConstraints { $0.leading.trailing.top.equalToSuperview() }
+		masterStack.snp.makeConstraints { $0.leading.trailing.top.bottom.width.equalToSuperview() }
 		
 		// Label
 		let label = UILabel()
 		label.text = "Setup Teams"
+		label.font = UIFont(name: "PTSans-Regular", size: 32)
 		
 		masterStack.addArrangedSubview(label)
 	
@@ -90,6 +99,11 @@ class TeacherCourseTeamsController: UIViewController {
 			self.teams.append(SetupTeam(ref: self.course.ref.collection("setupTeams").document(), name: self.generateTeamName()))
 			self.updateTeamsDisplay()
 		}
+		
+		// Spacer
+		let spacer = UIView()
+		spacer.snp.makeConstraints { $0.height.equalTo(30) }
+		masterStack.addArrangedSubview(spacer)
 	}
 	
 	private func fetchSetupTeams() {
@@ -143,7 +157,7 @@ class TeacherCourseTeamsController: UIViewController {
 		return validTeamNames.first!
 	}
 	
-	private func updateTeamsDisplay() {
+	func updateTeamsDisplay() {
 		// Remove previous teams
 		self.teamsStack.arrangedSubviews.forEach { $0.removeFromSuperview() }
 		

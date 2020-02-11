@@ -35,6 +35,7 @@ struct TeamOverview: TeamSkeleton {
 struct Team: TeamSkeleton {
 	
 	let ref: DocumentReference
+	let name: String
 	let members: [TeamMember]
 	
 	init?(reference: DocumentReference, json: JSONObject) {
@@ -42,6 +43,11 @@ struct Team: TeamSkeleton {
 			return nil
 		}
 		
+		guard let name = json["name"].string else {
+			return nil
+		}
+		
+		self.name = name
 		self.ref = reference
 		self.members = members.compactMap { TeamMember(json: $0) }
 	}
